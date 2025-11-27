@@ -6,6 +6,8 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import Image from 'next/image'
 import { useRef } from 'react'
 
+const teamLogoSrc = '/images/team/Screenshot%202025-11-27%20102701.png'
+
 const teamMembers = [
   {
     id: 1,
@@ -174,6 +176,25 @@ export default function Team() {
           >
             The passionate professionals behind Bangladesh's premier welding training institution
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, type: 'spring', stiffness: 120 }}
+            className="mt-12 flex justify-center"
+          >
+            <div className="relative p-4 rounded-3xl bg-white/5 border border-primary-500/30 shadow-2xl backdrop-blur">
+              <Image
+                src={teamLogoSrc}
+                alt="New Life Welding logo"
+                width={280}
+                height={140}
+                className="object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
         </AnimatedSection>
 
         {/* Leadership - Hero Style Cards */}

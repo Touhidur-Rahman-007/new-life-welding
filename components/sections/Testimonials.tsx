@@ -30,30 +30,6 @@ const testimonials = [
     rating: 5,
     text: 'Best investment I ever made. The comprehensive curriculum and industry connections led me to my dream job in the oil and gas sector. The certifications I earned here opened doors nationwide.',
   },
-  {
-    name: 'Maria Santos',
-    role: 'Custom Fabricator',
-    company: 'Self-Employed',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-    rating: 5,
-    text: 'After completing the Fabrication & Design program, I started my own custom metalwork business. The business skills and technical training I received here gave me the confidence to pursue entrepreneurship.',
-  },
-  {
-    name: 'David Williams',
-    role: 'Underwater Welder',
-    company: 'Global Diving',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
-    rating: 5,
-    text: 'The underwater welding program is world-class. The combination of commercial diving and welding training prepared me for one of the most lucrative careers in the field. Making $150k+ annually now.',
-  },
-  {
-    name: 'Jessica Park',
-    role: 'Robotic Welding Tech',
-    company: 'Tesla',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-    rating: 5,
-    text: 'The robotics program was ahead of its time. Learning automation alongside traditional welding made me incredibly marketable. Working at Tesla was a dream come true, and I owe it to this school.',
-  },
 ]
 
 export default function Testimonials() {

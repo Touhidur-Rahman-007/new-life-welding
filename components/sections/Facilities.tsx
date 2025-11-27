@@ -18,46 +18,46 @@ const facilities = [
     title: 'Classroom Labs',
     description: 'Modern classrooms with interactive learning technology',
     icon: Building2,
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80',
     specs: ['Smart boards', 'VR welding simulators', 'Video analysis systems', 'Computer workstations'],
   },
   {
     title: 'Safety Center',
     description: 'Dedicated safety training and certification area',
     icon: Shield,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80',
     specs: ['OSHA certified trainers', 'Emergency response drills', 'PPE fitting station', 'Safety equipment library'],
   },
   {
     title: 'Fabrication Shop',
     description: 'Full-scale fabrication facility for real-world projects',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
     specs: ['CNC plasma cutter', 'Press brake', 'Rolling machines', 'Material storage'],
   },
   {
     title: 'Student Lounge',
     description: 'Comfortable space for breaks and networking',
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80',
     specs: ['Vending area', 'Study rooms', 'WiFi access', 'Lockers'],
   },
   {
     title: 'Testing Center',
     description: 'AWS certified testing facility for certifications',
     icon: Star,
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&q=80',
     specs: ['AWS accredited', 'X-ray inspection', 'Bend test equipment', 'Documentation center'],
   },
 ]
 
 const equipment = [
-  { name: 'Lincoln Electric Power MIG', count: 25, image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80' },
-  { name: 'Miller Dynasty TIG', count: 20, image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80' },
-  { name: 'ESAB Stick Welders', count: 15, image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80' },
-  { name: 'Hypertherm Plasma Cutters', count: 10, image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80' },
-  { name: 'VR Welding Simulators', count: 8, image: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=400&q=80' },
-  { name: 'Orbital Welding Systems', count: 5, image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80' },
+  { name: 'Lincoln Electric Power MIG', count: 25, image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80' },
+  { name: 'Miller Dynasty TIG', count: 20, image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80' },
+  { name: 'ESAB Stick Welders', count: 15, image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80' },
+  { name: 'Hypertherm Plasma Cutters', count: 10, image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&q=80' },
+  { name: 'VR Welding Simulators', count: 8, image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80' },
+  { name: 'Orbital Welding Systems', count: 5, image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80' },
 ]
 
 export default function Facilities() {
@@ -204,39 +204,6 @@ export default function Facilities() {
             ))}
           </div>
         </AnimatedSection>
-
-        {/* Virtual Tour CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-block bg-gradient-to-r from-primary-600 to-primary-500 rounded-3xl p-12 shadow-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              See It For Yourself
-            </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Schedule a personal tour or explore our facility through our interactive virtual tour
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                Schedule Tour
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 backdrop-blur-lg text-white rounded-xl font-semibold text-lg border border-white/30 hover:bg-white/20 transition-all"
-              >
-                Virtual Tour
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

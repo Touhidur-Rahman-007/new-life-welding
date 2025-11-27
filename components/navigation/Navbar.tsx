@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, Flame, Phone, ChevronDown } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
@@ -59,11 +60,17 @@ export default function Navbar() {
               className="flex items-center gap-3 cursor-pointer"
             >
               <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg"
+                whileHover={{ rotate: 5 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-12 h-12 rounded-xl overflow-hidden shadow-lg border-2 border-primary-500/30 bg-white/5 backdrop-blur-sm"
               >
-                <Flame className="w-7 h-7 text-white" />
+                <Image
+                  src="/images/team/Screenshot%202025-11-27%20102701.png"
+                  alt="New Life Logo"
+                  fill
+                  className="object-contain p-1"
+                  priority
+                />
               </motion.div>
               <div>
                 <div className="text-xl font-bold text-white">New Life</div>

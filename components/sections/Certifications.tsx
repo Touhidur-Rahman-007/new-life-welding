@@ -7,42 +7,6 @@ import { AnimatedSection, StaggeredContainer, fadeInUp } from '@/components/ui/A
 
 const certifications = [
   {
-    id: 'aws-cwi',
-    title: 'AWS Certified Welding Inspector',
-    org: 'American Welding Society',
-    icon: Award,
-    color: 'from-blue-600 to-blue-700',
-    duration: '3 Months',
-    level: 'Advanced',
-    description: 'Industry-leading certification for welding inspection and quality control.',
-    requirements: ['5+ years welding experience', 'High school diploma', 'Vision test'],
-    benefits: ['Average salary: $75,000+', 'High demand nationwide', 'Career advancement'],
-  },
-  {
-    id: 'aws-cwe',
-    title: 'AWS Certified Welding Educator',
-    org: 'American Welding Society',
-    icon: Star,
-    color: 'from-primary-600 to-primary-700',
-    duration: '2 Months',
-    level: 'Professional',
-    description: 'Become a certified welding instructor and share your expertise.',
-    requirements: ['Valid welding certification', 'Teaching experience preferred', 'Pass exam'],
-    benefits: ['Instructor positions', 'Training center roles', 'Consulting opportunities'],
-  },
-  {
-    id: 'asme-ix',
-    title: 'ASME Section IX',
-    org: 'American Society of Mechanical Engineers',
-    icon: Shield,
-    color: 'from-green-600 to-green-700',
-    duration: '4 Weeks',
-    level: 'Professional',
-    description: 'Pressure vessel and piping welding certification for industrial applications.',
-    requirements: ['Pipe welding skills', 'X-ray quality welds', 'Code knowledge'],
-    benefits: ['Oil & gas industry access', 'Power plant opportunities', 'High-paying contracts'],
-  },
-  {
     id: 'api-1104',
     title: 'API 1104 Pipeline Welding',
     org: 'American Petroleum Institute',
@@ -199,9 +163,6 @@ export default function Certifications() {
             </h3>
 
             <div className="relative">
-              {/* Path Line */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600" />
-
               {/* Stages */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
                 {certificationPath.map((stage, index) => (
