@@ -102,7 +102,7 @@ There are four main types of welding. MIG – Gas Metal Arc Welding (GMAW), TIG 
     price: '$6,499',
     level: 'Advanced',
     color: 'from-accent-500 to-accent-600',
-    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80',
     description: 'Specialize in pipe welding for oil & gas, industrial, and construction sectors.',
     features: [
       'Pipe welding in all positions (2G, 5G, 6G)',
