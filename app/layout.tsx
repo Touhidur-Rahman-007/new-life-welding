@@ -1,0 +1,52 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { Providers } from '@/components/Providers'
+import Navbar from '@/components/navigation/Navbar'
+import Footer from '@/components/navigation/Footer'
+import ScrollProgress from '@/components/ui/ScrollProgress'
+import CustomCursor from '@/components/ui/CustomCursor'
+import PageTransition from '@/components/ui/PageTransition'
+import SmoothScroll from '@/components/ui/SmoothScroll'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+export const metadata: Metadata = {
+  title: 'New Life Welding Training Center | Premier Welding Education & Certification',
+  description: 'Master the art of welding with industry-leading certification programs. Expert instruction, state-of-the-art facilities, and comprehensive training in all welding techniques.',
+  keywords: ['welding training', 'welding certification', 'vocational training', 'trade school', 'welding courses', 'AWS certification', 'welding school'],
+  authors: [{ name: 'New Life Welding Training Center' }],
+  openGraph: {
+    title: 'New Life Welding Training Center',
+    description: 'Premier welding education and certification programs',
+    type: 'website',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}>
+        <Providers>
+          <SmoothScroll>
+            <CustomCursor />
+            <ScrollProgress />
+            <Navbar />
+            <PageTransition>
+              {children}
+            </PageTransition>
+            <Footer />
+          </SmoothScroll>
+        </Providers>
+      </body>
+    </html>
+  )
+}
