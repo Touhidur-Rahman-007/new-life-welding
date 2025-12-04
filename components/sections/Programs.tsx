@@ -100,7 +100,6 @@ export default function Programs() {
                   <motion.button
                     onClick={(event) => {
                       event.stopPropagation()
-                      setSelectedProgram(program)
                       router.push(`/programs/${program.id}`)
                     }}
                     whileHover={{ scale: 1.02 }}
