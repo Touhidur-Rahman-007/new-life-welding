@@ -167,7 +167,7 @@ export default function About() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="relative group cursor-pointer"
               >
-                <div className="relative p-8 bg-dark-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-dark-800">
+                <div className="relative p-8 bg-dark-900 rounded-2xl shadow-lg transition-all duration-500 border border-dark-800 hover:border-opacity-50" style={{ boxShadow: `0 10px 40px -10px rgba(${value.neonColor || '0,0,0'}, 0)` }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 10px 40px -10px rgba(${value.neonColor}, 0.6), 0 0 30px rgba(${value.neonColor}, 0.3)`; e.currentTarget.style.borderColor = `rgba(${value.neonColor}, 0.5)`; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = `0 10px 40px -10px rgba(${value.neonColor}, 0)`; e.currentTarget.style.borderColor = ''; }}>
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
