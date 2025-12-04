@@ -99,16 +99,6 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
         <div className="max-w-4xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 mb-6"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">ISO Certified Training Center</span>
-          </motion.div>
           {/* Bangla Title */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
