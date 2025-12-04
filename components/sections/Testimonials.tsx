@@ -34,9 +34,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-20 md:py-32 bg-dark-950 overflow-hidden">
+    <section id="testimonials" className="relative py-20 md:py-32 bg-gradient-to-b from-cyan-50 via-teal-50 to-emerald-50 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-950/20 via-dark-950 to-dark-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-100/50 via-transparent to-transparent" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -47,14 +47,14 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-900/50 text-primary-400 text-sm font-semibold border border-primary-500/30">
+            <span className="px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-600 text-sm font-semibold border border-primary-500/30">
               Success Stories
             </span>
           </motion.div>
-          <h2 className="heading-large text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Hear From Our <span className="gradient-text">Graduates</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             Real stories from real students who transformed their lives through welding
           </p>
         </AnimatedSection>
@@ -68,9 +68,9 @@ export default function Testimonials() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <div className="relative bg-dark-900/50 backdrop-blur-lg rounded-3xl p-8 border border-dark-800 hover:border-primary-500/50 transition-all duration-500 h-full flex flex-col">
+              <div className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 border border-cyan-200 hover:border-cyan-500/50 transition-all duration-500 h-full flex flex-col">
                 {/* Quote Icon */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-xl">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center shadow-xl">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
 
@@ -82,12 +82,12 @@ export default function Testimonials() {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-dark-300 leading-relaxed mb-6 flex-grow">
+                <p className="text-dark-600 leading-relaxed mb-6 flex-grow">
                   "{testimonial.text}"
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-dark-800">
+                <div className="flex items-center gap-4 pt-6 border-t border-cyan-200">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary-500/50">
                     <Image
                       src={testimonial.image}
@@ -97,7 +97,7 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold">{testimonial.name}</h4>
+                    <h4 className="text-dark-900 font-bold">{testimonial.name}</h4>
                     <p className="text-dark-400 text-sm">{testimonial.role}</p>
                     <p className="text-primary-400 text-sm font-medium">{testimonial.company}</p>
                   </div>

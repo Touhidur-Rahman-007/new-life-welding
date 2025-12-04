@@ -49,11 +49,11 @@ export default function Videos() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="videos" className="relative py-20 md:py-32 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 overflow-hidden">
+    <section id="videos" className="relative py-20 md:py-32 bg-gradient-to-b from-rose-50 via-pink-50 to-fuchsia-50 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
@@ -71,10 +71,10 @@ export default function Videos() {
               Video Gallery
             </span>
           </motion.div>
-          <h2 className="heading-large text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Watch Our <span className="gradient-text">Training in Action</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             Get an inside look at New Life Welding Training Center through our video showcases
           </p>
         </AnimatedSection>
@@ -90,7 +90,7 @@ export default function Videos() {
               onHoverEnd={() => setHoveredIndex(null)}
               className="group relative"
             >
-              <div className="relative bg-dark-900/50 backdrop-blur-xl rounded-3xl overflow-hidden border border-dark-800 hover:border-primary-500/50 transition-all duration-500 shadow-2xl">
+              <div className="relative bg-white/80 backdrop-blur-xl shadow-lg rounded-3xl overflow-hidden border border-rose-200 hover:border-rose-500/50 transition-all duration-500 shadow-2xl">
                 {/* Video Container */}
                 {activeVideo === video.id ? (
                   <motion.div
@@ -178,11 +178,11 @@ export default function Videos() {
                 {/* Content */}
                 <div className="p-6">
                   <motion.h3
-                    className="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors"
+                    className="text-2xl font-bold text-dark-900 mb-3 group-hover:text-rose-500 transition-colors"
                   >
                     {video.title}
                   </motion.h3>
-                  <p className="text-dark-400 leading-relaxed">
+                  <p className="text-dark-600 leading-relaxed">
                     {video.description}
                   </p>
 
@@ -192,7 +192,7 @@ export default function Videos() {
                       onClick={() => setActiveVideo(video.id)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="mt-4 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-red-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all group/btn"
+                      className="mt-4 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all group/btn"
                     >
                       <Play className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
                       Watch Now

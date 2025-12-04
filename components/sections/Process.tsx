@@ -93,9 +93,9 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-20 md:py-32 bg-dark-950 overflow-hidden">
+    <section id="process" className="relative py-20 md:py-32 bg-gradient-to-b from-orange-50 via-amber-50 to-yellow-50 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-950/30 via-dark-950 to-dark-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-100/50 via-transparent to-transparent" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -107,14 +107,14 @@ export default function Process() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-900/50 text-primary-400 text-sm font-semibold border border-primary-500/30">
+            <span className="px-4 py-2 rounded-full bg-orange-500/20 text-orange-600 text-sm font-semibold border border-primary-500/30">
               Step-by-Step Process
             </span>
           </motion.div>
-          <h2 className="heading-large text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Your Path to <span className="gradient-text">Success</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             A structured, comprehensive approach that takes you from beginner to certified professional
           </p>
         </AnimatedSection>
@@ -137,7 +137,7 @@ export default function Process() {
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="relative bg-dark-900/50 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-dark-800 hover:border-primary-500/50 transition-all duration-500"
+                    className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 md:p-10 border border-orange-200 hover:border-orange-500/50 transition-all duration-500"
                   >
                     {/* Step Number */}
                     <div className="absolute -top-6 -left-6">
@@ -162,17 +162,17 @@ export default function Process() {
                     </motion.div>
 
                     {/* Title & Description */}
-                    <h3 className="text-3xl font-bold text-white mb-4">
+                    <h3 className="text-3xl font-bold text-dark-900 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-lg text-dark-400 mb-6 leading-relaxed">
+                    <p className="text-lg text-dark-600 mb-6 leading-relaxed">
                       {step.description}
                     </p>
 
                     {/* Duration */}
-                    <div className="flex items-center gap-3 mb-6 px-4 py-2 bg-dark-800/50 rounded-full inline-flex">
+                    <div className="flex items-center gap-3 mb-6 px-4 py-2 bg-orange-100 rounded-full inline-flex">
                       <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-                      <span className="text-sm font-medium text-dark-300">
+                      <span className="text-sm font-medium text-dark-700">
                         Duration: {step.duration}
                       </span>
                     </div>
@@ -189,7 +189,7 @@ export default function Process() {
                           className="flex items-center gap-3"
                         >
                           <ArrowRight className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                          <span className="text-dark-300">{detail}</span>
+                          <span className="text-dark-600">{detail}</span>
                         </motion.div>
                       ))}
                     </div>

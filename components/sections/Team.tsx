@@ -133,11 +133,11 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="team" className="relative py-32 bg-dark-950 overflow-hidden">
+    <section id="team" className="relative py-32 bg-gradient-to-b from-violet-50 via-purple-50 to-indigo-50 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       </div>
 

@@ -1,7 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image' from 'framer-motion'
 import Link from 'next/link'
-import { Anchor, Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react'
+import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react'
 const footerLinks = {
   programs: [
     { name: 'Basic Welding', href: '#programs' },
@@ -31,12 +32,18 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-4 mb-6 cursor-pointer"
               >
-                {/* Logo Icon */}
-                <div className="w-20 h-20 rounded-full bg-blue-800 flex items-center justify-center border-4 border-purple-600 shadow-lg">
-                  <div className="text-center">
-                    <Anchor className="w-8 h-8 text-white mx-auto" />
-                    <span className="text-xs text-white font-bold">NEW LIFE</span>
-                  </div>
+                {/* Logo - same as Navbar */}
+                <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-lg border-2 border-primary-500/30 bg-white/20 backdrop-blur-sm">
+                  <Image
+                    src="/images/team/Screenshot%202025-11-27%20102701.png"
+                    alt="New Life Logo"
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
+                <div>
+                  <div className="text-xl font-bold text-dark-900">New Life</div>
+                  <div className="text-sm text-dark-700">Welding Training Center</div>
                 </div>
               </motion.div>
             </Link>
