@@ -146,7 +146,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4 mb-12"
+            className="flex flex-wrap gap-4 mb-8"
           >
             <Link
               href="/courses"
@@ -156,7 +156,7 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="tel:+8801700000000"
+              href="tel:+8801712577508"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
@@ -169,24 +169,19 @@ export default function Hero() {
               Watch Video
             </button>
           </motion.div>
-          {/* Stats Row */}
+          {/* Bangla Quote */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-8"
+            className="p-6 bg-gradient-to-r from-dark-900/80 to-dark-800/80 backdrop-blur-sm rounded-2xl border border-orange-500/20"
           >
-            {[
-              { value: '5000+', label: 'Graduates' },
-              { value: '95%', label: 'Placement Rate' },
-              { value: '15+', label: 'Years Experience' },
-              { value: '8', label: 'Countries' }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-orange-400">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </div>
-            ))}
+            <p 
+              className="text-xl md:text-2xl lg:text-3xl text-orange-400 font-medium italic text-center"
+              style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
+            >
+              "দক্ষ হয়ে বিদেশ গেলে অর্থ সম্মান দুই-ই মেলে"
+            </p>
           </motion.div>
         </div>
       </div>

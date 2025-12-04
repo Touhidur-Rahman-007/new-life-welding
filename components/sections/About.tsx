@@ -11,29 +11,25 @@ const values = [
     icon: Target,
     title: 'Excellence',
     description: 'We strive for perfection in every weld, every lesson, and every interaction.',
-    color: 'from-orange-500 to-orange-600',
-    neonColor: '249,115,22',
+    color: 'from-primary-500 to-primary-600',
   },
   {
     icon: Users2,
     title: 'Community',
     description: 'Building a supportive network of skilled professionals who lift each other up.',
-    color: 'from-cyan-500 to-cyan-600',
-    neonColor: '6,182,212',
+    color: 'from-blue-500 to-blue-600',
   },
   {
     icon: Zap,
     title: 'Innovation',
     description: 'Embracing cutting-edge techniques and technology to stay ahead of industry trends.',
-    color: 'from-purple-500 to-purple-600',
-    neonColor: '168,85,247',
+    color: 'from-accent-500 to-accent-600',
   },
   {
     icon: Shield,
     title: 'Safety First',
     description: 'Prioritizing safety in every aspect of training, from equipment to procedures.',
     color: 'from-green-500 to-green-600',
-    neonColor: '34,197,94',
   },
 ]
 
@@ -63,10 +59,10 @@ export default function About() {
               About Us
             </span>
           </motion.div>
-          <h2 className="heading-large text-white mb-6">
+          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
             Forging Futures Through <span className="gradient-text">Expert Training</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
             For over 25 years, we've been the catalyst for thousands of successful welding careers
           </p>
         </AnimatedSection>
@@ -115,15 +111,15 @@ export default function About() {
           <AnimatedSection animation="slide" direction="right">
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">
                   Your Journey to Welding Mastery Starts Here
                 </h3>
-                <p className="text-lg text-dark-400 mb-6 leading-relaxed">
+                <p className="text-lg text-dark-600 dark:text-dark-400 mb-6 leading-relaxed">
                   New Life Welding Training Center is more than a school—it's a launchpad for your career. 
                   We combine hands-on experience with theoretical knowledge, ensuring our students are 
                   industry-ready from day one.
                 </p>
-                <p className="text-lg text-dark-400 leading-relaxed">
+                <p className="text-lg text-dark-600 dark:text-dark-400 leading-relaxed">
                   Our expert instructors bring decades of real-world experience, teaching you not just 
                   how to weld, but how to think like a professional welder. From basic techniques to 
                   advanced certifications, we guide you every step of the way.
@@ -136,7 +132,7 @@ export default function About() {
                   className="flex items-center gap-3 px-6 py-3 bg-primary-100 dark:bg-primary-900/30 rounded-full"
                 >
                   <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                  <span className="font-semibold text-white">
+                  <span className="font-semibold text-dark-900 dark:text-white">
                     Comprehensive Curriculum
                   </span>
                 </motion.div>
@@ -145,7 +141,7 @@ export default function About() {
                   className="flex items-center gap-3 px-6 py-3 bg-accent-100 dark:bg-accent-900/30 rounded-full"
                 >
                   <Lightbulb className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-                  <span className="font-semibold text-white">
+                  <span className="font-semibold text-dark-900 dark:text-white">
                     Hands-On Learning
                   </span>
                 </motion.div>
@@ -156,7 +152,7 @@ export default function About() {
 
         {/* Core Values */}
         <AnimatedSection className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
             Our Core <span className="gradient-text">Values</span>
           </h3>
           <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -164,10 +160,10 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="relative group cursor-pointer"
+                whileHover={{ y: -10 }}
+                className="relative group"
               >
-                <div className="relative p-8 bg-dark-900 rounded-2xl shadow-lg transition-all duration-500 border border-dark-800 hover:border-opacity-50" style={{ boxShadow: `0 10px 40px -10px rgba(${value.neonColor || '0,0,0'}, 0)` }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 10px 40px -10px rgba(${value.neonColor}, 0.6), 0 0 30px rgba(${value.neonColor}, 0.3)`; e.currentTarget.style.borderColor = `rgba(${value.neonColor}, 0.5)`; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = `0 10px 40px -10px rgba(${value.neonColor}, 0)`; e.currentTarget.style.borderColor = ''; }}>
+                <div className="relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-dark-100 dark:border-dark-800">
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
@@ -175,10 +171,10 @@ export default function About() {
                   >
                     <value.icon className="w-7 h-7 text-white" />
                   </motion.div>
-                  <h4 className="text-xl font-bold text-white mb-3">
+                  <h4 className="text-xl font-bold text-dark-900 dark:text-white mb-3">
                     {value.title}
                   </h4>
-                  <p className="text-dark-400 leading-relaxed">
+                  <p className="text-dark-600 dark:text-dark-400 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -189,7 +185,7 @@ export default function About() {
 
         {/* Timeline */}
         <AnimatedSection>
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
             Our <span className="gradient-text">Journey</span>
           </h3>
           <div className="relative max-w-5xl mx-auto">
@@ -212,15 +208,15 @@ export default function About() {
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="inline-block p-6 bg-dark-900 rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                      className="inline-block p-6 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-xl transition-all"
                     >
                       <div className="text-3xl font-bold gradient-text mb-2">
                         {milestone.year}
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-xl font-bold text-dark-900 dark:text-white mb-2">
                         {milestone.title}
                       </h4>
-                      <p className="text-dark-400">
+                      <p className="text-dark-600 dark:text-dark-400">
                         {milestone.description}
                       </p>
                     </motion.div>
