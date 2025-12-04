@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import Image from 'next/image' from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react'
 const footerLinks = {
