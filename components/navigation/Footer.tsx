@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react'
+import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart, Send } from 'lucide-react'
+
 const footerLinks = {
   programs: [
     { name: 'Basic Welding', href: '#programs' },
@@ -21,7 +22,9 @@ const footerLinks = {
 }
 export default function Footer() {
   return (
-    <footer className="relative bg-[#4ADE80] text-dark-900 overflow-hidden">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -42,64 +45,57 @@ export default function Footer() {
                   />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-dark-900">New Life</div>
-                  <div className="text-sm text-dark-700">Welding Training Center</div>
+                  <div className="text-xl font-bold text-gray-800">New Life</div>
+                  <div className="text-sm text-indigo-600 font-medium">Welding Training Center</div>
                 </div>
               </motion.div>
             </Link>
-            <h3 className="text-xl font-bold text-dark-900 mb-4">New Life Welding Training Center</h3>
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-dark-800 flex-shrink-0 mt-1" />
-                <div className="text-dark-800">
+              <div className="flex items-start gap-3 p-3 bg-white/60 rounded-xl border border-indigo-100">
+                <MapPin className="w-5 h-5 text-indigo-600 flex-shrink-0 mt-1" />
+                <div className="text-gray-700 text-sm">
                   House # 5372, Road # Dakshinkhan Bazar, Dakshinkhan, Dhaka 1230, Bangladesh
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-dark-800" />
-                <a href="tel:+8801712577508" className="text-dark-800 hover:text-dark-900 transition-colors font-medium">
+              <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-indigo-100">
+                <Phone className="w-5 h-5 text-green-600" />
+                <a href="tel:+8801712577508" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
                   01712-577508 , 01748-003338
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-dark-800" />
-                <a href="mailto:newlifeweldingtrainingcenter@gmail.com" className="text-dark-800 hover:text-dark-900 transition-colors">
+              <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-indigo-100">
+                <Mail className="w-5 h-5 text-orange-500" />
+                <a href="mailto:newlifeweldingtrainingcenter@gmail.com" className="text-gray-700 hover:text-indigo-600 transition-colors text-sm">
                   newlifeweldingtrainingcenter@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-dark-800" />
-                <a href="http://www.newlifeweldingtrainingcenter.com" target="_blank" rel="noopener noreferrer" className="text-dark-800 hover:text-dark-900 transition-colors">
-                  www.newlifeweldingtrainingcenter.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Facebook className="w-5 h-5 text-dark-800" />
-                <a href="https://www.facebook.com/newlifeweldingtrainingcenter" target="_blank" rel="noopener noreferrer" className="text-dark-800 hover:text-dark-900 transition-colors">
-                  facebook.com/newlifeweldingtrainingcenter
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Youtube className="w-5 h-5 text-dark-800" />
-                <a href="https://www.youtube.com/@newlifeweldingtrainingcent9244" target="_blank" rel="noopener noreferrer" className="text-dark-800 hover:text-dark-900 transition-colors">
-                  youtube.com/@newlifeweldingtrainingcent9244
-                </a>
-              </div>
+            </div>
+            {/* Social Links */}
+            <div className="mt-6 flex gap-3">
+              <a href="https://www.facebook.com/newlifeweldingtrainingcenter" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-blue-500 hover:bg-blue-600 flex items-center justify-center transition-colors">
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://www.youtube.com/@newlifeweldingtrainingcent9244" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-red-500 hover:bg-red-600 flex items-center justify-center transition-colors">
+                <Youtube className="w-5 h-5 text-white" />
+              </a>
+              <a href="http://www.newlifeweldingtrainingcenter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-teal-500 hover:bg-teal-600 flex items-center justify-center transition-colors">
+                <Globe className="w-5 h-5 text-white" />
+              </a>
             </div>
           </div>
           {/* Programs Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-dark-900">Programs</h3>
+            <h3 className="text-lg font-bold mb-6 text-gray-800">Programs</h3>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>
                     <motion.div
                       whileHover={{ x: 5 }}
-                      className="text-dark-700 hover:text-dark-900 transition-all flex items-center gap-2 group"
+                      className="text-gray-600 hover:text-indigo-600 transition-all flex items-center gap-2 group"
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-500" />
                       {link.name}
                     </motion.div>
                   </Link>
@@ -109,16 +105,16 @@ export default function Footer() {
           </div>
           {/* Company Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-dark-900">Company</h3>
+            <h3 className="text-lg font-bold mb-6 text-gray-800">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>
                     <motion.div
                       whileHover={{ x: 5 }}
-                      className="text-dark-700 hover:text-dark-900 transition-all flex items-center gap-2 group"
+                      className="text-gray-600 hover:text-purple-600 transition-all flex items-center gap-2 group"
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-purple-500" />
                       {link.name}
                     </motion.div>
                   </Link>
@@ -128,16 +124,16 @@ export default function Footer() {
           </div>
         </div>
         {/* Bottom Bar */}
-        <div className="border-t border-dark-400/30 py-6">
+        <div className="border-t border-indigo-200 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-dark-700 text-sm">
-              © {new Date().getFullYear()} New Life Welding Training Center. All rights reserved.
+            <p className="text-gray-600 text-sm flex items-center gap-2">
+              © {new Date().getFullYear()} New Life Welding Training Center. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Bangladesh
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-dark-700 hover:text-dark-900 transition-colors">
+              <Link href="#" className="text-gray-600 hover:text-indigo-600 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-dark-700 hover:text-dark-900 transition-colors">
+              <Link href="#" className="text-gray-600 hover:text-indigo-600 transition-colors">
                 Terms of Service
               </Link>
             </div>

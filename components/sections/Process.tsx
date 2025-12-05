@@ -211,14 +211,14 @@ export default function Process() {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-10 blur-2xl`}
+                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-30 blur-xl`}
                       />
                       
                       {/* Middle Ring */}
                       <motion.div
                         animate={{ rotate: -360 }}
                         transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-8 rounded-full border-2 border-dashed ${step.color} opacity-30`}
+                        className="absolute inset-8 rounded-full border-4 border-dashed border-gray-800 opacity-60"
                       />
                       
                       {/* Inner Content */}
@@ -226,9 +226,9 @@ export default function Process() {
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 360 }}
                           transition={{ duration: 0.6 }}
-                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl`}
+                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 border-white`}
                         >
-                          <step.icon className="w-24 h-24 text-white" />
+                          <step.icon className="w-24 h-24 text-white drop-shadow-lg" />
                         </motion.div>
                       </div>
                     </div>
