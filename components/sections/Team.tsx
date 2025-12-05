@@ -133,12 +133,11 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="team" className="relative py-32 bg-gradient-to-b from-violet-50 via-purple-50 to-indigo-50 overflow-hidden">
+    <section id="team" className="relative py-32 bg-gradient-to-b from-gray-50 via-white to-orange-50 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(234,88,12,0.08),transparent_50%)]" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -149,20 +148,20 @@ export default function Team() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', duration: 1 }}
-            className="inline-flex items-center gap-3 mb-6 px-8 py-3 bg-gradient-to-r from-primary-500/20 via-accent-500/20 to-primary-500/20 border border-primary-500/30 rounded-full"
+            className="inline-flex items-center gap-3 mb-6 px-8 py-3 bg-gradient-to-r from-orange-100 via-orange-50 to-orange-100 border border-orange-300 rounded-full"
           >
-            <Flame className="w-6 h-6 text-primary-400 animate-pulse" />
-            <span className="text-primary-400 font-bold text-lg">Our Expert Team</span>
-            <Flame className="w-6 h-6 text-primary-400 animate-pulse" />
+            <Flame className="w-6 h-6 text-orange-500 animate-pulse" />
+            <span className="text-orange-600 font-bold text-lg">Our Expert Team</span>
+            <Flame className="w-6 h-6 text-orange-500 animate-pulse" />
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 font-display leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 font-display leading-tight"
           >
-            <span className="inline-block bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent animate-gradient">
+            <span className="inline-block bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-clip-text text-transparent">
               Meet The Masters
             </span>
           </motion.h2>
@@ -172,7 +171,7 @@ export default function Team() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl text-dark-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
           >
             The passionate professionals behind Bangladesh's premier welding training institution
           </motion.p>
@@ -184,7 +183,7 @@ export default function Team() {
             transition={{ delay: 0.5, type: 'spring', stiffness: 120 }}
             className="mt-12 flex justify-center"
           >
-            <div className="relative p-4 rounded-3xl bg-white/5 border border-primary-500/30 shadow-2xl backdrop-blur">
+            <div className="relative p-4 rounded-3xl bg-white border border-orange-200 shadow-xl">
               <Image
                 src={teamLogoSrc}
                 alt="New Life Welding logo"
@@ -272,19 +271,19 @@ function SectionTitle({ icon: Icon, title, subtitle }: SectionTitleProps) {
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         >
-          <Icon className="w-8 h-8 text-primary-400" />
+          <Icon className="w-8 h-8 text-orange-500" />
         </motion.div>
-        <h3 className="text-4xl md:text-5xl font-bold font-display text-white">
+        <h3 className="text-4xl md:text-5xl font-bold font-display text-orange-600">
           {title}
         </h3>
         <motion.div
           animate={{ rotate: [360, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         >
-          <Icon className="w-8 h-8 text-primary-400" />
+          <Icon className="w-8 h-8 text-orange-500" />
         </motion.div>
       </div>
-      <p className="text-xl text-primary-400/80 font-semibold">{subtitle}</p>
+      <p className="text-xl text-orange-500 font-semibold">{subtitle}</p>
     </motion.div>
   )
 }
@@ -314,13 +313,13 @@ function LeadershipCard({ member, index }: CardProps) {
     >
       <motion.div style={{ y }} className="relative">
         {/* Card Container */}
-        <div className="relative bg-gradient-to-br from-dark-900/90 to-dark-950/90 backdrop-blur-2xl border-2 border-primary-500/30 rounded-3xl overflow-hidden p-8 hover:border-primary-500 transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-primary-500/50">
+        <div className="relative bg-white border-2 border-orange-200 rounded-3xl overflow-hidden p-8 hover:border-orange-400 transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-orange-200 shadow-xl">
           
           {/* Animated Gradient Overlay */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
+          <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`} />
           
           {/* Spark Effect */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
             {/* Image with Hexagon Mask */}
@@ -328,20 +327,14 @@ function LeadershipCard({ member, index }: CardProps) {
               <motion.div
                 whileHover={{ rotate: 5, scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
-                className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-primary-500/50 group-hover:border-primary-400 transition-colors duration-500"
+                className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-orange-300 group-hover:border-orange-500 transition-colors duration-500"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/30 to-accent-500/30 group-hover:opacity-100 opacity-0 transition-opacity duration-500 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-300/30 to-red-300/30 group-hover:opacity-100 opacity-0 transition-opacity duration-500 z-10" />
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                {/* Rotating Ring */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                  className="absolute inset-0 border-4 border-transparent border-t-primary-400 rounded-full"
                 />
               </motion.div>
               
@@ -360,14 +353,14 @@ function LeadershipCard({ member, index }: CardProps) {
             <div className="flex-1 text-center md:text-left">
               <motion.h4
                 whileHover={{ x: 10 }}
-                className="text-3xl md:text-4xl font-black mb-3 font-display bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent"
+                className="text-3xl md:text-4xl font-black mb-3 font-display text-gray-800"
               >
                 {member.name}
               </motion.h4>
               
-              <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-primary-500/20 border border-primary-500/50 rounded-full">
-                <Briefcase className="w-5 h-5 text-primary-400" />
-                <p className="text-lg font-bold text-primary-400 uppercase tracking-wider">
+              <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-orange-100 border border-orange-300 rounded-full">
+                <Briefcase className="w-5 h-5 text-orange-500" />
+                <p className="text-lg font-bold text-orange-600 uppercase tracking-wider">
                   {member.role}
                 </p>
               </div>
@@ -378,10 +371,10 @@ function LeadershipCard({ member, index }: CardProps) {
                   href={`tel:${member.phone}`}
                   whileHover={{ scale: 1.05, x: 10 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gradient-to-r from-dark-800 to-dark-900 hover:from-primary-500/20 hover:to-accent-500/20 border border-dark-700 hover:border-primary-500 rounded-xl transition-all group/btn"
+                  className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-xl transition-all group/btn"
                 >
-                  <Phone className="w-5 h-5 text-primary-400 group-hover/btn:animate-bounce" />
-                  <span className="text-base font-semibold text-white">{member.phone}</span>
+                  <Phone className="w-5 h-5 text-orange-500 group-hover/btn:animate-bounce" />
+                  <span className="text-base font-semibold text-gray-700">{member.phone}</span>
                 </motion.a>
 
                 {member.email && (
@@ -389,10 +382,10 @@ function LeadershipCard({ member, index }: CardProps) {
                     href={`mailto:${member.email}`}
                     whileHover={{ scale: 1.05, x: 10 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gradient-to-r from-dark-800 to-dark-900 hover:from-primary-500/20 hover:to-accent-500/20 border border-dark-700 hover:border-primary-500 rounded-xl transition-all group/btn"
+                    className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-xl transition-all group/btn"
                   >
-                    <Mail className="w-5 h-5 text-primary-400 group-hover/btn:animate-bounce" />
-                    <span className="text-sm font-medium text-white break-all">{member.email}</span>
+                    <Mail className="w-5 h-5 text-orange-500 group-hover/btn:animate-bounce" />
+                    <span className="text-sm font-medium text-gray-700 break-all">{member.email}</span>
                   </motion.a>
                 )}
               </div>
@@ -415,12 +408,12 @@ function HexagonCard({ member, index }: CardProps) {
       whileHover={{ y: -10 }}
       className="group relative"
     >
-      <div className="relative bg-dark-900/80 backdrop-blur-xl border border-dark-700/50 rounded-2xl overflow-hidden p-8 hover:border-primary-500/50 transition-all duration-500">
+      <div className="relative bg-white border border-orange-200 rounded-2xl overflow-hidden p-8 hover:border-orange-400 transition-all duration-500 shadow-lg hover:shadow-xl">
         {/* Background Gradient */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
         
         {/* Image */}
-        <div className="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-dark-700 group-hover:border-primary-500 transition-all duration-500 rotate-0 group-hover:rotate-3">
+        <div className="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-gray-200 group-hover:border-orange-400 transition-all duration-500 rotate-0 group-hover:rotate-3">
           <Image
             src={member.image}
             alt={member.name}
@@ -431,14 +424,14 @@ function HexagonCard({ member, index }: CardProps) {
         </div>
 
         {/* Name */}
-        <h4 className="text-2xl font-bold text-center mb-2 group-hover:text-primary-400 transition-colors font-display">
+        <h4 className="text-2xl font-bold text-center mb-2 text-gray-800 group-hover:text-orange-600 transition-colors font-display">
           {member.name}
         </h4>
 
         {/* Role */}
         <div className="flex items-center justify-center gap-2 mb-6">
-          <Briefcase className="w-4 h-4 text-primary-400" />
-          <p className="text-sm text-primary-400 font-bold uppercase tracking-wide">
+          <Briefcase className="w-4 h-4 text-orange-500" />
+          <p className="text-sm text-orange-600 font-bold uppercase tracking-wide">
             {member.role}
           </p>
         </div>
@@ -447,18 +440,18 @@ function HexagonCard({ member, index }: CardProps) {
         <div className="space-y-2">
           <a
             href={`tel:${member.phone}`}
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-dark-800/50 hover:bg-primary-500/10 border border-dark-700 hover:border-primary-500/50 rounded-lg transition-all text-sm"
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-lg transition-all text-sm"
           >
-            <Phone className="w-4 h-4 text-primary-400" />
-            <span className="text-dark-200">{member.phone}</span>
+            <Phone className="w-4 h-4 text-orange-500" />
+            <span className="text-gray-700">{member.phone}</span>
           </a>
           {member.email && (
             <a
               href={`mailto:${member.email}`}
-              className="flex items-center justify-center gap-2 px-4 py-3 bg-dark-800/50 hover:bg-primary-500/10 border border-dark-700 hover:border-primary-500/50 rounded-lg transition-all text-xs"
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-lg transition-all text-xs"
             >
-              <Mail className="w-4 h-4 text-primary-400" />
-              <span className="text-dark-200 break-all">{member.email}</span>
+              <Mail className="w-4 h-4 text-orange-500" />
+              <span className="text-gray-700 break-all">{member.email}</span>
             </a>
           )}
         </div>
@@ -477,7 +470,7 @@ function ModernCard({ member, index }: CardProps) {
       transition={{ delay: index * 0.2 }}
       className="group"
     >
-      <div className="relative bg-gradient-to-br from-dark-900 to-dark-950 rounded-3xl overflow-hidden border border-dark-700 hover:border-primary-500 transition-all duration-500">
+      <div className="relative bg-white rounded-3xl overflow-hidden border border-orange-200 hover:border-orange-400 transition-all duration-500 shadow-lg hover:shadow-xl">
         {/* Top Color Bar */}
         <div className={`h-2 bg-gradient-to-r ${member.gradient}`} />
         
@@ -486,7 +479,7 @@ function ModernCard({ member, index }: CardProps) {
           <div className="relative w-40 h-40 mx-auto mb-6">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500/30 group-hover:border-primary-400 transition-colors"
+              className="relative w-full h-full rounded-full overflow-hidden border-4 border-orange-300 group-hover:border-orange-500 transition-colors"
             >
               <Image
                 src={member.image}
@@ -501,35 +494,35 @@ function ModernCard({ member, index }: CardProps) {
             <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -top-2 -right-2 bg-primary-500 rounded-full p-2"
+              className="absolute -top-2 -right-2 bg-orange-500 rounded-full p-2"
             >
               <Star className="w-5 h-5 text-white" />
             </motion.div>
           </div>
 
-          <h4 className="text-2xl font-bold text-center mb-2 group-hover:text-primary-400 transition-colors font-display">
+          <h4 className="text-2xl font-bold text-center mb-2 text-gray-800 group-hover:text-orange-600 transition-colors font-display">
             {member.name}
           </h4>
           
-          <p className="text-center text-primary-400 font-semibold text-sm uppercase tracking-wider mb-6">
+          <p className="text-center text-orange-600 font-semibold text-sm uppercase tracking-wider mb-6">
             {member.role}
           </p>
 
           <div className="space-y-2">
             <a
               href={`tel:${member.phone}`}
-              className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/30 hover:border-primary-500 rounded-xl transition-all"
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-400 rounded-xl transition-all"
             >
-              <Phone className="w-4 h-4 text-primary-400" />
-              <span className="text-sm text-white">{member.phone}</span>
+              <Phone className="w-4 h-4 text-orange-500" />
+              <span className="text-sm text-gray-700">{member.phone}</span>
             </a>
             {member.email && (
               <a
                 href={`mailto:${member.email}`}
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/30 hover:border-primary-500 rounded-xl transition-all"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-400 rounded-xl transition-all"
               >
-                <Mail className="w-4 h-4 text-primary-400" />
-                <span className="text-xs text-white break-all">{member.email}</span>
+                <Mail className="w-4 h-4 text-orange-500" />
+                <span className="text-xs text-gray-700 break-all">{member.email}</span>
               </a>
             )}
           </div>
@@ -550,10 +543,10 @@ function CircularCard({ member, index }: CardProps) {
       whileHover={{ y: -15, scale: 1.05 }}
       className="group"
     >
-      <div className="relative bg-dark-900/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-dark-700/50 hover:border-primary-500 transition-all duration-500 p-6">
+      <div className="relative bg-white rounded-2xl overflow-hidden border border-orange-200 hover:border-orange-400 transition-all duration-500 p-6 shadow-lg hover:shadow-xl">
         {/* Spotlight Effect */}
         <motion.div
-          className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${member.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
+          className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${member.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
         />
         
         {/* Image */}
@@ -561,7 +554,7 @@ function CircularCard({ member, index }: CardProps) {
           <motion.div
             whileHover={{ rotate: 360 }}
             transition={{ duration: 0.6 }}
-            className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500/40 group-hover:border-primary-400 transition-colors"
+            className="relative w-full h-full rounded-full overflow-hidden border-4 border-orange-300 group-hover:border-orange-500 transition-colors"
           >
             <Image
               src={member.image}
@@ -577,29 +570,29 @@ function CircularCard({ member, index }: CardProps) {
           </div>
         </div>
 
-        <h4 className="text-lg font-bold text-center mb-1 group-hover:text-primary-400 transition-colors font-display">
+        <h4 className="text-lg font-bold text-center mb-1 text-gray-800 group-hover:text-orange-600 transition-colors font-display">
           {member.name}
         </h4>
         
-        <p className="text-center text-xs text-primary-400 font-semibold uppercase tracking-wider mb-4">
+        <p className="text-center text-xs text-orange-600 font-semibold uppercase tracking-wider mb-4">
           {member.role}
         </p>
 
         <div className="space-y-2">
           <a
             href={`tel:${member.phone}`}
-            className="flex items-center justify-center gap-2 px-3 py-2 bg-dark-800/50 hover:bg-primary-500/10 border border-dark-700 hover:border-primary-500/50 rounded-lg transition-all text-xs"
+            className="flex items-center justify-center gap-2 px-3 py-2 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-lg transition-all text-xs"
           >
-            <Phone className="w-3 h-3 text-primary-400" />
-            <span className="text-dark-200">{member.phone}</span>
+            <Phone className="w-3 h-3 text-orange-500" />
+            <span className="text-gray-700">{member.phone}</span>
           </a>
           {member.email && (
             <a
               href={`mailto:${member.email}`}
-              className="flex items-center justify-center gap-1 px-3 py-2 bg-dark-800/50 hover:bg-primary-500/10 border border-dark-700 hover:border-primary-500/50 rounded-lg transition-all"
+              className="flex items-center justify-center gap-1 px-3 py-2 bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-lg transition-all"
             >
-              <Mail className="w-3 h-3 text-primary-400" />
-              <span className="text-[10px] text-dark-200 break-all">{member.email}</span>
+              <Mail className="w-3 h-3 text-orange-500" />
+              <span className="text-[10px] text-gray-700 break-all">{member.email}</span>
             </a>
           )}
         </div>
@@ -619,14 +612,14 @@ function CompactCard({ member, index }: CardProps) {
       whileHover={{ y: -10 }}
       className="group"
     >
-      <div className="relative bg-gradient-to-br from-dark-900 via-dark-900 to-dark-800 rounded-2xl overflow-hidden border border-dark-700 hover:border-primary-500 transition-all duration-500 p-6">
+      <div className="relative bg-white rounded-2xl overflow-hidden border border-orange-200 hover:border-orange-400 transition-all duration-500 p-6 shadow-lg hover:shadow-xl">
         {/* Gradient Bar */}
         <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${member.gradient}`} />
         
         <div className="flex items-center gap-6">
           {/* Image */}
           <div className="relative w-32 h-32 flex-shrink-0">
-            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-dark-700 group-hover:border-primary-500 transition-colors">
+            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-200 group-hover:border-orange-400 transition-colors">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -638,13 +631,13 @@ function CompactCard({ member, index }: CardProps) {
 
           {/* Info */}
           <div className="flex-1">
-            <h4 className="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors font-display">
+            <h4 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-orange-600 transition-colors font-display">
               {member.name}
             </h4>
             
             <div className="flex items-center gap-2 mb-4">
-              <Briefcase className="w-4 h-4 text-primary-400" />
-              <p className="text-sm text-primary-400 font-semibold uppercase">
+              <Briefcase className="w-4 h-4 text-orange-500" />
+              <p className="text-sm text-orange-600 font-semibold uppercase">
                 {member.role}
               </p>
             </div>
@@ -652,7 +645,7 @@ function CompactCard({ member, index }: CardProps) {
             <div className="space-y-2">
               <a
                 href={`tel:${member.phone}`}
-                className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 {member.phone}
@@ -660,7 +653,7 @@ function CompactCard({ member, index }: CardProps) {
               {member.email && (
                 <a
                   href={`mailto:${member.email}`}
-                  className="flex items-center gap-2 text-xs text-dark-300 hover:text-primary-400 transition-colors break-all"
+                  className="flex items-center gap-2 text-xs text-gray-600 hover:text-orange-600 transition-colors break-all"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
                   {member.email}
