@@ -37,19 +37,19 @@ export default function Navbar() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(15, 23, 42, 0)', 'rgba(15, 23, 42, 0.95)']
+    ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.95)']
   )
   
   const backdropBlur = useTransform(
     scrollY,
     [0, 100],
-    ['blur(0px)', 'blur(20px)']
+    ['blur(8px)', 'blur(20px)']
   )
 
   return (
     <motion.nav
       style={{ backgroundColor, backdropFilter: backdropBlur }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-orange-100 shadow-sm"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -73,8 +73,8 @@ export default function Navbar() {
                 />
               </motion.div>
               <div>
-                <div className="text-xl font-bold text-white">New Life</div>
-                <div className="text-xs text-primary-400">Welding Training Center</div>
+                <div className="text-xl font-bold text-gray-900">New Life</div>
+                <div className="text-xs text-orange-500">Welding Training Center</div>
               </div>
             </motion.div>
           </Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
                 <Link href={link.href}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 text-white/90 hover:text-white font-medium rounded-lg hover:bg-white/10 transition-all flex items-center gap-1"
+                    className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-all flex items-center gap-1"
                   >
                     {link.name}
                     {link.submenu && <ChevronDown className="w-4 h-4" />}
@@ -104,13 +104,13 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-dark-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 overflow-hidden"
                   >
                     {link.submenu.map((item) => (
                       <Link key={item.name} href={item.href}>
                         <motion.div
                           whileHover={{ x: 5, backgroundColor: 'rgba(249, 115, 22, 0.1)' }}
-                          className="px-6 py-3 text-white/80 hover:text-white text-sm border-b border-white/5 last:border-0 transition-all"
+                          className="px-6 py-3 text-gray-700 hover:text-orange-600 text-sm border-b border-orange-50 last:border-0 transition-all"
                         >
                           {item.name}
                         </motion.div>
@@ -140,9 +140,9 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden w-10 h-10 rounded-lg bg-white/10 backdrop-blur-lg flex items-center justify-center"
+            className="lg:hidden w-10 h-10 rounded-lg bg-orange-50 backdrop-blur-lg flex items-center justify-center border border-orange-200"
           >
-            {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            {isOpen ? <X className="w-6 h-6 text-gray-800" /> : <Menu className="w-6 h-6 text-gray-800" />}
           </motion.button>
         </div>
 
