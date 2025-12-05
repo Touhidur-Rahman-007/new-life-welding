@@ -42,9 +42,9 @@ const milestones = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 md:py-32 bg-gradient-to-b from-white to-dark-50 dark:from-dark-950 dark:to-dark-900 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-32 bg-gradient-to-br from-amber-50 via-yellow-50 to-lime-50 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 noise-bg opacity-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(217,119,6,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(217,119,6,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

@@ -62,9 +62,9 @@ const equipment = [
 
 export default function Facilities() {
   return (
-    <section id="facilities" className="relative py-20 md:py-32 bg-white dark:bg-dark-950 overflow-hidden">
+    <section id="facilities" className="relative py-20 md:py-32 bg-gradient-to-br from-fuchsia-50 via-pink-50 to-rose-50 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 noise-bg opacity-5" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(219,39,119,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(219,39,119,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}

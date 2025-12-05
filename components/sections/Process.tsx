@@ -18,6 +18,7 @@ const steps = [
     ],
     duration: '1-2 hours',
     color: 'from-blue-500 to-blue-600',
+    borderColor: 'border-blue-600',
   },
   {
     number: '02',
@@ -32,6 +33,7 @@ const steps = [
     ],
     duration: '1 week',
     color: 'from-primary-500 to-primary-600',
+    borderColor: 'border-orange-500',
   },
   {
     number: '03',
@@ -46,6 +48,7 @@ const steps = [
     ],
     duration: '2-4 weeks',
     color: 'from-accent-500 to-accent-600',
+    borderColor: 'border-emerald-500',
   },
   {
     number: '04',
@@ -60,6 +63,7 @@ const steps = [
     ],
     duration: '8-12 weeks',
     color: 'from-orange-500 to-orange-600',
+    borderColor: 'border-rose-500',
   },
   {
     number: '05',
@@ -74,6 +78,7 @@ const steps = [
     ],
     duration: '2-3 weeks',
     color: 'from-purple-500 to-purple-600',
+    borderColor: 'border-violet-500',
   },
   {
     number: '06',
@@ -88,15 +93,16 @@ const steps = [
     ],
     duration: 'Ongoing',
     color: 'from-green-500 to-green-600',
+    borderColor: 'border-teal-500',
   },
 ]
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-20 md:py-32 bg-gradient-to-b from-slate-50 via-gray-50 to-zinc-100 overflow-hidden">
+    <section id="process" className="relative py-20 md:py-32 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200/50 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,116,139,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(100,116,139,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-100/50 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(14,165,233,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.04)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -207,28 +213,28 @@ export default function Process() {
                   >
                     {/* Decorative Elements */}
                     <div className={`relative w-full aspect-square max-w-md mx-auto`}>
-                      {/* Outer Ring - More visible */}
+                      {/* Outer Ring - Color glow */}
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-40`}
+                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-20 blur-xl`}
                       />
                       
-                      {/* Middle Ring - Black border for visibility */}
+                      {/* Middle Ring - White rotating border */}
                       <motion.div
                         animate={{ rotate: -360 }}
                         transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                        className="absolute inset-8 rounded-full border-4 border-dashed border-gray-900"
+                        className="absolute inset-8 rounded-full border-4 border-dashed border-white shadow-lg"
                       />
                       
-                      {/* Inner Content - Black border for visibility */}
+                      {/* Inner Content - Different color border for each step */}
                       <div className="absolute inset-16 flex items-center justify-center">
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 360 }}
                           transition={{ duration: 0.6 }}
-                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 border-gray-900`}
+                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 ${step.borderColor}`}
                         >
-                          <step.icon className="w-24 h-24 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" strokeWidth={2.5} />
+                          <step.icon className="w-24 h-24 text-white drop-shadow-lg" strokeWidth={2} />
                         </motion.div>
                       </div>
                     </div>
