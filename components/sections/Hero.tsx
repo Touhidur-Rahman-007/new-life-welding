@@ -24,6 +24,26 @@ const heroImages = [
   {
     url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1920&auto=format&fit=crop',
     alt: 'Modern Welding Facility'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=1920&auto=format&fit=crop',
+    alt: 'MIG Welding Process'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1920&auto=format&fit=crop',
+    alt: 'TIG Welding Expert'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1597762117709-859f744b84c3?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Steel Fabrication Welding'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Precision Welding Work'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Metal Workshop Welding'
   }
 ];
 
