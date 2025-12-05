@@ -12,24 +12,28 @@ const values = [
     title: 'Excellence',
     description: 'We strive for perfection in every weld, every lesson, and every interaction.',
     color: 'from-primary-500 to-primary-600',
+    glowColor: 'hover:shadow-orange-500/50',
   },
   {
     icon: Users2,
     title: 'Community',
     description: 'Building a supportive network of skilled professionals who lift each other up.',
     color: 'from-blue-500 to-blue-600',
+    glowColor: 'hover:shadow-blue-500/50',
   },
   {
     icon: Zap,
     title: 'Innovation',
     description: 'Embracing cutting-edge techniques and technology to stay ahead of industry trends.',
     color: 'from-accent-500 to-accent-600',
+    glowColor: 'hover:shadow-red-500/50',
   },
   {
     icon: Shield,
     title: 'Safety First',
     description: 'Prioritizing safety in every aspect of training, from equipment to procedures.',
     color: 'from-green-500 to-green-600',
+    glowColor: 'hover:shadow-green-500/50',
   },
 ]
 
@@ -163,7 +167,7 @@ export default function About() {
                 whileHover={{ y: -10 }}
                 className="relative group"
               >
-                <div className="relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-dark-100 dark:border-dark-800">
+                <div className={`relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-2xl ${value.glowColor} transition-all duration-500 border border-dark-100 dark:border-dark-800`}>
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}

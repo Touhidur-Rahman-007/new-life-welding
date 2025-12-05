@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart, Send } from 'lucide-react'
+import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart } from 'lucide-react'
 
 const footerLinks = {
   programs: [
@@ -22,106 +22,136 @@ const footerLinks = {
 }
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-stone-100 via-neutral-50 to-warm-gray-100">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(120,113,108,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(120,113,108,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-amber-200/20 to-orange-200/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-rose-200/20 to-pink-200/20 rounded-full blur-3xl" />
+    <footer className="relative overflow-hidden">
+      {/* Premium Dark Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900" />
+      
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500/15 to-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-full blur-3xl" />
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top CTA Banner */}
-        <div className="py-8 border-b border-stone-200">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 rounded-2xl p-6 shadow-xl"
-          >
-            <div className="text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Ready to Start Your Welding Career?</h3>
-              <p className="text-white/90 text-sm">Join 500+ successful graduates working worldwide</p>
-            </div>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 bg-white text-orange-600 font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
-            >
-              <span>Enroll Now</span>
-              <Send className="w-4 h-4" />
-            </motion.a>
-          </motion.div>
-        </div>
         {/* Main Footer */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column with Logo */}
           <div className="lg:col-span-2">
             <Link href="/">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-4 mb-6 cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center gap-4 mb-8 cursor-pointer"
               >
-                {/* Logo - same as Navbar */}
-                <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-lg border-2 border-amber-400/50 bg-white">
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-violet-500/30 bg-white/10 backdrop-blur-sm p-1">
                   <Image
                     src="/images/team/Screenshot%202025-11-27%20102701.png"
                     alt="New Life Logo"
                     fill
-                    className="object-contain p-1"
+                    className="object-contain"
                   />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-gray-800">New Life</div>
-                  <div className="text-sm text-amber-600 font-medium">Welding Training Center</div>
+                  <div className="text-2xl font-bold text-white">New Life</div>
+                  <div className="text-sm text-violet-400 font-medium">Welding Training Center</div>
                 </div>
               </motion.div>
             </Link>
-            {/* Contact Info */}
+            
+            {/* Contact Cards */}
             <div className="space-y-3">
-              <div className="flex items-start gap-3 p-3 bg-white/80 rounded-xl border border-stone-200 shadow-sm">
-                <MapPin className="w-5 h-5 text-amber-600 flex-shrink-0 mt-1" />
-                <div className="text-gray-700 text-sm">
-                  House # 5372, Road # Dakshinkhan Bazar, Dakshinkhan, Dhaka 1230, Bangladesh
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-violet-500/30 transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-white/80 rounded-xl border border-stone-200 shadow-sm">
-                <Phone className="w-5 h-5 text-green-600" />
-                <a href="tel:+8801712577508" className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
-                  01712-577508 , 01748-003338
-                </a>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-white/80 rounded-xl border border-stone-200 shadow-sm">
-                <Mail className="w-5 h-5 text-rose-500" />
-                <a href="mailto:newlifeweldingtrainingcenter@gmail.com" className="text-gray-700 hover:text-amber-600 transition-colors text-sm">
-                  newlifeweldingtrainingcenter@gmail.com
-                </a>
-              </div>
+                <div>
+                  <div className="text-xs text-violet-400 font-semibold mb-1">ADDRESS</div>
+                  <div className="text-gray-300 text-sm">
+                    House # 5372, Dakshinkhan Bazar, Dhaka 1230, Bangladesh
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.a
+                href="tel:+8801712577508"
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-cyan-500/30 transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <div className="text-xs text-cyan-400 font-semibold mb-1">PHONE</div>
+                  <div className="text-gray-300 font-medium">01712-577508 , 01748-003338</div>
+                </div>
+              </motion.a>
+
+              <motion.a
+                href="mailto:newlifeweldingtrainingcenter@gmail.com"
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-rose-500/30 transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Mail className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <div className="text-xs text-rose-400 font-semibold mb-1">EMAIL</div>
+                  <div className="text-gray-300 text-sm">newlifeweldingtrainingcenter@gmail.com</div>
+                </div>
+              </motion.a>
             </div>
+
             {/* Social Links */}
-            <div className="mt-6 flex gap-3">
-              <a href="https://www.facebook.com/newlifeweldingtrainingcenter" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-blue-500 hover:bg-blue-600 flex items-center justify-center transition-colors shadow-md">
+            <div className="mt-8 flex gap-3">
+              <motion.a
+                href="https://www.facebook.com/newlifeweldingtrainingcenter"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -3 }}
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 transition-all"
+              >
                 <Facebook className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://www.youtube.com/@newlifeweldingtrainingcent9244" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-red-500 hover:bg-red-600 flex items-center justify-center transition-colors shadow-md">
+              </motion.a>
+              <motion.a
+                href="https://www.youtube.com/@newlifeweldingtrainingcent9244"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -3 }}
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-lg hover:shadow-red-500/30 transition-all"
+              >
                 <Youtube className="w-5 h-5 text-white" />
-              </a>
-              <a href="http://www.newlifeweldingtrainingcenter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-amber-500 hover:bg-amber-600 flex items-center justify-center transition-colors shadow-md">
+              </motion.a>
+              <motion.a
+                href="http://www.newlifeweldingtrainingcenter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -3 }}
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg hover:shadow-emerald-500/30 transition-all"
+              >
                 <Globe className="w-5 h-5 text-white" />
-              </a>
+              </motion.a>
             </div>
           </div>
+
           {/* Programs Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-gray-800">Programs</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-bold mb-6 text-white flex items-center gap-3">
+              <span className="w-10 h-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full" />
+              Programs
+            </h3>
+            <ul className="space-y-4">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>
                     <motion.div
-                      whileHover={{ x: 5 }}
-                      className="text-gray-600 hover:text-amber-600 transition-all flex items-center gap-2 group"
+                      whileHover={{ x: 8 }}
+                      className="text-gray-400 hover:text-violet-400 transition-all flex items-center gap-2 group"
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-amber-500" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-violet-400" />
                       {link.name}
                     </motion.div>
                   </Link>
@@ -129,37 +159,53 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
           {/* Company Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-gray-800">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-bold mb-6 text-white flex items-center gap-3">
+              <span className="w-10 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+              Company
+            </h3>
+            <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>
                     <motion.div
-                      whileHover={{ x: 5 }}
-                      className="text-gray-600 hover:text-rose-600 transition-all flex items-center gap-2 group"
+                      whileHover={{ x: 8 }}
+                      className="text-gray-400 hover:text-cyan-400 transition-all flex items-center gap-2 group"
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-rose-500" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400" />
                       {link.name}
                     </motion.div>
                   </Link>
                 </li>
               ))}
             </ul>
+            
+            {/* Stats Card */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="mt-8 p-4 bg-gradient-to-br from-violet-500/20 to-purple-500/10 backdrop-blur-sm rounded-xl border border-violet-500/20"
+            >
+              <div className="text-3xl font-bold text-white">500+</div>
+              <div className="text-sm text-violet-300">Graduates Worldwide</div>
+            </motion.div>
           </div>
         </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-stone-300 py-6">
+        <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm flex items-center gap-2">
-              © {new Date().getFullYear()} New Life Welding Training Center. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Bangladesh
+            <p className="text-gray-500 text-sm flex items-center gap-2">
+              © {new Date().getFullYear()} New Life Welding Training Center. Made with 
+              <Heart className="w-4 h-4 text-rose-500 fill-rose-500" /> 
+              in Bangladesh
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-gray-600 hover:text-amber-600 transition-colors">
+              <Link href="#" className="text-gray-500 hover:text-violet-400 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-600 hover:text-amber-600 transition-colors">
+              <Link href="#" className="text-gray-500 hover:text-violet-400 transition-colors">
                 Terms of Service
               </Link>
             </div>

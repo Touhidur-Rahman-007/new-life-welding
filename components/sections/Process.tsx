@@ -217,24 +217,17 @@ export default function Process() {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-20 blur-xl`}
+                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-25 blur-2xl`}
                       />
                       
-                      {/* Middle Ring - White rotating border */}
-                      <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                        className="absolute inset-8 rounded-full border-4 border-dashed border-white shadow-lg"
-                      />
-                      
-                      {/* Inner Content - Different color border for each step */}
-                      <div className="absolute inset-16 flex items-center justify-center">
+                      {/* Inner Content - Only colored border on icon circle */}
+                      <div className="absolute inset-12 flex items-center justify-center">
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 360 }}
                           transition={{ duration: 0.6 }}
-                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 ${step.borderColor}`}
+                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-[6px] ${step.borderColor}`}
                         >
-                          <step.icon className="w-24 h-24 text-white drop-shadow-lg" strokeWidth={2} />
+                          <step.icon className="w-28 h-28 text-white drop-shadow-lg" strokeWidth={1.5} />
                         </motion.div>
                       </div>
                     </div>
