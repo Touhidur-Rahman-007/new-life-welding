@@ -49,10 +49,10 @@ export default function Stats() {
   })
 
   return (
-    <section className="relative py-20 md:py-32 bg-white dark:bg-dark-950 overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-white overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950/5 to-transparent dark:from-dark-900/50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 dark:bg-primary-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-950/5 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedSection className="text-center mb-16">
@@ -62,14 +62,14 @@ export default function Stats() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               Proven Excellence
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Results That Speak <span className="gradient-text">Volumes</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             Our commitment to excellence is reflected in the success of our graduates
           </p>
         </AnimatedSection>
@@ -90,7 +90,7 @@ export default function Stats() {
               className="relative group"
             >
               {/* Card Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-dark-50 dark:from-dark-900 dark:to-dark-800 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-dark-50 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500" />
               
               {/* Animated Border */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-[2px]">
@@ -110,7 +110,7 @@ export default function Stats() {
 
                 {/* Value */}
                 <div className="space-y-2">
-                  <div className="text-5xl md:text-6xl font-bold text-dark-900 dark:text-white font-display">
+                  <div className="text-5xl md:text-6xl font-bold text-dark-900 font-display">
                     {inView && (
                       <>
                         {stat.prefix}
@@ -123,13 +123,13 @@ export default function Stats() {
                       </>
                     )}
                   </div>
-                  <h3 className="text-xl font-semibold text-dark-800 dark:text-dark-200">
+                  <h3 className="text-xl font-semibold text-dark-800">
                     {stat.label}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-dark-600 dark:text-dark-400">
+                <p className="text-sm text-dark-600">
                   {stat.description}
                 </p>
 

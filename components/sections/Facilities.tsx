@@ -75,14 +75,14 @@ export default function Facilities() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               World-Class Facilities
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             State-of-the-Art <span className="gradient-text">Training Environment</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             Train with professional-grade equipment in facilities designed for optimal learning
           </p>
         </AnimatedSection>
@@ -103,7 +103,7 @@ export default function Facilities() {
                 glareMaxOpacity={0.1}
                 scale={1.02}
               >
-                <div className="relative bg-white dark:bg-dark-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
                     <Image
@@ -127,10 +127,10 @@ export default function Facilities() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3">
+                    <h3 className="text-2xl font-bold text-dark-900 mb-3">
                       {facility.title}
                     </h3>
-                    <p className="text-dark-600 dark:text-dark-400 mb-4">
+                    <p className="text-dark-600 mb-4">
                       {facility.description}
                     </p>
 
@@ -139,7 +139,7 @@ export default function Facilities() {
                       {facility.specs.map((spec, i) => (
                         <div
                           key={i}
-                          className="flex items-center gap-2 text-sm text-dark-600 dark:text-dark-400"
+                          className="flex items-center gap-2 text-sm text-dark-600"
                         >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary-500" />
                           {spec}

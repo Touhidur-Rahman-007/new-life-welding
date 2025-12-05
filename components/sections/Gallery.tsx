@@ -28,7 +28,7 @@ export default function Gallery() {
     : images.filter(img => img.category === filter)
 
   return (
-    <section id="gallery" className="relative py-20 md:py-32 bg-gradient-to-b from-dark-50 to-white dark:from-dark-900 dark:to-dark-950">
+    <section id="gallery" className="relative py-20 md:py-32 bg-gradient-to-b from-dark-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <AnimatedSection className="text-center mb-12">
@@ -38,11 +38,11 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               Gallery
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             See Our <span className="gradient-text">Campus in Action</span>
           </h2>
         </AnimatedSection>
@@ -63,7 +63,7 @@ export default function Gallery() {
               className={`px-6 py-3 rounded-full font-semibold capitalize transition-all ${
                 filter === cat
                   ? 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg'
-                  : 'bg-white dark:bg-dark-900 text-dark-700 dark:text-dark-300 hover:bg-dark-50 dark:hover:bg-dark-800'
+                  : 'bg-white text-dark-700 hover:bg-dark-50:bg-dark-800'
               }`}
             >
               {cat}

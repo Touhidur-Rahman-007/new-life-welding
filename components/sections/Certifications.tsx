@@ -53,7 +53,7 @@ const certificationPath = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-20 md:py-32 bg-gradient-to-b from-white to-dark-50 dark:from-dark-950 dark:to-dark-900">
+    <section id="certifications" className="relative py-20 md:py-32 bg-gradient-to-b from-white to-dark-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <AnimatedSection className="text-center mb-20">
@@ -63,14 +63,14 @@ export default function Certifications() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               Professional Certifications
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Industry-Recognized <span className="gradient-text">Certifications</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             Earn credentials that open doors to high-paying careers and global opportunities
           </p>
         </AnimatedSection>
@@ -84,7 +84,7 @@ export default function Certifications() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="relative group"
             >
-              <div className="relative bg-white dark:bg-dark-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-dark-100 dark:border-dark-800">
+              <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-dark-100">
                 {/* Icon */}
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
@@ -96,36 +96,36 @@ export default function Certifications() {
 
                 {/* Badge */}
                 <div className="absolute top-6 right-6">
-                  <span className="px-3 py-1 rounded-full bg-dark-100 dark:bg-dark-800 text-dark-700 dark:text-dark-300 text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-dark-100 text-dark-700 text-xs font-semibold">
                     {cert.level}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-dark-900 mb-2">
                   {cert.title}
                 </h3>
-                <p className="text-sm text-primary-600 dark:text-primary-400 mb-4 font-medium">
+                <p className="text-sm text-primary-600 mb-4 font-medium">
                   {cert.org}
                 </p>
-                <p className="text-dark-600 dark:text-dark-400 mb-6">
+                <p className="text-dark-600 mb-6">
                   {cert.description}
                 </p>
 
                 {/* Duration */}
-                <div className="flex items-center gap-2 mb-6 text-dark-700 dark:text-dark-300">
+                <div className="flex items-center gap-2 mb-6 text-dark-700">
                   <Award className="w-4 h-4" />
                   <span className="text-sm font-medium">{cert.duration} Program</span>
                 </div>
 
                 {/* Requirements */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-dark-900 dark:text-white mb-3">
+                  <h4 className="text-sm font-semibold text-dark-900 mb-3">
                     Requirements:
                   </h4>
                   <ul className="space-y-2">
                     {cert.requirements.map((req, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-dark-600 dark:text-dark-400">
+                      <li key={i} className="flex items-start gap-2 text-sm text-dark-600">
                         <CheckCircle2 className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" />
                         {req}
                       </li>
@@ -135,12 +135,12 @@ export default function Certifications() {
 
                 {/* Benefits */}
                 <div>
-                  <h4 className="text-sm font-semibold text-dark-900 dark:text-white mb-3">
+                  <h4 className="text-sm font-semibold text-dark-900 mb-3">
                     Benefits:
                   </h4>
                   <ul className="space-y-2">
                     {cert.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-dark-600 dark:text-dark-400">
+                      <li key={i} className="flex items-start gap-2 text-sm text-dark-600">
                         <Star className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" />
                         {benefit}
                       </li>
@@ -157,8 +157,8 @@ export default function Certifications() {
 
         {/* Certification Path */}
         <AnimatedSection>
-          <div className="bg-white dark:bg-dark-900 rounded-3xl p-8 md:p-12 shadow-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+            <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 mb-12">
               Your Certification <span className="gradient-text">Journey</span>
             </h3>
 
@@ -184,20 +184,20 @@ export default function Certifications() {
 
                     {/* Content */}
                     <div className="text-center">
-                      <h4 className="text-xl font-bold text-dark-900 dark:text-white mb-3">
+                      <h4 className="text-xl font-bold text-dark-900 mb-3">
                         {stage.stage}
                       </h4>
                       <div className="space-y-2 mb-4">
                         {stage.certs.map((cert, i) => (
                           <div
                             key={i}
-                            className="text-sm text-dark-600 dark:text-dark-400 px-3 py-1 bg-dark-50 dark:bg-dark-800 rounded-full inline-block mx-1"
+                            className="text-sm text-dark-600 px-3 py-1 bg-dark-50 rounded-full inline-block mx-1"
                           >
                             {cert}
                           </div>
                         ))}
                       </div>
-                      <p className="text-sm text-primary-600 dark:text-primary-400 font-medium">
+                      <p className="text-sm text-primary-600 font-medium">
                         {stage.duration}
                       </p>
                     </div>

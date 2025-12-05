@@ -17,13 +17,13 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="relative py-20 bg-white dark:bg-dark-950">
+    <section className="relative py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-dark-900 dark:text-white mb-4">
+          <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-4">
             Trusted By Industry <span className="gradient-text">Leaders</span>
           </h3>
-          <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto">
+          <p className="text-dark-600 max-w-2xl mx-auto">
             We partner with the best to provide you with world-class training
           </p>
         </AnimatedSection>
@@ -35,7 +35,7 @@ export default function Partners() {
               href={partner.url}
               variants={fadeInUp}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="flex items-center justify-center p-6 bg-dark-50 dark:bg-dark-900 rounded-xl hover:bg-dark-100 dark:hover:bg-dark-800 transition-all grayscale hover:grayscale-0"
+              className="flex items-center justify-center p-6 bg-dark-50 rounded-xl hover:bg-dark-100:bg-dark-800 transition-all grayscale hover:grayscale-0"
             >
               <div className="relative w-full h-12">
                 <Image
