@@ -61,22 +61,22 @@ export default function Hero() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${heroImages[currentIndex].url})` }}
           />
-          {/* Light overlay for better text visibility and navbar */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/40" />
+          {/* Subtle overlay for text visibility - keeping images clear */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-transparent to-gray-900/30" />
         </motion.div>
       </AnimatePresence>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/80 backdrop-blur-sm border border-orange-200 text-gray-800 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 group shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group shadow-lg"
       >
         <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/80 backdrop-blur-sm border border-orange-200 text-gray-800 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 group shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group shadow-lg"
       >
         <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
@@ -89,7 +89,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base md:text-lg text-orange-600 font-medium mb-2"
+            className="text-base md:text-lg text-orange-400 font-medium mb-2"
             style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
           >
             আপনার ওয়েল্ডিং ক্যারিয়ার শুরু করুন
@@ -100,10 +100,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4"
           >
             Master the Art of
-            <span className="block mt-1 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 bg-clip-text text-transparent">
+            <span className="block mt-1 bg-gradient-to-r from-orange-400 via-orange-500 to-red-400 bg-clip-text text-transparent">
               Professional Welding
             </span>
           </motion.h1>
@@ -113,7 +113,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm md:text-base text-gray-700 mb-6 max-w-lg leading-relaxed"
+            className="text-sm md:text-base text-gray-200 mb-6 max-w-lg leading-relaxed"
           >
             Join Bangladesh's premier welding training institute. Get internationally recognized 
             certifications and secure high-paying jobs in Europe, Japan, and the Middle East.
@@ -140,10 +140,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-orange-200 shadow-lg"
+            className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg"
           >
             <p 
-              className="text-base md:text-lg text-orange-600 font-medium italic text-center"
+              className="text-base md:text-lg text-orange-400 font-medium italic text-center"
               style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
             >
               "দক্ষ হয়ে বিদেশ গেলে অর্থ সম্মান দুই-ই মেলে"
@@ -161,7 +161,7 @@ export default function Hero() {
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
                 ? 'bg-orange-500 w-8'
-                : 'bg-gray-400/50 hover:bg-gray-500/70'
+                : 'bg-white/50 hover:bg-white/70'
             }`}
           />
         ))}

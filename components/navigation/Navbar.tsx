@@ -31,25 +31,35 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
   const { theme, setTheme } = useTheme()
+  
+  // Track scroll position for text color change
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.95)']
+    ['rgba(0, 0, 0, 0)', 'rgba(255, 255, 255, 0.95)']
   )
   
   const backdropBlur = useTransform(
     scrollY,
     [0, 100],
-    ['blur(8px)', 'blur(20px)']
+    ['blur(0px)', 'blur(20px)']
   )
 
   return (
     <motion.nav
       style={{ backgroundColor, backdropFilter: backdropBlur }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-orange-100 shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-orange-100 shadow-sm' : ''}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -73,8 +83,8 @@ export default function Navbar() {
                 />
               </motion.div>
               <div>
-                <div className="text-xl font-bold text-gray-900">New Life</div>
-                <div className="text-xs text-orange-500">Welding Training Center</div>
+                <div className={`text-xl font-bold transition-colors duration-300 ${scrolled ? 'text-gray-900' : 'text-white'}`}>New Life</div>
+                <div className={`text-xs transition-colors duration-300 ${scrolled ? 'text-orange-500' : 'text-orange-400'}`}>Welding Training Center</div>
               </div>
             </motion.div>
           </Link>
@@ -91,7 +101,11 @@ export default function Navbar() {
                 <Link href={link.href}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-all flex items-center gap-1"
+                    className={`px-4 py-2 font-medium rounded-lg transition-all flex items-center gap-1 ${
+                      scrolled 
+                        ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' 
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
+                    }`}
                   >
                     {link.name}
                     {link.submenu && <ChevronDown className="w-4 h-4" />}
@@ -140,9 +154,17 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden w-10 h-10 rounded-lg bg-orange-50 backdrop-blur-lg flex items-center justify-center border border-orange-200"
+            className={`lg:hidden w-10 h-10 rounded-lg backdrop-blur-lg flex items-center justify-center border transition-all duration-300 ${
+              scrolled 
+                ? 'bg-orange-50 border-orange-200' 
+                : 'bg-white/10 border-white/20'
+            }`}
           >
-            {isOpen ? <X className="w-6 h-6 text-gray-800" /> : <Menu className="w-6 h-6 text-gray-800" />}
+            {isOpen ? (
+              <X className={`w-6 h-6 ${scrolled ? 'text-gray-800' : 'text-white'}`} />
+            ) : (
+              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-800' : 'text-white'}`} />
+            )}
           </motion.button>
         </div>
 
@@ -152,23 +174,23 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-6"
+            className="lg:hidden pb-6 bg-white/95 backdrop-blur-xl rounded-2xl mt-2 shadow-xl border border-orange-100"
           >
             {navLinks.map((link) => (
-              <div key={link.name} className="border-b border-white/10">
+              <div key={link.name} className="border-b border-orange-50 last:border-0">
                 <Link href={link.href} onClick={() => setIsOpen(false)}>
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="py-4 text-white/90 hover:text-white font-medium"
+                    className="px-4 py-4 text-gray-700 hover:text-orange-600 font-medium"
                   >
                     {link.name}
                   </motion.div>
                 </Link>
                 {link.submenu && (
-                  <div className="pl-4 pb-4 space-y-2">
+                  <div className="pl-6 pb-4 space-y-2">
                     {link.submenu.map((item) => (
                       <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)}>
-                        <div className="py-2 text-sm text-white/70 hover:text-white">
+                        <div className="py-2 text-sm text-gray-500 hover:text-orange-600">
                           {item.name}
                         </div>
                       </Link>

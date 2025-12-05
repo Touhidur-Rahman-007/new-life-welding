@@ -84,18 +84,6 @@ export default function Programs() {
                     {program.description}
                   </p>
 
-                  {/* Meta Info */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-dark-700 dark:text-dark-300">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm font-medium">{program.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
-                      <DollarSign className="w-4 h-4" />
-                      <span className="text-lg font-bold">{program.price}</span>
-                    </div>
-                  </div>
-
                   {/* Button */}
                   <motion.button
                     onClick={(event) => {
