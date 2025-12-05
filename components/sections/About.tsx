@@ -11,29 +11,37 @@ const values = [
     icon: Target,
     title: 'Excellence',
     description: 'We strive for perfection in every weld, every lesson, and every interaction.',
-    color: 'from-primary-500 to-primary-600',
-    glowColor: 'hover:shadow-orange-500/50',
+    color: 'from-orange-500 to-orange-600',
+    bgColor: 'bg-orange-500',
+    shadowColor: 'shadow-orange-400/60',
+    bottomLine: 'bg-orange-500',
   },
   {
     icon: Users2,
     title: 'Community',
     description: 'Building a supportive network of skilled professionals who lift each other up.',
-    color: 'from-blue-500 to-blue-600',
-    glowColor: 'hover:shadow-blue-500/50',
+    color: 'from-red-500 to-red-600',
+    bgColor: 'bg-red-500',
+    shadowColor: 'shadow-red-400/60',
+    bottomLine: 'bg-red-500',
   },
   {
     icon: Zap,
     title: 'Innovation',
     description: 'Embracing cutting-edge techniques and technology to stay ahead of industry trends.',
-    color: 'from-accent-500 to-accent-600',
-    glowColor: 'hover:shadow-red-500/50',
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-500',
+    shadowColor: 'shadow-blue-400/60',
+    bottomLine: 'bg-blue-500',
   },
   {
     icon: Shield,
     title: 'Safety First',
     description: 'Prioritizing safety in every aspect of training, from equipment to procedures.',
     color: 'from-green-500 to-green-600',
-    glowColor: 'hover:shadow-green-500/50',
+    bgColor: 'bg-green-500',
+    shadowColor: 'shadow-green-400/60',
+    bottomLine: 'bg-green-500',
   },
 ]
 
@@ -164,23 +172,29 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -8, scale: 1.02 }}
                 className="relative group"
               >
-                <div className={`relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-2xl ${value.glowColor} transition-all duration-500 border border-dark-100 dark:border-dark-800`}>
+                <div className={`relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-xl hover:shadow-2xl ${value.shadowColor} transition-all duration-500 border border-gray-100 dark:border-dark-800 overflow-hidden`}>
+                  {/* Glow Effect Background */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${value.bgColor}`} />
+                  
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-4 shadow-lg`}
+                    className={`relative w-14 h-14 rounded-xl ${value.bgColor} flex items-center justify-center mb-4 shadow-lg`}
                   >
                     <value.icon className="w-7 h-7 text-white" />
                   </motion.div>
-                  <h4 className="text-xl font-bold text-dark-900 dark:text-white mb-3">
+                  <h4 className="relative text-xl font-bold text-dark-900 dark:text-white mb-3">
                     {value.title}
                   </h4>
-                  <p className="text-dark-600 dark:text-dark-400 leading-relaxed">
+                  <p className="relative text-dark-600 dark:text-dark-400 leading-relaxed">
                     {value.description}
                   </p>
+                  
+                  {/* Bottom Color Line */}
+                  <div className={`absolute bottom-0 left-8 right-8 h-1 ${value.bottomLine} rounded-full`} />
                 </div>
               </motion.div>
             ))}
@@ -190,7 +204,7 @@ export default function About() {
         {/* Timeline */}
         <AnimatedSection>
           <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
-            Our <span className="gradient-text">Journey</span>
+            Our <span className="text-orange-500">Journey</span>
           </h3>
           <div className="relative max-w-5xl mx-auto">
             {/* Timeline Line */}
