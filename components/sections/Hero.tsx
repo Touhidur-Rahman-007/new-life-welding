@@ -18,10 +18,6 @@ const heroImages = [
     alt: 'Industrial Welding'
   },
   {
-    url: 'https://images.unsplash.com/photo-1573239567170-1f4a6281a5e4?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Welding Training'
-  },
-  {
     url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1920&auto=format&fit=crop',
     alt: 'Modern Welding Facility'
   },
@@ -34,16 +30,20 @@ const heroImages = [
     alt: 'TIG Welding Expert'
   },
   {
-    url: 'https://images.unsplash.com/photo-1597762117709-859f744b84c3?q=80&w=1920&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=1920&auto=format&fit=crop',
     alt: 'Steel Fabrication Welding'
   },
   {
-    url: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Precision Welding Work'
+    url: 'https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Professional Welding Sparks'
   },
   {
-    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Metal Workshop Welding'
+    url: 'https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Metal Fabrication Work'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1560461396-ec0ef7bb29dd?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Industrial Metal Cutting'
   }
 ];
 
