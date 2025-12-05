@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  @apply bg-white dark:bg-dark-950 text-dark-900 dark:text-dark-50 antialiased;
+  @apply bg-white text-dark-900 antialiased;
   font-family: var(--font-inter);
   overflow-x: hidden;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark-100 dark:bg-dark-900;
+  @apply bg-dark-100;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -65,7 +65,7 @@ body {
 
 /* Glass Effect */
 .glass-effect {
-  @apply bg-white/10 dark:bg-dark-900/10 backdrop-blur-xl border border-white/20 dark:border-dark-700/20;
+  @apply bg-white/10 backdrop-blur-xl border border-white/20;
 }
 
 /* Noise Texture */

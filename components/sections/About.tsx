@@ -67,14 +67,14 @@ export default function About() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               About Us
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Forging Futures Through <span className="gradient-text">Expert Training</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             For over 25 years, we've been the catalyst for thousands of successful welding careers
           </p>
         </AnimatedSection>
@@ -123,15 +123,15 @@ export default function About() {
           <AnimatedSection animation="slide" direction="right">
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-dark-900 mb-4">
                   Your Journey to Welding Mastery Starts Here
                 </h3>
-                <p className="text-lg text-dark-600 dark:text-dark-400 mb-6 leading-relaxed">
+                <p className="text-lg text-dark-600 mb-6 leading-relaxed">
                   New Life Welding Training Center is more than a school—it's a launchpad for your career. 
                   We combine hands-on experience with theoretical knowledge, ensuring our students are 
                   industry-ready from day one.
                 </p>
-                <p className="text-lg text-dark-600 dark:text-dark-400 leading-relaxed">
+                <p className="text-lg text-dark-600 leading-relaxed">
                   Our expert instructors bring decades of real-world experience, teaching you not just 
                   how to weld, but how to think like a professional welder. From basic techniques to 
                   advanced certifications, we guide you every step of the way.
@@ -141,19 +141,19 @@ export default function About() {
               <div className="flex flex-wrap gap-4">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-3 px-6 py-3 bg-primary-100 dark:bg-primary-900/30 rounded-full"
+                  className="flex items-center gap-3 px-6 py-3 bg-primary-100 rounded-full"
                 >
-                  <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                  <span className="font-semibold text-dark-900 dark:text-white">
+                  <BookOpen className="w-5 h-5 text-primary-600" />
+                  <span className="font-semibold text-dark-900">
                     Comprehensive Curriculum
                   </span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-3 px-6 py-3 bg-accent-100 dark:bg-accent-900/30 rounded-full"
+                  className="flex items-center gap-3 px-6 py-3 bg-accent-100 rounded-full"
                 >
-                  <Lightbulb className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-                  <span className="font-semibold text-dark-900 dark:text-white">
+                  <Lightbulb className="w-5 h-5 text-accent-600" />
+                  <span className="font-semibold text-dark-900">
                     Hands-On Learning
                   </span>
                 </motion.div>
@@ -164,7 +164,7 @@ export default function About() {
 
         {/* Core Values */}
         <AnimatedSection className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 mb-12">
             Our Core <span className="text-orange-500">Values</span>
           </h3>
           <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -175,7 +175,7 @@ export default function About() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="relative group"
               >
-                <div className={`relative p-8 bg-white dark:bg-dark-900 rounded-2xl shadow-xl hover:shadow-2xl ${value.shadowColor} transition-all duration-500 border border-gray-100 dark:border-dark-800 overflow-hidden`}>
+                <div className={`relative p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl ${value.shadowColor} transition-all duration-500 border border-gray-100 overflow-hidden`}>
                   {/* Glow Effect Background */}
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${value.bgColor}`} />
                   
@@ -186,10 +186,10 @@ export default function About() {
                   >
                     <value.icon className="w-7 h-7 text-white" />
                   </motion.div>
-                  <h4 className="relative text-xl font-bold text-dark-900 dark:text-white mb-3">
+                  <h4 className="relative text-xl font-bold text-dark-900 mb-3">
                     {value.title}
                   </h4>
-                  <p className="relative text-dark-600 dark:text-dark-400 leading-relaxed">
+                  <p className="relative text-dark-600 leading-relaxed">
                     {value.description}
                   </p>
                   
@@ -203,7 +203,7 @@ export default function About() {
 
         {/* Timeline */}
         <AnimatedSection>
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 mb-12">
             Our <span className="text-orange-500">Journey</span>
           </h3>
           <div className="relative max-w-5xl mx-auto">
@@ -226,15 +226,15 @@ export default function About() {
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="inline-block p-6 bg-white dark:bg-dark-900 rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                      className="inline-block p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all"
                     >
                       <div className="text-3xl font-bold gradient-text mb-2">
                         {milestone.year}
                       </div>
-                      <h4 className="text-xl font-bold text-dark-900 dark:text-white mb-2">
+                      <h4 className="text-xl font-bold text-dark-900 mb-2">
                         {milestone.title}
                       </h4>
-                      <p className="text-dark-600 dark:text-dark-400">
+                      <p className="text-dark-600">
                         {milestone.description}
                       </p>
                     </motion.div>

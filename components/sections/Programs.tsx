@@ -13,9 +13,9 @@ export default function Programs() {
   const router = useRouter()
 
   return (
-    <section id="programs" className="relative py-20 md:py-32 bg-white dark:bg-dark-950 overflow-hidden">
+    <section id="programs" className="relative py-20 md:py-32 bg-white overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-100 via-white to-white dark:from-primary-950/20 dark:via-dark-950 dark:to-dark-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-100 via-white to-white" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -26,14 +26,14 @@ export default function Programs() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
               Training Programs
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 dark:text-white mb-6">
+          <h2 className="heading-large text-dark-900 mb-6">
             Comprehensive <span className="gradient-text">Welding Programs</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 dark:text-dark-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
             From beginner to expert, find the perfect program to launch or advance your welding career
           </p>
         </AnimatedSection>
@@ -48,7 +48,7 @@ export default function Programs() {
               className="relative group"
             >
               {/* Card */}
-              <div className="relative bg-white dark:bg-dark-900 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -80,7 +80,7 @@ export default function Programs() {
 
                 {/* Info */}
                 <div className="p-6 space-y-4">
-                  <p className="text-dark-600 dark:text-dark-400 line-clamp-2">
+                  <p className="text-dark-600 line-clamp-2">
                     {program.description}
                   </p>
 
