@@ -154,10 +154,10 @@ export default function Facilities() {
         </StaggeredContainer>
 
         {/* Equipment Showcase */}
-        <AnimatedSection className="bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 rounded-3xl p-8 md:p-12 shadow-xl border border-orange-100">
+        <AnimatedSection className="bg-gradient-to-br from-lime-50 via-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 shadow-xl border border-green-200">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Professional-Grade <span className="bg-gradient-to-r from-orange-500 to-rose-500 bg-clip-text text-transparent">Equipment</span>
+              Professional-Grade <span className="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">Equipment</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Train with the same equipment used by industry professionals worldwide
@@ -175,7 +175,7 @@ export default function Facilities() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="relative group"
               >
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden border border-orange-200 hover:border-orange-400 hover:shadow-lg transition-all">
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden border border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -188,7 +188,7 @@ export default function Facilities() {
                     <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
                     
                     {/* Count Badge */}
-                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-sm font-bold shadow-md">
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold shadow-md">
                       {item.count} Units
                     </div>
                   </div>

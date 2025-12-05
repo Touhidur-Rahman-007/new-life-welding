@@ -93,10 +93,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-20 md:py-32 bg-gradient-to-b from-orange-50 via-amber-50 to-yellow-50 overflow-hidden">
+    <section id="process" className="relative py-20 md:py-32 bg-gradient-to-b from-slate-50 via-gray-50 to-zinc-100 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-100/50 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200/50 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,116,139,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(100,116,139,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -207,28 +207,28 @@ export default function Process() {
                   >
                     {/* Decorative Elements */}
                     <div className={`relative w-full aspect-square max-w-md mx-auto`}>
-                      {/* Outer Ring */}
+                      {/* Outer Ring - More visible */}
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-30 blur-xl`}
+                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-40`}
                       />
                       
-                      {/* Middle Ring */}
+                      {/* Middle Ring - Black border for visibility */}
                       <motion.div
                         animate={{ rotate: -360 }}
                         transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                        className="absolute inset-8 rounded-full border-4 border-dashed border-gray-800 opacity-60"
+                        className="absolute inset-8 rounded-full border-4 border-dashed border-gray-900"
                       />
                       
-                      {/* Inner Content */}
+                      {/* Inner Content - Black border for visibility */}
                       <div className="absolute inset-16 flex items-center justify-center">
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 360 }}
                           transition={{ duration: 0.6 }}
-                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 border-white`}
+                          className={`w-full h-full rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl border-4 border-gray-900`}
                         >
-                          <step.icon className="w-24 h-24 text-white drop-shadow-lg" />
+                          <step.icon className="w-24 h-24 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" strokeWidth={2.5} />
                         </motion.div>
                       </div>
                     </div>
