@@ -17,8 +17,9 @@ const steps = [
       'Financial aid guidance',
     ],
     duration: '1-2 hours',
-    color: 'from-blue-500 to-blue-600',
-    borderColor: 'border-blue-600',
+    color: 'from-orange-500 to-orange-600',
+    borderColor: 'border-orange-500',
+    iconColor: 'text-orange-500',
   },
   {
     number: '02',
@@ -32,8 +33,9 @@ const steps = [
       'Facility orientation',
     ],
     duration: '1 week',
-    color: 'from-primary-500 to-primary-600',
-    borderColor: 'border-orange-500',
+    color: 'from-red-500 to-red-600',
+    borderColor: 'border-red-500',
+    iconColor: 'text-red-500',
   },
   {
     number: '03',
@@ -47,8 +49,9 @@ const steps = [
       'Blueprint reading',
     ],
     duration: '2-4 weeks',
-    color: 'from-accent-500 to-accent-600',
-    borderColor: 'border-emerald-500',
+    color: 'from-blue-500 to-blue-600',
+    borderColor: 'border-blue-500',
+    iconColor: 'text-blue-500',
   },
   {
     number: '04',
@@ -62,8 +65,9 @@ const steps = [
       'Portfolio development',
     ],
     duration: '8-12 weeks',
-    color: 'from-orange-500 to-orange-600',
-    borderColor: 'border-rose-500',
+    color: 'from-emerald-500 to-emerald-600',
+    borderColor: 'border-emerald-500',
+    iconColor: 'text-emerald-500',
   },
   {
     number: '05',
@@ -77,8 +81,9 @@ const steps = [
       'Practical demonstrations',
     ],
     duration: '2-3 weeks',
-    color: 'from-purple-500 to-purple-600',
+    color: 'from-violet-500 to-violet-600',
     borderColor: 'border-violet-500',
+    iconColor: 'text-violet-500',
   },
   {
     number: '06',
@@ -92,8 +97,9 @@ const steps = [
       'Lifetime placement support',
     ],
     duration: 'Ongoing',
-    color: 'from-green-500 to-green-600',
+    color: 'from-teal-500 to-teal-600',
     borderColor: 'border-teal-500',
+    iconColor: 'text-teal-500',
   },
 ]
 
@@ -209,36 +215,21 @@ export default function Process() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="relative"
+                    className="relative flex items-center justify-center"
                   >
-                    {/* Decorative Elements */}
-                    <div className={`relative w-full aspect-square max-w-md mx-auto`}>
-                      {/* Outer Ring - Color glow */}
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                        className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-20 blur-2xl`}
-                      />
+                    {/* Simple Icon Circle - Only colored border, no lines */}
+                    <div className="relative w-48 h-48 md:w-56 md:h-56">
+                      {/* Soft glow background */}
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-15 blur-xl`} />
                       
-                      {/* Rotating Vertical Line */}
+                      {/* Main Icon Circle */}
                       <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                        className="absolute inset-8 flex items-center justify-center"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                        className={`relative w-full h-full rounded-full bg-white flex items-center justify-center shadow-xl border-4 ${step.borderColor}`}
                       >
-                        <div className={`absolute w-1 h-full bg-gradient-to-b ${step.color} rounded-full opacity-60`} />
+                        <step.icon className={`w-20 h-20 md:w-24 md:h-24 ${step.iconColor} drop-shadow-md`} strokeWidth={1.5} />
                       </motion.div>
-                      
-                      {/* Main Icon Circle - Only colored border */}
-                      <div className="absolute inset-16 flex items-center justify-center">
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                          className={`w-full h-full rounded-full bg-white flex items-center justify-center shadow-2xl border-4 ${step.borderColor}`}
-                        >
-                          <step.icon className={`w-20 h-20 ${step.borderColor.replace('border-', 'text-')} drop-shadow-lg`} strokeWidth={1.5} />
-                        </motion.div>
-                      </div>
                     </div>
                   </motion.div>
                 </div>

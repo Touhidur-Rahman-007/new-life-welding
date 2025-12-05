@@ -165,7 +165,7 @@ export default function About() {
         {/* Core Values */}
         <AnimatedSection className="mb-20">
           <h3 className="text-3xl md:text-4xl font-bold text-center text-dark-900 dark:text-white mb-12">
-            Our Core <span className="gradient-text">Values</span>
+            Our Core <span className="text-orange-500">Values</span>
           </h3>
           <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
