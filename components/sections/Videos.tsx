@@ -60,7 +60,13 @@ const videos = [
 export default function Videos() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [loadingVideos, setLoadingVideos] = useState<Record<string, boolean>>({})
   const { language, t } = useLanguage()
+
+  const handlePlay = (videoId: string) => {
+    setActiveVideo(videoId)
+    setLoadingVideos((prev) => ({ ...prev, [videoId]: true }))
+  }
 
   return (
     <section id="videos" className="relative py-20 md:py-32 bg-gradient-to-b from-emerald-50 via-teal-50 to-green-50 overflow-hidden">
@@ -119,12 +125,21 @@ export default function Videos() {
                       allowFullScreen
                       className="absolute inset-0 w-full h-full border-0"
                       loading="lazy"
+                      onLoad={() => setLoadingVideos((prev) => ({ ...prev, [video.id]: false }))}
                     />
+                    {loadingVideos[video.id] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div className="flex flex-col items-center gap-3 text-white">
+                          <div className="w-10 h-10 border-4 border-white/40 border-t-white rounded-full animate-spin" />
+                          <span className={language === 'bn' ? 'font-bengali' : ''}>{language === 'bn' ? 'ভিডিও লোড হচ্ছে…' : 'Loading video…'}</span>
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 ) : (
                   <div 
                     className="relative aspect-video cursor-pointer group/thumb bg-dark-800"
-                    onClick={() => setActiveVideo(video.id)}
+                    onClick={() => handlePlay(video.id)}
                   >
                     {/* Thumbnail */}
                     <img

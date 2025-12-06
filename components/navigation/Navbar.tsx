@@ -18,18 +18,18 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t('nav.home'), href: '/#home' },
+    { name: t('nav.about'), href: '/#about' },
     { 
       name: t('nav.programs'), 
-      href: '#programs',
+      href: '/#programs',
       submenu: [
-        { name: t('nav.basicWelding'), href: '#programs' },
-        { name: t('nav.advancedMigTig'), href: '#programs' },
-        { name: t('nav.pipeWelding'), href: '#programs' },
+        { name: t('nav.basicWelding'), href: '/#programs' },
+        { name: t('nav.advancedMigTig'), href: '/#programs' },
+        { name: t('nav.pipeWelding'), href: '/#programs' },
       ]
     },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.team'), href: '#team' },
-    { name: t('nav.facilities'), href: '#facilities' },
+    { name: t('nav.videos'), href: '/#videos' },
+    { name: t('nav.team'), href: '/#team' },
     { name: t('nav.contact'), href: '/contact' },
   ]
   
@@ -157,7 +157,7 @@ export default function Navbar() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all"
               >
                 <Phone className="w-4 h-4" />
                 <span className={language === 'bn' ? 'font-[var(--font-hind-siliguri)]' : ''}>
@@ -219,7 +219,7 @@ export default function Navbar() {
             <Link href="tel:+8801712577508">
               <motion.button
                 whileHover={{ scale: 1.02 }}
-                className={`w-full mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold ${language === 'bn' ? 'font-bengali' : ''}`}
+                className={`w-full mt-4 flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold text-sm ${language === 'bn' ? 'font-bengali' : ''}`}
               >
                 <Phone className="w-4 h-4" />
                 {t('nav.callNow')}

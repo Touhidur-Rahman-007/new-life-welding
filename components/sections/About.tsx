@@ -1,53 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Target, Users2, Zap, Shield, BookOpen, Lightbulb } from 'lucide-react'
+import { BookOpen, Lightbulb } from 'lucide-react'
 import Image from 'next/image'
-import { AnimatedSection, StaggeredContainer, fadeInUp } from '@/components/ui/AnimatedSection'
+import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import Tilt from 'react-parallax-tilt'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function About() {
   const { language, t } = useLanguage()
-
-  const values = [
-    {
-      icon: Target,
-      title: t('about.values.excellence.title'),
-      description: t('about.values.excellence.description'),
-      color: 'from-emerald-500 to-emerald-600',
-      bgColor: 'bg-emerald-500',
-      shadowColor: 'shadow-emerald-400/60',
-      bottomLine: 'bg-emerald-500',
-    },
-    {
-      icon: Users2,
-      title: t('about.values.community.title'),
-      description: t('about.values.community.description'),
-      color: 'from-teal-500 to-teal-600',
-      bgColor: 'bg-teal-500',
-      shadowColor: 'shadow-teal-400/60',
-      bottomLine: 'bg-teal-500',
-    },
-    {
-      icon: Zap,
-      title: t('about.values.innovation.title'),
-      description: t('about.values.innovation.description'),
-      color: 'from-cyan-500 to-cyan-600',
-      bgColor: 'bg-cyan-500',
-      shadowColor: 'shadow-cyan-400/60',
-      bottomLine: 'bg-cyan-500',
-    },
-    {
-      icon: Shield,
-      title: t('about.values.safety.title'),
-      description: t('about.values.safety.description'),
-      color: 'from-lime-500 to-green-600',
-      bgColor: 'bg-lime-500',
-      shadowColor: 'shadow-lime-400/60',
-      bottomLine: 'bg-lime-500',
-    },
-  ]
 
   const milestones = [
     { year: '1995', title: t('about.milestones.founded.title'), description: t('about.milestones.founded.description') },
@@ -159,45 +120,6 @@ export default function About() {
             </div>
           </AnimatedSection>
         </div>
-
-        {/* Core Values */}
-        <AnimatedSection className="mb-20">
-          <h3 className={`text-3xl md:text-4xl font-bold text-center text-dark-900 mb-12 ${language === 'bn' ? 'font-bengali' : ''}`}>
-            {t('about.values.heading')} <span className="text-emerald-500">{t('about.values.headingHighlight')}</span>
-          </h3>
-          <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="relative group"
-              >
-                <div className={`relative p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl ${value.shadowColor} transition-all duration-500 border border-gray-100 overflow-hidden`}>
-                  {/* Glow Effect Background */}
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${value.bgColor}`} />
-                  
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className={`relative w-14 h-14 rounded-xl ${value.bgColor} flex items-center justify-center mb-4 shadow-lg`}
-                  >
-                    <value.icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <h4 className={`relative text-xl font-bold text-dark-900 mb-3 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {value.title}
-                  </h4>
-                  <p className={`relative text-dark-600 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {value.description}
-                  </p>
-                  
-                  {/* Bottom Color Line */}
-                  <div className={`absolute bottom-0 left-8 right-8 h-1 ${value.bottomLine} rounded-full`} />
-                </div>
-              </motion.div>
-            ))}
-          </StaggeredContainer>
-        </AnimatedSection>
 
         {/* Timeline */}
         <AnimatedSection>
