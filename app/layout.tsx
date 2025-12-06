@@ -10,7 +10,7 @@ import PageTransition from '@/components/ui/PageTransition'
 import SmoothScroll from '@/components/ui/SmoothScroll'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',

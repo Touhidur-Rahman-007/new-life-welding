@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Lightbulb } from 'lucide-react'
+import { BookOpen, Lightbulb, Quote } from 'lucide-react'
 import Image from 'next/image'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import Tilt from 'react-parallax-tilt'
@@ -239,38 +239,65 @@ export default function About() {
 
             {/* Right: Quote Content */}
             <AnimatedSection animation="slide" direction="right" className="h-full">
-              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden h-full flex flex-col justify-center">
+              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden h-full flex flex-col justify-center group">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50" />
                 <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-emerald-100 blur-3xl opacity-60" />
                 <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-teal-100 blur-3xl opacity-60" />
 
-                <div className="relative space-y-6">
-                  {/* Quote Icon */}
-                  <motion.div
-                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                {/* Top Quote Mark - Elegant Typography */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, x: -20 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute top-4 left-6 z-0 select-none pointer-events-none"
+                >
+                  <motion.span
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="block text-[8rem] md:text-[10rem] leading-none text-emerald-100/80 font-serif"
                   >
-                    <span className="text-3xl font-black text-white">"</span>
-                  </motion.div>
+                    ❝
+                  </motion.span>
+                </motion.div>
 
+                <div className="relative z-10 space-y-6 pt-8">
                   {/* Badge */}
-                  <span className={`inline-flex px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    {t('about.quote.badge')}
-                  </span>
+                  <div className="relative inline-block">
+                    <span className={`relative z-10 inline-flex px-4 py-2 rounded-full bg-emerald-100/80 backdrop-blur-sm text-emerald-700 text-sm font-semibold shadow-sm border border-emerald-200 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                      {t('about.quote.badge')}
+                    </span>
+                  </div>
 
                   {/* Title */}
-                  <h4 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-dark-900 leading-tight ${language === 'bn' ? 'font-bengali' : ''}`}>
+                  <h4 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-dark-900 leading-tight relative ${language === 'bn' ? 'font-bengali' : ''}`}>
                     {t('about.quote.title')}
                   </h4>
 
                   {/* Quote Text */}
-                  <p className={`text-base md:text-lg text-dark-600 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
+                  <p className={`text-base md:text-lg text-dark-600 leading-relaxed italic relative ${language === 'bn' ? 'font-bengali not-italic leading-loose' : ''}`}>
                     {t('about.quote.text')}
                   </p>
 
                   {/* Decorative Line */}
                   <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
                 </div>
+
+                {/* Bottom Quote Mark - Elegant Typography */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, x: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="absolute bottom-4 right-6 z-0 select-none pointer-events-none"
+                >
+                  <motion.span
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                    className="block text-[8rem] md:text-[10rem] leading-none text-emerald-100/80 font-serif"
+                  >
+                    ❞
+                  </motion.span>
+                </motion.div>
+
               </div>
             </AnimatedSection>
           </div>
