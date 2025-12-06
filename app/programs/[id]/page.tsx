@@ -1,39 +1,22 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Award, Check, Clock, DollarSign } from 'lucide-react'
 
-import { programs, getProgramById } from '@/data/programs'
+import { getProgramById } from '@/data/programs'
 
-interface ProgramPageProps {
-  params: {
+type ProgramPageProps = {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export function generateStaticParams() {
-  return programs.map((program) => ({ id: program.id }))
-}
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-export function generateMetadata({ params }: ProgramPageProps): Metadata {
-  const program = getProgramById(params.id)
-
-  if (!program) {
-    return {
-      title: 'Program Not Found | New Life Welding Training Center',
-      description: 'Explore world-class welding and construction training programs tailored to industry demand.'
-    }
-  }
-
-  return {
-    title: `${program.title} | New Life Welding Training Center`,
-    description: program.description
-  }
-}
-
-export default function ProgramDetailsPage({ params }: ProgramPageProps) {
-  const program = getProgramById(params.id)
+export default async function ProgramDetailsPage({ params }: ProgramPageProps) {
+  const { id } = await params
+  const program = getProgramById(id)
 
   if (!program) {
     notFound()
@@ -44,12 +27,11 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
         <Link
           href="/#programs"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors mb-10"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-dark-600 dark:text-dark-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-10"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Programs
         </Link>
-
         <div className="grid gap-10 lg:grid-cols-[1.7fr,1fr]">
           {/* Hero Card */}
           <div className="bg-white dark:bg-dark-900 rounded-3xl overflow-hidden shadow-2xl border border-dark-100/50 dark:border-dark-800">
@@ -76,7 +58,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
               <div className="flex flex-wrap gap-6 md:gap-10 text-dark-700 dark:text-dark-200">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <DollarSign className="w-5 h-5 text-primary-600" />
+                    <DollarSign className="w-5 h-5 text-emerald-600" />
                   </div>
                   <div>
                     <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Investment</p>
@@ -85,7 +67,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-primary-600" />
+                    <Clock className="w-5 h-5 text-emerald-600" />
                   </div>
                   <div>
                     <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Duration</p>
@@ -94,7 +76,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <span className="text-sm font-bold text-primary-600">Lvl</span>
+                    <span className="text-sm font-bold text-emerald-600">Lvl</span>
                   </div>
                   <div>
                     <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Level</p>
@@ -141,7 +123,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
               </p>
               <Link
                 href="/#contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-primary-600 to-primary-500 py-4 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-500 py-4 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
               >
                 Join This Program
               </Link>
@@ -153,8 +135,8 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
         <div className="mt-16 space-y-12">
           <section>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-2xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
-                <Check className="w-5 h-5 text-primary-600" />
+              <div className="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+                <Check className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-dark-500 dark:text-dark-400">Skills You Master</p>
@@ -164,7 +146,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
             <div className="grid md:grid-cols-2 gap-5">
               {program.features.map((feature) => (
                 <div key={feature} className="flex items-start gap-3 p-5 rounded-2xl bg-dark-50 dark:bg-dark-900/60 border border-dark-100 dark:border-dark-800">
-                  <div className="w-3 h-3 rounded-full bg-primary-500 mt-2" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-500 mt-2" />
                   <p className="text-dark-700 dark:text-dark-200 leading-relaxed">{feature}</p>
                 </div>
               ))}
@@ -173,8 +155,8 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
 
           <section>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-2xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
-                <Clock className="w-5 h-5 text-primary-600" />
+              <div className="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-dark-500 dark:text-dark-400">Step-by-Step Journey</p>
@@ -183,8 +165,8 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
             </div>
             <div className="space-y-6">
               {program.modules.map((module, index) => (
-                <div key={`${module.title}-${index}`} className="relative pl-8 pb-8 border-l-2 border-primary-300 dark:border-primary-700 last:border-0 last:pb-0">
-                  <span className="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg" />
+                <div key={`${module.title}-${index}`} className="relative pl-8 pb-8 border-l-2 border-emerald-300 dark:border-emerald-700 last:border-0 last:pb-0">
+                  <span className="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg" />
                   <h3 className="text-2xl font-semibold text-dark-900 dark:text-white mb-3">{module.title}</h3>
                   <p className="text-dark-600 dark:text-dark-300 whitespace-pre-line leading-relaxed">
                     {module.description}
@@ -205,7 +187,7 @@ export default function ProgramDetailsPage({ params }: ProgramPageProps) {
               <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-4">Certifications You Earn</h3>
               <div className="flex flex-wrap gap-3">
                 {program.certifications.map((cert) => (
-                  <span key={`${cert}-detail`} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-semibold text-sm">
+                  <span key={`${cert}-detail`} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-semibold text-sm">
                     <Award className="w-4 h-4" />
                     {cert}
                   </span>
