@@ -176,70 +176,9 @@ export default function About() {
         {/* Chairman Quote - Premium Design */}
         <AnimatedSection className="mt-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch max-w-6xl mx-auto">
-            {/* Left: Chairman Image with 3D Tilt Effects */}
+            {/* Left: Quote Content */}
             <AnimatedSection animation="slide" direction="left" className="h-full">
-              <div className="space-y-6 h-full flex flex-col">
-                <Tilt
-                  tiltMaxAngleX={15}
-                  tiltMaxAngleY={15}
-                  glareEnable={true}
-                  glareMaxOpacity={0.1}
-                  scale={1.0}
-                  transitionSpeed={2000}
-                  className="flex-1 min-h-[400px] md:min-h-[500px]"
-                >
-                  <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl group border-[6px] border-white/90">
-                    {/* Image Background & Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 via-transparent to-transparent z-10" />
-                    <Image
-                      src="/images/team/chairman-jony-new.png"
-                      alt="Chairman Jony Sir"
-                      width={600}
-                      height={700}
-                      className="w-full h-full object-cover object-top transition-transform duration-700"
-                      priority
-                    />
-                  </div>
-                </Tilt>
-
-                {/* Info Card Below Image */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="relative mx-4 shrink-0"
-                >
-                  <div className="bg-white rounded-2xl shadow-xl shadow-emerald-900/5 border border-emerald-100 p-6 text-center relative overflow-hidden group hover:border-emerald-300 transition-all duration-300">
-                    {/* Decorative Elements */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-bl-[100px] -z-0 opacity-60" />
-                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-50 to-teal-50 rounded-tr-[50px] -z-0 opacity-60" />
-
-                    <div className="relative z-10">
-                      <h3 className={`text-2xl md:text-3xl font-bold text-dark-900 mb-2 bg-gradient-to-r from-dark-900 to-dark-700 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-teal-600 transition-all duration-300 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                        {t('about.quote.name').replace('— ', '')}
-                      </h3>
-
-                      <div className="flex items-center justify-center gap-3 my-3">
-                        <span className="h-px w-8 bg-gradient-to-r from-transparent to-emerald-300" />
-                        <p className={`text-emerald-600 font-bold text-lg uppercase tracking-wide px-2 py-1 rounded-md bg-emerald-50/50 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                          {t('about.quote.designation')}
-                        </p>
-                        <span className="h-px w-8 bg-gradient-to-l from-transparent to-emerald-300" />
-                      </div>
-
-                      <p className={`text-dark-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
-                        {t('about.quote.company')}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </AnimatedSection>
-
-            {/* Right: Quote Content */}
-            <AnimatedSection animation="slide" direction="right" className="h-full">
-              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden h-full flex flex-col justify-center group">
+              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden h-full flex flex-col justify-center group order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50" />
                 <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-emerald-100 blur-3xl opacity-60" />
                 <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-teal-100 blur-3xl opacity-60" />
@@ -298,6 +237,67 @@ export default function About() {
                   </motion.span>
                 </motion.div>
 
+              </div>
+            </AnimatedSection>
+
+            {/* Right: Chairman Image with 3D Tilt Effects */}
+            <AnimatedSection animation="slide" direction="right" className="h-full">
+              <div className="space-y-6 h-full flex flex-col order-1 lg:order-2">
+                <Tilt
+                  tiltMaxAngleX={15}
+                  tiltMaxAngleY={15}
+                  glareEnable={true}
+                  glareMaxOpacity={0.1}
+                  scale={1.0}
+                  transitionSpeed={2000}
+                  className="flex-1 min-h-[400px] md:min-h-[500px]"
+                >
+                  <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl group border-[6px] border-white/90">
+                    {/* Image Background & Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 via-transparent to-transparent z-10" />
+                    <Image
+                      src="/images/team/chairman-jony-new.png"
+                      alt="Chairman Jony Sir"
+                      width={600}
+                      height={700}
+                      className="w-full h-full object-cover object-top transition-transform duration-700"
+                      priority
+                    />
+                  </div>
+                </Tilt>
+
+                {/* Info Card Below Image */}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="relative mx-4 shrink-0"
+                >
+                  <div className="bg-white rounded-2xl shadow-xl shadow-emerald-900/5 border border-emerald-100 p-6 text-center relative overflow-hidden group hover:border-emerald-300 transition-all duration-300">
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-bl-[100px] -z-0 opacity-60" />
+                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-50 to-teal-50 rounded-tr-[50px] -z-0 opacity-60" />
+
+                    <div className="relative z-10">
+                      <h3 className={`text-2xl md:text-3xl font-bold text-dark-900 mb-2 bg-gradient-to-r from-dark-900 to-dark-700 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-teal-600 transition-all duration-300 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                        {t('about.quote.name').replace('— ', '')}
+                      </h3>
+
+                      <div className="flex items-center justify-center gap-3 my-3">
+                        <span className="h-px w-8 bg-gradient-to-r from-transparent to-emerald-300" />
+                        <p className={`text-emerald-600 font-bold text-lg uppercase tracking-wide px-2 py-1 rounded-md bg-emerald-50/50 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                          {t('about.quote.designation')}
+                        </p>
+                        <span className="h-px w-8 bg-gradient-to-l from-transparent to-emerald-300" />
+                      </div>
+
+                      <p className={`text-dark-500 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>
+                        {t('about.quote.company')}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </AnimatedSection>
           </div>
