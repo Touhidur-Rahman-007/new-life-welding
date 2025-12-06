@@ -31,7 +31,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.underwaterWelding': 'Underwater Welding',
     'nav.roboticWelding': 'Robotic Welding',
     'nav.fabricationDesign': 'Fabrication & Design',
-    
+
     // Hero
     'hero.banglaTtitle': 'Start Your Welding Career',
     'hero.title1': 'Master the Art of',
@@ -43,7 +43,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.jobPlacement': 'Job Placement',
     'hero.certificationRate': 'Certification Rate',
     'hero.quote': '"Skill abroad brings both money and honor"',
-    
+
     // About
     'about.badge': 'About Us',
     'about.title': 'Building Futures Through',
@@ -79,7 +79,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.milestones.recognition.description': 'Received national recognition for excellence.',
     'about.milestones.innovation.title': 'Innovation',
     'about.milestones.innovation.description': 'Introduced advanced training technologies.',
-    
+
     // Programs
     'programs.badge': 'Training Programs',
     'programs.title': 'Comprehensive',
@@ -89,7 +89,7 @@ const translations: Record<Language, Record<string, string>> = {
     'programs.price': 'Price',
     'programs.learnMore': 'Learn More',
     'programs.viewDetails': 'View Details',
-    
+
     // Process
     'process.badge': 'Step-by-Step Process',
     'process.title': 'Your Path to',
@@ -138,19 +138,19 @@ const translations: Record<Language, Record<string, string>> = {
     'process.steps.career.details.1': 'Interview preparation',
     'process.steps.career.details.2': 'Visa assistance',
     'process.steps.career.details.3': 'Career support',
-    
+
     // Testimonials
     'testimonials.badge': 'Success Stories',
     'testimonials.title': 'Hear From Our',
     'testimonials.titleHighlight': 'Graduates',
     'testimonials.subtitle': 'Real stories from real students who transformed their lives through welding',
-    
+
     // Team
     'team.badge': 'Expert Instructors',
     'team.title': 'Meet Our',
     'team.titleHighlight': 'Team',
     'team.subtitle': 'The passionate professionals behind Bangladesh\'s premier welding training institution',
-    
+
     // Facilities
     'facilities.badge': 'World-Class Facilities',
     'facilities.title': 'Our Training',
@@ -192,13 +192,13 @@ const translations: Record<Language, Record<string, string>> = {
     'facilities.items.testingCenter.specs.1': 'Practical Labs',
     'facilities.items.testingCenter.specs.2': 'Written Exams',
     'facilities.items.testingCenter.specs.3': 'Result Processing',
-    
+
     // FAQ
     'faq.badge': 'FAQ',
     'faq.title': 'Common',
     'faq.titleHighlight': 'Questions',
     'faq.subtitle': 'Everything you need to know about our welding programs',
-    
+
     // Contact
     'contact.badge': 'Get In Touch',
     'contact.title': 'Contact',
@@ -212,7 +212,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.address': 'Address',
     'contact.callUs': 'Call Us',
     'contact.emailUs': 'Email Us',
-    
+
     // Footer
     'footer.programs': 'Programs',
     'footer.company': 'Company',
@@ -252,7 +252,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.underwaterWelding': 'আন্ডারওয়াটার ওয়েল্ডিং',
     'nav.roboticWelding': 'রোবোটিক ওয়েল্ডিং',
     'nav.fabricationDesign': 'ফ্যাব্রিকেশন ও ডিজাইন',
-    
+
     // Hero
     'hero.banglaTtitle': 'আপনার ওয়েল্ডিং ক্যারিয়ার শুরু করুন',
     'hero.title1': 'পেশাদার ওয়েল্ডিং এর',
@@ -264,7 +264,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.jobPlacement': 'চাকরি নিয়োগ',
     'hero.certificationRate': 'সার্টিফিকেশন হার',
     'hero.quote': '"দক্ষ হয়ে বিদেশ গেলে অর্থ সম্মান দুই-ই মেলে"',
-    
+
     // About
     'about.badge': 'আমাদের সম্পর্কে',
     'about.title': 'উৎকর্ষতার মাধ্যমে',
@@ -300,7 +300,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.milestones.recognition.description': 'শ্রেষ্ঠত্বের জন্য জাতীয় স্বীকৃতি অর্জন।',
     'about.milestones.innovation.title': 'উদ্ভাবন',
     'about.milestones.innovation.description': 'উন্নত প্রশিক্ষণ প্রযুক্তি চালু করা হয়েছে।',
-    
+
     // Programs
     'programs.badge': 'প্রশিক্ষণ প্রোগ্রাম',
     'programs.title': 'ব্যাপক',
@@ -310,7 +310,7 @@ const translations: Record<Language, Record<string, string>> = {
     'programs.price': 'মূল্য',
     'programs.learnMore': 'আরও জানুন',
     'programs.viewDetails': 'বিস্তারিত দেখুন',
-    
+
     // Process
     'process.badge': 'ধাপে ধাপে প্রক্রিয়া',
     'process.title': 'সাফল্যের',
@@ -359,19 +359,19 @@ const translations: Record<Language, Record<string, string>> = {
     'process.steps.career.details.1': 'ইন্টারভিউ প্রস্তুতি',
     'process.steps.career.details.2': 'ভিসা সহায়তা',
     'process.steps.career.details.3': 'ক্যারিয়ার সাপোর্ট',
-    
+
     // Testimonials
     'testimonials.badge': 'সাফল্যের গল্প',
     'testimonials.title': 'আমাদের',
     'testimonials.titleHighlight': 'গ্র্যাজুয়েটদের কথা',
     'testimonials.subtitle': 'প্রকৃত শিক্ষার্থীদের প্রকৃত গল্প যারা ওয়েল্ডিংয়ের মাধ্যমে তাদের জীবন পরিবর্তন করেছে',
-    
+
     // Team
     'team.badge': 'বিশেষজ্ঞ প্রশিক্ষক',
     'team.title': 'আমাদের',
     'team.titleHighlight': 'টিমের সাথে পরিচিত হন',
     'team.subtitle': 'বাংলাদেশের সেরা ওয়েল্ডিং প্রশিক্ষণ প্রতিষ্ঠানের পেছনে উৎসর্গীকৃত পেশাদাররা',
-    
+
     // Facilities
     'facilities.badge': 'বিশ্বমানের সুবিধা',
     'facilities.title': 'আমাদের প্রশিক্ষণ',
@@ -413,13 +413,13 @@ const translations: Record<Language, Record<string, string>> = {
     'facilities.items.testingCenter.specs.1': 'ব্যবহারিক ল্যাব',
     'facilities.items.testingCenter.specs.2': 'লিখিত পরীক্ষা',
     'facilities.items.testingCenter.specs.3': 'ফলাফল প্রসেসিং',
-    
+
     // FAQ
     'faq.badge': 'প্রশ্নোত্তর',
     'faq.title': 'সাধারণ',
     'faq.titleHighlight': 'প্রশ্নসমূহ',
     'faq.subtitle': 'আমাদের ওয়েল্ডিং প্রশিক্ষণ প্রোগ্রাম সম্পর্কে আপনার যা জানা দরকার',
-    
+
     // Contact
     'contact.badge': 'যোগাযোগ করুন',
     'contact.title': 'আমাদের সাথে',
@@ -433,7 +433,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.address': 'ঠিকানা',
     'contact.callUs': 'কল করুন',
     'contact.emailUs': 'ইমেইল করুন',
-    
+
     // Footer
     'footer.programs': 'প্রোগ্রাম',
     'footer.company': 'কোম্পানি',
@@ -458,7 +458,7 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>('bn')
 
   const t = (key: string): string => {
     return translations[language][key] || key

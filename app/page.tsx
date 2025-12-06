@@ -6,8 +6,8 @@ import Team from '@/components/sections/Team'
 import Testimonials from '@/components/sections/Testimonials'
 import Facilities from '@/components/sections/Facilities'
 import FAQ from '@/components/sections/FAQ'
-import Process from '@/components/sections/Process'
 import CoreValues from '@/components/sections/CoreValues'
+import Contact from '@/components/sections/Contact'
 
 export default function Home() {
   return (
@@ -20,8 +20,8 @@ export default function Home() {
       <Testimonials />
       <Facilities />
       <FAQ />
-      <Process />
       <CoreValues />
+      <Contact />
     </main>
   )
 }

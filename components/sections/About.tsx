@@ -20,7 +20,7 @@ export default function About() {
     <section id="about" className="relative py-20 md:py-32 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <AnimatedSection className="text-center mb-20">
@@ -139,9 +139,8 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className={`flex items-center gap-8 ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  }`}
+                  className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    }`}
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <motion.div
@@ -159,14 +158,14 @@ export default function About() {
                       </p>
                     </motion.div>
                   </div>
-                  
+
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg z-10 flex items-center justify-center"
                   >
                     <div className="w-4 h-4 rounded-full bg-white" />
                   </motion.div>
-                  
+
                   <div className="flex-1" />
                 </motion.div>
               ))}
@@ -206,7 +205,7 @@ export default function About() {
               </div>
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-3xl overflow-hidden border-4 border-emerald-100 shadow-lg bg-white/80">
                 <Image
-                  src="/images/team/chairman.png"
+                  src="/images/team/chairman-jony.jpg"
                   alt="Abdur Rahman Jony"
                   width={160}
                   height={160}

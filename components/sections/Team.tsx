@@ -15,7 +15,7 @@ const teamMembers = [
     role: 'CHAIRMAN',
     phone: '01712577508',
     email: 'jonymiah84@gmail.com',
-    image: '/images/team/chairman.png',
+    image: '/images/team/chairman-jony.jpg',
     category: 'leadership',
     gradient: 'from-emerald-500 via-teal-500 to-green-500'
   },
@@ -314,13 +314,13 @@ function LeadershipCard({ member, index }: CardProps) {
       <motion.div style={{ y }} className="relative">
         {/* Card Container */}
         <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden p-8 hover:border-emerald-400 transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-emerald-200 shadow-xl">
-          
+
           {/* Animated Gradient Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`} />
-          
+
           {/* Spark Effect */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
-          
+
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
             {/* Image with Hexagon Mask */}
             <div className="relative flex-shrink-0">
@@ -337,7 +337,7 @@ function LeadershipCard({ member, index }: CardProps) {
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </motion.div>
-              
+
               {/* Achievement Badge */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -357,7 +357,7 @@ function LeadershipCard({ member, index }: CardProps) {
               >
                 {member.name}
               </motion.h4>
-              
+
               <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-emerald-100 border border-emerald-300 rounded-full">
                 <Briefcase className="w-5 h-5 text-emerald-500" />
                 <p className="text-lg font-bold text-emerald-600 uppercase tracking-wider">
@@ -411,7 +411,7 @@ function HexagonCard({ member, index }: CardProps) {
       <div className="relative bg-white border border-emerald-200 rounded-2xl overflow-hidden p-8 hover:border-emerald-400 transition-all duration-500 shadow-lg hover:shadow-xl">
         {/* Background Gradient */}
         <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-        
+
         {/* Image */}
         <div className="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-gray-200 group-hover:border-emerald-400 transition-all duration-500 rotate-0 group-hover:rotate-3">
           <Image
@@ -473,7 +473,7 @@ function ModernCard({ member, index }: CardProps) {
       <div className="relative bg-white rounded-3xl overflow-hidden border border-emerald-200 hover:border-emerald-400 transition-all duration-500 shadow-lg hover:shadow-xl">
         {/* Top Color Bar */}
         <div className={`h-2 bg-gradient-to-r ${member.gradient}`} />
-        
+
         <div className="p-8">
           {/* Image Circle */}
           <div className="relative w-40 h-40 mx-auto mb-6">
@@ -489,7 +489,7 @@ function ModernCard({ member, index }: CardProps) {
               />
               <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-20 transition-opacity`} />
             </motion.div>
-            
+
             {/* Floating Icons */}
             <motion.div
               animate={{ y: [-5, 5, -5] }}
@@ -503,7 +503,7 @@ function ModernCard({ member, index }: CardProps) {
           <h4 className="text-2xl font-bold text-center mb-2 text-gray-800 group-hover:text-emerald-600 transition-colors font-display">
             {member.name}
           </h4>
-          
+
           <p className="text-center text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-6">
             {member.role}
           </p>
@@ -548,7 +548,7 @@ function CircularCard({ member, index }: CardProps) {
         <motion.div
           className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${member.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
         />
-        
+
         {/* Image */}
         <div className="relative w-32 h-32 mx-auto mb-4">
           <motion.div
@@ -563,7 +563,7 @@ function CircularCard({ member, index }: CardProps) {
               className="object-cover"
             />
           </motion.div>
-          
+
           {/* Flame Badge */}
           <div className="absolute -bottom-1 -right-1 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full p-2">
             <Flame className="w-4 h-4 text-white" />
@@ -573,7 +573,7 @@ function CircularCard({ member, index }: CardProps) {
         <h4 className="text-lg font-bold text-center mb-1 text-gray-800 group-hover:text-emerald-600 transition-colors font-display">
           {member.name}
         </h4>
-        
+
         <p className="text-center text-xs text-emerald-600 font-semibold uppercase tracking-wider mb-4">
           {member.role}
         </p>
@@ -615,7 +615,7 @@ function CompactCard({ member, index }: CardProps) {
       <div className="relative bg-white rounded-2xl overflow-hidden border border-emerald-200 hover:border-emerald-400 transition-all duration-500 p-6 shadow-lg hover:shadow-xl">
         {/* Gradient Bar */}
         <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${member.gradient}`} />
-        
+
         <div className="flex items-center gap-6">
           {/* Image */}
           <div className="relative w-32 h-32 flex-shrink-0">
@@ -634,7 +634,7 @@ function CompactCard({ member, index }: CardProps) {
             <h4 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-emerald-600 transition-colors font-display">
               {member.name}
             </h4>
-            
+
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4 text-emerald-500" />
               <p className="text-sm text-emerald-600 font-semibold uppercase">

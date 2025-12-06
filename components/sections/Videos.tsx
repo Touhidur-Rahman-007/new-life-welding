@@ -137,7 +137,7 @@ export default function Videos() {
                     )}
                   </motion.div>
                 ) : (
-                  <div 
+                  <div
                     className="relative aspect-video cursor-pointer group/thumb bg-dark-800"
                     onClick={() => handlePlay(video.id)}
                   >
@@ -152,10 +152,10 @@ export default function Videos() {
                         target.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
                       }}
                     />
-                    
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent" />
-                    
+
                     {/* Category Badge */}
                     <motion.div
                       initial={{ opacity: 0, y: -20 }}
@@ -190,7 +190,7 @@ export default function Videos() {
                           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                           className="absolute inset-0 w-24 h-24 rounded-full border-4 border-emerald-500/30 border-t-emerald-500"
                         />
-                        
+
                         {/* Play Button */}
                         <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-2xl group-hover/thumb:shadow-emerald-500/50 transition-all duration-500">
                           <div className="absolute inset-0 rounded-full bg-emerald-400/20 animate-ping" />
@@ -232,6 +232,24 @@ export default function Videos() {
             </motion.div>
           ))}
         </StaggeredContainer>
+
+        {/* See More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
+          <motion.a
+            href="/videos"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:shadow-emerald-500/25 transition-all ${language === 'bn' ? 'font-bengali' : ''}`}
+          >
+            {language === 'bn' ? 'আরও দেখুন' : 'See More'}
+            <Eye className="w-5 h-5" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
