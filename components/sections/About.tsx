@@ -175,10 +175,10 @@ export default function About() {
 
         {/* Chairman Quote - Premium Design */}
         <AnimatedSection className="mt-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch max-w-6xl mx-auto">
             {/* Left: Chairman Image with 3D Tilt Effects */}
-            <AnimatedSection animation="slide" direction="left">
-              <div className="space-y-6">
+            <AnimatedSection animation="slide" direction="left" className="h-full">
+              <div className="space-y-6 h-full flex flex-col">
                 <Tilt
                   tiltMaxAngleX={15}
                   tiltMaxAngleY={15}
@@ -186,9 +186,9 @@ export default function About() {
                   glareMaxOpacity={0.1}
                   scale={1.0}
                   transitionSpeed={2000}
-                  className="h-full"
+                  className="flex-1 min-h-[400px] md:min-h-[500px]"
                 >
-                  <div className="relative h-full min-h-[400px] md:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl group border-[6px] border-white/90">
+                  <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl group border-[6px] border-white/90">
                     {/* Image Background & Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 via-transparent to-transparent z-10" />
                     <Image
@@ -208,7 +208,7 @@ export default function About() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="relative mx-4"
+                  className="relative mx-4 shrink-0"
                 >
                   <div className="bg-white rounded-2xl shadow-xl shadow-emerald-900/5 border border-emerald-100 p-6 text-center relative overflow-hidden group hover:border-emerald-300 transition-all duration-300">
                     {/* Decorative Elements */}
@@ -238,8 +238,8 @@ export default function About() {
             </AnimatedSection>
 
             {/* Right: Quote Content */}
-            <AnimatedSection animation="slide" direction="right">
-              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden">
+            <AnimatedSection animation="slide" direction="right" className="h-full">
+              <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 relative overflow-hidden h-full flex flex-col justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50" />
                 <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-emerald-100 blur-3xl opacity-60" />
                 <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-teal-100 blur-3xl opacity-60" />
