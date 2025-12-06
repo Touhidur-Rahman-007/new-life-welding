@@ -17,7 +17,7 @@ export default function Navbar() {
   const { language, setLanguage, t } = useLanguage()
 
   const navLinks = [
-    { name: t('nav.home'), href: '#' },
+    { name: t('nav.home'), href: '/#home' },
     { 
       name: t('nav.programs'), 
       href: '#programs',

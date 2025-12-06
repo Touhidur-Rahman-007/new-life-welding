@@ -68,7 +68,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gray-900">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-gray-900">
       {/* Full Screen Background Image Slider */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -104,14 +104,14 @@ export default function Hero() {
       </button>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
-        <div className="max-w-2xl">
+      <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center justify-center">
+        <div className="max-w-3xl text-center">
           {/* Bangla Title - Smaller */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className={`text-base md:text-lg text-emerald-400 font-medium mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}
+            className={`text-lg md:text-xl text-emerald-400 font-semibold mb-3 ${language === 'bn' ? 'font-bengali' : ''}`}
           >
             {t('hero.banglaTtitle')}
           </motion.p>
@@ -121,7 +121,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4 ${language === 'bn' ? 'font-bengali' : ''}`}
+            className={`text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}
           >
             {t('hero.title1')}
             <span className="block mt-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
@@ -134,7 +134,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className={`text-sm md:text-base text-gray-200 mb-6 max-w-lg leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}
+            className={`text-base md:text-lg text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}
           >
             {t('hero.description')}
           </motion.p>
@@ -144,11 +144,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-6"
+            className="mb-8 flex justify-center"
           >
             <Link
               href="#programs"
-              className={`group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 ${language === 'bn' ? 'font-bengali' : ''}`}
+              className={`group inline-flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-lg font-semibold rounded-full hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 ${language === 'bn' ? 'font-bengali' : ''}`}
             >
               {t('hero.startJourney')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -160,10 +160,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg"
+            className="p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg max-w-2xl mx-auto"
           >
             <p 
-              className="text-base md:text-lg text-emerald-400 font-medium italic text-center font-bengali"
+              className="text-lg md:text-xl text-emerald-400 font-semibold italic text-center font-bengali"
             >
               {t('hero.quote')}
             </p>
