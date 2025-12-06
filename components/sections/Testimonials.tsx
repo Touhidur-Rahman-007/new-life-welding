@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
 import Image from 'next/image'
-import { AnimatedSection, StaggeredContainer, fadeInUp } from '@/components/ui/AnimatedSection'
+import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const testimonials = [
@@ -40,16 +40,63 @@ const testimonials = [
     text: 'Best investment I ever made. The comprehensive curriculum and industry connections led me to my dream job in the oil and gas sector. The certifications I earned here opened doors nationwide.',
     textBn: 'আমার জীবনের সেরা বিনিয়োগ। ব্যাপক পাঠ্যক্রম এবং শিল্প সংযোগ আমাকে তেল ও গ্যাস সেক্টরে আমার স্বপ্নের চাকরিতে নিয়ে গেছে। এখানে অর্জিত সার্টিফিকেট দেশব্যাপী দরজা খুলে দিয়েছে।',
   },
+  {
+    name: 'David Kim',
+    nameBn: 'ডেভিড কিম',
+    role: 'Structural Welder',
+    roleBn: 'স্ট্রাকচারাল ওয়েল্ডার',
+    company: 'Turner Construction',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    rating: 5,
+    text: 'The hands-on training and safety protocols I learned here prepared me perfectly for the construction industry. I now work on high-rise buildings across the country.',
+    textBn: 'এখানে শেখা হাতে-কলমে প্রশিক্ষণ এবং নিরাপত্তা প্রটোকল আমাকে নির্মাণ শিল্পের জন্য পুরোপুরি প্রস্তুত করেছে। আমি এখন দেশের বিভিন্ন উঁচু ভবনে কাজ করি।',
+  },
+  {
+    name: 'Maria Garcia',
+    nameBn: 'মারিয়া গার্সিয়া',
+    role: 'TIG Specialist',
+    roleBn: 'টিআইজি বিশেষজ্ঞ',
+    company: 'SpaceX',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+    rating: 5,
+    text: 'From zero experience to working at SpaceX in just 2 years. The TIG welding program here is world-class. My instructors never gave up on me.',
+    textBn: 'শূন্য অভিজ্ঞতা থেকে মাত্র ২ বছরে স্পেসএক্সে কাজ করছি। এখানকার টিআইজি ওয়েল্ডিং প্রোগ্রাম বিশ্বমানের। আমার প্রশিক্ষকরা কখনই আমাকে ছেড়ে দেননি।',
+  },
+  {
+    name: 'Robert Johnson',
+    nameBn: 'রবার্ট জনসন',
+    role: 'Offshore Welder',
+    roleBn: 'অফশোর ওয়েল্ডার',
+    company: 'Shell Oil',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    rating: 5,
+    text: 'The offshore welding certification I got here landed me a job paying over $100k. The safety training was exceptional and gave me confidence for deep sea work.',
+    textBn: 'এখান থেকে পাওয়া অফশোর ওয়েল্ডিং সার্টিফিকেশন আমাকে $১০০k+ বেতনের চাকরি দিয়েছে। নিরাপত্তা প্রশিক্ষণ ছিল অসাধারণ।',
+  },
+  {
+    name: 'Lisa Wang',
+    nameBn: 'লিসা ওয়াং',
+    role: 'Quality Inspector',
+    roleBn: 'কোয়ালিটি ইন্সপেক্টর',
+    company: 'Tesla',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+    rating: 5,
+    text: 'Started as a welder, now I inspect welds at Tesla. The comprehensive knowledge I gained here about quality standards was invaluable.',
+    textBn: 'ওয়েল্ডার হিসেবে শুরু করেছিলাম, এখন টেসলায় ওয়েল্ড ইন্সপেক্টর। মান নিয়ন্ত্রণ সম্পর্কে যে জ্ঞান পেয়েছি তা অমূল্য।',
+  },
 ]
 
+// Triple for seamless loop
+const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials]
+
 export default function Testimonials() {
-  const { language, t } = useLanguage()
+  const { language } = useLanguage()
 
   return (
     <section id="testimonials" className="relative py-20 md:py-32 bg-gradient-to-b from-emerald-50 via-green-50 to-teal-50 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-100/50 via-transparent to-transparent" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <AnimatedSection className="text-center mb-20">
@@ -71,56 +118,71 @@ export default function Testimonials() {
           </p>
         </AnimatedSection>
 
-        {/* Testimonials Grid */}
-        <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group"
-            >
-              <div className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 border border-emerald-200 hover:border-emerald-500/50 transition-all duration-500 h-full flex flex-col">
-                {/* Quote Icon */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl">
-                  <Quote className="w-6 h-6 text-white" />
-                </div>
+        {/* Auto-rotating Testimonials Slider */}
+        <div className="relative overflow-hidden">
+          {/* Gradient fade on edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-emerald-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-teal-50 to-transparent z-10 pointer-events-none" />
 
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-emerald-500 text-emerald-500" />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <p className={`text-dark-600 leading-relaxed mb-6 flex-grow ${language === 'bn' ? 'font-bengali' : ''}`}>
-                  "{language === 'bn' ? testimonial.textBn : testimonial.text}"
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-emerald-200">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/50">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
+          {/* Sliding container */}
+          <motion.div
+            className="flex gap-8"
+            animate={{
+              x: [0, -50 * testimonials.length + '%'],
+            }}
+            transition={{
+              x: {
+                duration: 180,
+                repeat: Infinity,
+                ease: 'linear',
+              },
+            }}
+            style={{ width: 'fit-content' }}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div
+                key={`${testimonial.name}-${index}`}
+                className="flex-shrink-0 w-[400px]"
+              >
+                <div className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 border border-emerald-200 h-full flex flex-col">
+                  {/* Quote Icon */}
+                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl">
+                    <Quote className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <h4 className={`text-dark-900 font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.nameBn : testimonial.name}</h4>
-                    <p className={`text-dark-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.roleBn : testimonial.role}</p>
-                    <p className="text-emerald-500 text-sm font-medium">{testimonial.company}</p>
+
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-emerald-500 text-emerald-500" />
+                    ))}
+                  </div>
+
+                  {/* Testimonial Text */}
+                  <p className={`text-dark-600 leading-relaxed mb-6 flex-grow ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    "{language === 'bn' ? testimonial.textBn : testimonial.text}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4 pt-6 border-t border-emerald-200">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/50">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className={`text-dark-900 font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.nameBn : testimonial.name}</h4>
+                      <p className={`text-dark-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.roleBn : testimonial.role}</p>
+                      <p className="text-emerald-500 text-sm font-medium">{testimonial.company}</p>
+                    </div>
                   </div>
                 </div>
-
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </motion.div>
-          ))}
-        </StaggeredContainer>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )

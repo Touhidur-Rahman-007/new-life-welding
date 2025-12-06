@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Award, Check, Clock, DollarSign } from 'lucide-react'
+import { ArrowLeft, Award, Check, Clock } from 'lucide-react'
 
 import { getProgramById } from '@/data/programs'
 
@@ -23,10 +23,11 @@ export default async function ProgramDetailsPage({ params }: ProgramPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-950 py-12 md:py-20">
+    <div className="min-h-screen bg-white dark:bg-dark-950 pt-24 pb-12 md:pt-28 md:pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
         <Link
           href="/#programs"
+          scroll={false}
           className="inline-flex items-center gap-2 text-sm font-semibold text-dark-600 dark:text-dark-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-10"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -44,7 +45,7 @@ export default async function ProgramDetailsPage({ params }: ProgramPageProps) {
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 className="object-cover"
               />
-              <div className={`absolute inset-0 bg-gradient-to-r ${program.color} opacity-80`} />
+              <div className={`absolute inset-0 bg-gradient-to-r ${program.color} opacity-40`} />
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
                   Premium Training
@@ -53,69 +54,15 @@ export default async function ProgramDetailsPage({ params }: ProgramPageProps) {
                 <p className="text-lg text-white/90">{program.subtitle}</p>
               </div>
             </div>
-
             <div className="p-6 md:p-10 space-y-8">
-              <div className="flex flex-wrap gap-6 md:gap-10 text-dark-700 dark:text-dark-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <DollarSign className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Investment</p>
-                    <p className="text-2xl font-bold">{program.price}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Duration</p>
-                    <p className="text-2xl font-bold">{program.duration}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-50 dark:bg-dark-800 flex items-center justify-center">
-                    <span className="text-sm font-bold text-emerald-600">Lvl</span>
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-widest text-dark-500 dark:text-dark-400">Level</p>
-                    <p className="text-2xl font-bold">{program.level}</p>
-                  </div>
-                </div>
-              </div>
-
               <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
                 {program.description}
               </p>
             </div>
           </div>
 
-          {/* Quick Stats */}
+          {/* Enroll Section */}
           <div className="space-y-6">
-            <div className="bg-dark-900 text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent)]" />
-              <div className="relative z-10 space-y-5">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.4em] text-white/70">Program Code</p>
-                  <p className="text-3xl font-black mt-2">{program.id.toUpperCase()}</p>
-                </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.4em] text-white/70">Career Path</p>
-                  <p className="text-lg leading-relaxed">
-                    {program.career}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {program.certifications.map((cert) => (
-                    <span key={cert} className="px-4 py-2 rounded-full bg-white/10 text-sm font-semibold">
-                      {cert}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             <div className="bg-white dark:bg-dark-900 rounded-3xl p-6 shadow-lg border border-dark-100/60 dark:border-dark-800">
               <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-4">Ready to Enroll?</h3>
               <p className="text-dark-600 dark:text-dark-300 mb-6">

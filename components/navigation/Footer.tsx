@@ -27,15 +27,15 @@ export default function Footer() {
     <footer className="relative overflow-hidden">
       {/* Premium Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900" />
-      
+
       {/* Decorative Gradient Orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500/15 to-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl" />
-      
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -60,7 +60,7 @@ export default function Footer() {
                 </div>
               </motion.div>
             </Link>
-            
+
             {/* Contact Cards */}
             <div className="space-y-3">
               <motion.div
@@ -183,15 +183,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            
-            {/* Stats Card */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="mt-8 p-4 bg-gradient-to-br from-emerald-500/20 to-teal-500/10 backdrop-blur-sm rounded-xl border border-emerald-500/20"
-            >
-              <div className="text-3xl font-bold text-white">500+</div>
-              <div className={`text-sm text-emerald-300 ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'বিশ্বব্যাপী স্নাতক' : 'Graduates Worldwide'}</div>
-            </motion.div>
+
           </div>
         </div>
 
@@ -199,8 +191,8 @@ export default function Footer() {
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className={`text-gray-500 text-sm flex items-center gap-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
-              © {new Date().getFullYear()} New Life Welding Training Center. {language === 'bn' ? 'বাংলাদেশে তৈরি' : 'Made with'} 
-              <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" /> 
+              © {new Date().getFullYear()} New Life Welding Training Center. {language === 'bn' ? 'বাংলাদেশে তৈরি' : 'Made with'}
+              <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" />
               {language === 'bn' ? '' : 'in Bangladesh'}
             </p>
             <div className="flex gap-6 text-sm">

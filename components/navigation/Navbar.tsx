@@ -19,8 +19,8 @@ export default function Navbar() {
   const navLinks = [
     { name: t('nav.home'), href: '/#home' },
     { name: t('nav.about'), href: '/#about' },
-    { 
-      name: t('nav.programs'), 
+    {
+      name: t('nav.programs'),
       href: '/#programs',
       submenu: [
         { name: t('nav.basicWelding'), href: '/#programs' },
@@ -30,9 +30,9 @@ export default function Navbar() {
     },
     { name: t('nav.videos'), href: '/#videos' },
     { name: t('nav.team'), href: '/#team' },
-    { name: t('nav.contact'), href: '/contact' },
+    { name: t('nav.contact'), href: '/#contact' },
   ]
-  
+
   // Track scroll position for text color change
   useEffect(() => {
     const handleScroll = () => {
@@ -41,13 +41,13 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  
+
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
     ['rgba(0, 0, 0, 0)', 'rgba(255, 255, 255, 0.95)']
   )
-  
+
   const backdropBlur = useTransform(
     scrollY,
     [0, 100],
@@ -99,11 +99,10 @@ export default function Navbar() {
                 <Link href={link.href}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
-                    className={`px-4 py-2 font-medium rounded-lg transition-all flex items-center gap-1 ${language === 'bn' ? 'font-bengali' : ''} ${
-                      scrolled 
-                        ? 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50' 
+                    className={`px-4 py-2 font-medium rounded-lg transition-all flex items-center gap-1 ${language === 'bn' ? 'font-bengali' : ''} ${scrolled
+                        ? 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50'
                         : 'text-white/90 hover:text-white hover:bg-white/10'
-                    }`}
+                      }`}
                   >
                     {link.name}
                     {link.submenu && <ChevronDown className="w-4 h-4" />}
@@ -141,18 +140,17 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${
-                scrolled 
-                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100' 
+              className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${scrolled
+                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'
                   : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
-              }`}
+                }`}
             >
               <Globe className="w-4 h-4" />
               <span className={language === 'bn' ? 'font-[var(--font-hind-siliguri)]' : ''}>
                 {language === 'en' ? 'বাংলা' : 'English'}
               </span>
             </motion.button>
-            
+
             <Link href="tel:+8801712577508">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -171,11 +169,10 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden w-10 h-10 rounded-lg backdrop-blur-lg flex items-center justify-center border transition-all duration-300 ${
-              scrolled 
-                ? 'bg-emerald-50 border-emerald-200' 
+            className={`lg:hidden w-10 h-10 rounded-lg backdrop-blur-lg flex items-center justify-center border transition-all duration-300 ${scrolled
+                ? 'bg-emerald-50 border-emerald-200'
                 : 'bg-white/10 border-white/20'
-            }`}
+              }`}
           >
             {isOpen ? (
               <X className={`w-6 h-6 ${scrolled ? 'text-gray-800' : 'text-white'}`} />

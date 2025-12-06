@@ -324,19 +324,16 @@ function LeadershipCard({ member, index }: CardProps) {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
             {/* Image with Hexagon Mask */}
             <div className="relative flex-shrink-0">
-              <motion.div
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-emerald-300 group-hover:border-emerald-500 transition-colors duration-500"
+              <div
+                className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-emerald-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-300/30 to-teal-300/30 group-hover:opacity-100 opacity-0 transition-opacity duration-500 z-10" />
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover"
                 />
-              </motion.div>
+              </div>
 
               {/* Achievement Badge */}
               <motion.div
@@ -380,12 +377,12 @@ function LeadershipCard({ member, index }: CardProps) {
                 {member.email && (
                   <motion.a
                     href={`mailto:${member.email}`}
-                    whileHover={{ scale: 1.05, x: 10 }}
+                    whileHover={{ scale: 1.02, x: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gray-50 hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-xl transition-all group/btn"
+                    className="flex items-center justify-center md:justify-start gap-3 px-6 py-4 bg-gray-50 hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-xl transition-all group/btn overflow-hidden"
                   >
-                    <Mail className="w-5 h-5 text-emerald-500 group-hover/btn:animate-bounce" />
-                    <span className="text-sm font-medium text-gray-700 break-all">{member.email}</span>
+                    <Mail className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                    <span className="text-sm font-medium text-gray-700 truncate">{member.email}</span>
                   </motion.a>
                 )}
               </div>
@@ -413,14 +410,13 @@ function HexagonCard({ member, index }: CardProps) {
         <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
         {/* Image */}
-        <div className="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-gray-200 group-hover:border-emerald-400 transition-all duration-500 rotate-0 group-hover:rotate-3">
+        <div className="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-gray-200">
           <Image
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="object-cover"
           />
-          <div className={`absolute inset-0 bg-gradient-to-t ${member.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
         </div>
 
         {/* Name */}
@@ -477,9 +473,8 @@ function ModernCard({ member, index }: CardProps) {
         <div className="p-8">
           {/* Image Circle */}
           <div className="relative w-40 h-40 mx-auto mb-6">
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="relative w-full h-full rounded-full overflow-hidden border-4 border-emerald-300 group-hover:border-emerald-500 transition-colors"
+            <div
+              className="relative w-full h-full rounded-full overflow-hidden border-4 border-emerald-300"
             >
               <Image
                 src={member.image}
@@ -487,8 +482,7 @@ function ModernCard({ member, index }: CardProps) {
                 fill
                 className="object-cover"
               />
-              <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-20 transition-opacity`} />
-            </motion.div>
+            </div>
 
             {/* Floating Icons */}
             <motion.div
@@ -551,10 +545,8 @@ function CircularCard({ member, index }: CardProps) {
 
         {/* Image */}
         <div className="relative w-32 h-32 mx-auto mb-4">
-          <motion.div
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-full rounded-full overflow-hidden border-4 border-emerald-300 group-hover:border-emerald-500 transition-colors"
+          <div
+            className="relative w-full h-full rounded-full overflow-hidden border-4 border-emerald-300"
           >
             <Image
               src={member.image}
@@ -562,7 +554,7 @@ function CircularCard({ member, index }: CardProps) {
               fill
               className="object-cover"
             />
-          </motion.div>
+          </div>
 
           {/* Flame Badge */}
           <div className="absolute -bottom-1 -right-1 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full p-2">
@@ -619,12 +611,12 @@ function CompactCard({ member, index }: CardProps) {
         <div className="flex items-center gap-6">
           {/* Image */}
           <div className="relative w-32 h-32 flex-shrink-0">
-            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-200 group-hover:border-emerald-400 transition-colors">
+            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-200">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                className="object-cover"
               />
             </div>
           </div>

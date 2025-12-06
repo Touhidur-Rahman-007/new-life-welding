@@ -71,7 +71,7 @@ export default function VideosPage() {
     }
 
     return (
-        <main className="relative min-h-screen py-20 md:py-32 bg-gradient-to-b from-emerald-50 via-teal-50 to-green-50 overflow-hidden">
+        <main className="relative min-h-screen pt-32 pb-20 md:pt-36 md:pb-32 bg-gradient-to-b from-emerald-50 via-teal-50 to-green-50 overflow-hidden">
             {/* Animated Background */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.08),transparent_50%)]" />

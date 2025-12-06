@@ -197,55 +197,13 @@ export default function PageTransition({ children }: { children: React.ReactNode
         className="relative"
         style={{ perspective: '1200px' }}
       >
-        {/* Premium Transition Overlay */}
+        {/* Page Transition Overlay - Dark neutral animation */}
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-          className="fixed inset-0 z-50 pointer-events-none overflow-hidden"
-        >
-          {/* Blinds Effect */}
-          {isBlinds ? (
-            <div className="absolute inset-0 flex">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <BlindStrip key={i} index={i} total={10} />
-              ))}
-            </div>
-          ) : isSplit ? (
-            <>
-              {/* Split Curtain - Left */}
-              <motion.div
-                initial={{ x: '0%' }}
-                animate={{ x: '-100%' }}
-                transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] as CubicBezier }}
-                className={`absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r ${effect.gradient}`}
-              />
-              {/* Split Curtain - Right */}
-              <motion.div
-                initial={{ x: '0%' }}
-                animate={{ x: '100%' }}
-                transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] as CubicBezier }}
-                className={`absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l ${effect.gradient}`}
-              />
-            </>
-          ) : (
-            /* Standard Overlay with Effect */
-            <motion.div
-              initial={effect.overlay.initial}
-              animate={effect.overlay.animate}
-              transition={effect.overlay.transition}
-              className={`absolute inset-0 bg-gradient-to-br ${effect.gradient}`}
-            />
-          )}
-
-          {/* Shimmer Effect */}
-          <motion.div
-            initial={{ x: '-100%', opacity: 0.5 }}
-            animate={{ x: '200%', opacity: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: 'easeInOut' }}
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
-          />
-        </motion.div>
+          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-50 bg-slate-900 pointer-events-none"
+        />
 
         {/* Page Content with Effect-specific Animation */}
         <motion.div
