@@ -18,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           },
           success: {
             iconTheme: {
-              primary: '#f97316',
+              primary: '#10b981',
               secondary: '#fff',
             },
           },

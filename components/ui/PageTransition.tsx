@@ -19,7 +19,7 @@ const transitionEffects = {
       exit: { opacity: 0, x: 100, rotateY: 15 },
       transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
     },
-    gradient: 'from-orange-500 via-red-500 to-pink-500'
+    gradient: 'from-emerald-500 via-teal-500 to-green-500'
   },
   
   // 2. Circular Reveal with Scale
@@ -67,7 +67,7 @@ const transitionEffects = {
       exit: { opacity: 0, scale: 0.9, rotateX: -10 },
       transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
     },
-    gradient: 'from-amber-500 via-orange-500 to-red-500'
+    gradient: 'from-green-500 via-emerald-500 to-teal-500'
   },
   
   // 5. Wave Morph Effect
@@ -99,7 +99,7 @@ const transitionEffects = {
       exit: { opacity: 0, filter: 'blur(20px) saturate(2)' },
       transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
     },
-    gradient: 'from-rose-500 via-pink-500 to-red-500'
+    gradient: 'from-teal-500 via-emerald-500 to-green-500'
   },
   
   // 7. Slide with Rotate 3D

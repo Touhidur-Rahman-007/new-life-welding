@@ -3,107 +3,109 @@
 import { motion } from 'framer-motion'
 import { ClipboardList, UserCheck, BookOpen, Wrench, GraduationCap, Briefcase, ArrowRight } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-
-const steps = [
-  {
-    number: '01',
-    icon: ClipboardList,
-    title: 'Consultation & Assessment',
-    description: 'Schedule a free consultation to discuss your goals, experience level, and career aspirations.',
-    details: [
-      'One-on-one career counseling',
-      'Skills assessment test',
-      'Program recommendation',
-      'Financial aid guidance',
-    ],
-    duration: '1-2 hours',
-    color: 'from-orange-500 to-orange-600',
-    borderColor: 'border-orange-500',
-    iconColor: 'text-orange-500',
-  },
-  {
-    number: '02',
-    icon: UserCheck,
-    title: 'Enrollment & Setup',
-    description: 'Complete registration, receive your starter kit, and prepare for your welding journey.',
-    details: [
-      'Easy online enrollment',
-      'Welcome kit delivery',
-      'Safety gear fitting',
-      'Facility orientation',
-    ],
-    duration: '1 week',
-    color: 'from-red-500 to-red-600',
-    borderColor: 'border-red-500',
-    iconColor: 'text-red-500',
-  },
-  {
-    number: '03',
-    icon: BookOpen,
-    title: 'Foundational Learning',
-    description: 'Master safety protocols, equipment handling, and fundamental welding theory.',
-    details: [
-      'OSHA safety certification',
-      'Equipment operation training',
-      'Metallurgy basics',
-      'Blueprint reading',
-    ],
-    duration: '2-4 weeks',
-    color: 'from-blue-500 to-blue-600',
-    borderColor: 'border-blue-500',
-    iconColor: 'text-blue-500',
-  },
-  {
-    number: '04',
-    icon: Wrench,
-    title: 'Hands-On Practice',
-    description: 'Apply your knowledge with supervised practice sessions on real projects.',
-    details: [
-      'Individual workstation access',
-      'Project-based learning',
-      'Instructor feedback',
-      'Portfolio development',
-    ],
-    duration: '8-12 weeks',
-    color: 'from-emerald-500 to-emerald-600',
-    borderColor: 'border-emerald-500',
-    iconColor: 'text-emerald-500',
-  },
-  {
-    number: '05',
-    icon: GraduationCap,
-    title: 'Certification Testing',
-    description: 'Demonstrate your skills through comprehensive practical and written examinations.',
-    details: [
-      'AWS certification prep',
-      'Mock testing sessions',
-      'Written exams',
-      'Practical demonstrations',
-    ],
-    duration: '2-3 weeks',
-    color: 'from-violet-500 to-violet-600',
-    borderColor: 'border-violet-500',
-    iconColor: 'text-violet-500',
-  },
-  {
-    number: '06',
-    icon: Briefcase,
-    title: 'Career Placement',
-    description: 'Leverage our industry connections for job placement and career advancement.',
-    details: [
-      'Resume building workshop',
-      'Interview preparation',
-      'Industry job fairs',
-      'Lifetime placement support',
-    ],
-    duration: 'Ongoing',
-    color: 'from-teal-500 to-teal-600',
-    borderColor: 'border-teal-500',
-    iconColor: 'text-teal-500',
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Process() {
+  const { language, t } = useLanguage()
+
+  const steps = [
+    {
+      number: '01',
+      icon: ClipboardList,
+      title: t('process.steps.consultation.title'),
+      description: t('process.steps.consultation.description'),
+      details: [
+        t('process.steps.consultation.details.0'),
+        t('process.steps.consultation.details.1'),
+        t('process.steps.consultation.details.2'),
+        t('process.steps.consultation.details.3'),
+      ],
+      duration: t('process.steps.consultation.duration'),
+      color: 'from-emerald-500 to-emerald-600',
+      borderColor: 'border-emerald-500',
+      iconColor: 'text-emerald-500',
+    },
+    {
+      number: '02',
+      icon: UserCheck,
+      title: t('process.steps.enrollment.title'),
+      description: t('process.steps.enrollment.description'),
+      details: [
+        t('process.steps.enrollment.details.0'),
+        t('process.steps.enrollment.details.1'),
+        t('process.steps.enrollment.details.2'),
+        t('process.steps.enrollment.details.3'),
+      ],
+      duration: t('process.steps.enrollment.duration'),
+      color: 'from-teal-500 to-teal-600',
+      borderColor: 'border-teal-500',
+      iconColor: 'text-teal-500',
+    },
+    {
+      number: '03',
+      icon: BookOpen,
+      title: t('process.steps.foundational.title'),
+      description: t('process.steps.foundational.description'),
+      details: [
+        t('process.steps.foundational.details.0'),
+        t('process.steps.foundational.details.1'),
+        t('process.steps.foundational.details.2'),
+        t('process.steps.foundational.details.3'),
+      ],
+      duration: t('process.steps.foundational.duration'),
+      color: 'from-cyan-500 to-cyan-600',
+      borderColor: 'border-cyan-500',
+      iconColor: 'text-cyan-500',
+    },
+    {
+      number: '04',
+      icon: Wrench,
+      title: t('process.steps.practice.title'),
+      description: t('process.steps.practice.description'),
+      details: [
+        t('process.steps.practice.details.0'),
+        t('process.steps.practice.details.1'),
+        t('process.steps.practice.details.2'),
+        t('process.steps.practice.details.3'),
+      ],
+      duration: t('process.steps.practice.duration'),
+      color: 'from-sky-500 to-sky-600',
+      borderColor: 'border-sky-500',
+      iconColor: 'text-sky-500',
+    },
+    {
+      number: '05',
+      icon: GraduationCap,
+      title: t('process.steps.certification.title'),
+      description: t('process.steps.certification.description'),
+      details: [
+        t('process.steps.certification.details.0'),
+        t('process.steps.certification.details.1'),
+        t('process.steps.certification.details.2'),
+        t('process.steps.certification.details.3'),
+      ],
+      duration: t('process.steps.certification.duration'),
+      color: 'from-blue-500 to-blue-600',
+      borderColor: 'border-blue-500',
+      iconColor: 'text-blue-500',
+    },
+    {
+      number: '06',
+      icon: Briefcase,
+      title: t('process.steps.career.title'),
+      description: t('process.steps.career.description'),
+      details: [
+        t('process.steps.career.details.0'),
+        t('process.steps.career.details.1'),
+        t('process.steps.career.details.2'),
+        t('process.steps.career.details.3'),
+      ],
+      duration: t('process.steps.career.duration'),
+      color: 'from-amber-500 to-orange-500',
+      borderColor: 'border-amber-500',
+      iconColor: 'text-amber-500',
+    },
+  ]
   return (
     <section id="process" className="relative py-20 md:py-32 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 overflow-hidden">
       {/* Background */}
@@ -119,15 +121,15 @@ export default function Process() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-orange-500/20 text-orange-600 text-sm font-semibold border border-primary-500/30">
-              Step-by-Step Process
+            <span className={`px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-600 text-sm font-semibold border border-emerald-500/30 ${language === 'bn' ? 'font-bengali' : ''}`}>
+              {t('process.badge')}
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 mb-6">
-            Your Path to <span className="gradient-text">Success</span>
+          <h2 className={`heading-large text-dark-900 mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {t('process.title')} <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">{t('process.titleHighlight')}</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-            A structured, comprehensive approach that takes you from beginner to certified professional
+          <p className={`text-lg md:text-xl text-dark-600 max-w-3xl mx-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {t('process.subtitle')}
           </p>
         </AnimatedSection>
 
@@ -149,7 +151,7 @@ export default function Process() {
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 md:p-10 border border-orange-200 hover:border-orange-500/50 transition-all duration-500"
+                    className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 md:p-10 border border-emerald-200 hover:border-emerald-500/50 transition-all duration-500"
                   >
                     {/* Step Number */}
                     <div className="absolute -top-6 -left-6">
@@ -174,18 +176,18 @@ export default function Process() {
                     </motion.div>
 
                     {/* Title & Description */}
-                    <h3 className="text-3xl font-bold text-dark-900 mb-4">
+                    <h3 className={`text-3xl font-bold text-dark-900 mb-4 ${language === 'bn' ? 'font-bengali' : ''}`}>
                       {step.title}
                     </h3>
-                    <p className="text-lg text-dark-600 mb-6 leading-relaxed">
+                    <p className={`text-lg text-dark-600 mb-6 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
                       {step.description}
                     </p>
 
                     {/* Duration */}
-                    <div className="flex items-center gap-3 mb-6 px-4 py-2 bg-orange-100 rounded-full inline-flex">
-                      <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-                      <span className="text-sm font-medium text-dark-700">
-                        Duration: {step.duration}
+                    <div className="flex items-center gap-3 mb-6 px-4 py-2 bg-emerald-100 rounded-full inline-flex">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className={`text-sm font-medium text-dark-700 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                        {t('process.duration')}: {step.duration}
                       </span>
                     </div>
 
@@ -200,8 +202,8 @@ export default function Process() {
                           transition={{ delay: i * 0.1 }}
                           className="flex items-center gap-3"
                         >
-                          <ArrowRight className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                          <span className="text-dark-600">{detail}</span>
+                          <ArrowRight className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                          <span className={`text-dark-600 ${language === 'bn' ? 'font-bengali' : ''}`}>{detail}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -237,7 +239,7 @@ export default function Process() {
 
               {/* Connecting Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-full w-1 h-20 bg-gradient-to-b from-primary-500 to-transparent" />
+                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-full w-1 h-20 bg-gradient-to-b from-emerald-500 to-transparent" />
               )}
             </motion.div>
           ))}

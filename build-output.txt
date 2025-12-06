@@ -1,0 +1,7 @@
+
+> newlife-welding-training-center@2.0.0 build
+> next build
+
+  Ôû▓ Next.js 14.2.15
+
+   Creating an optimized production build ...

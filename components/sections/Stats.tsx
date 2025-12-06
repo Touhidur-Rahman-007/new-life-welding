@@ -5,6 +5,7 @@ import { Users, GraduationCap, Award, TrendingUp } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import CountUp from 'react-countup'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const stats = [
   {
@@ -12,24 +13,30 @@ const stats = [
     value: 5000,
     suffix: '+',
     label: 'Graduates',
+    labelBn: 'স্নাতক',
     description: 'Success stories across industries',
-    color: 'from-primary-500 to-primary-600',
+    descriptionBn: 'বিভিন্ন শিল্পে সাফল্যের গল্প',
+    color: 'from-emerald-500 to-emerald-600',
   },
   {
     icon: GraduationCap,
     value: 98,
     suffix: '%',
     label: 'Job Placement',
+    labelBn: 'চাকরি নিয়োগ',
     description: 'Students employed within 6 months',
-    color: 'from-accent-500 to-accent-600',
+    descriptionBn: '৬ মাসের মধ্যে শিক্ষার্থীদের চাকরি',
+    color: 'from-teal-500 to-teal-600',
   },
   {
     icon: Award,
     value: 25,
     suffix: '+',
     label: 'Certifications',
+    labelBn: 'সার্টিফিকেট',
     description: 'Industry-recognized credentials',
-    color: 'from-blue-500 to-blue-600',
+    descriptionBn: 'শিল্প-স্বীকৃত সনদপত্র',
+    color: 'from-green-500 to-green-600',
   },
   {
     icon: TrendingUp,
@@ -37,12 +44,15 @@ const stats = [
     suffix: 'K',
     prefix: '$',
     label: 'Avg Starting Salary',
+    labelBn: 'গড় প্রারম্ভিক বেতন',
     description: 'Competitive entry-level wages',
-    color: 'from-green-500 to-green-600',
+    descriptionBn: 'প্রতিযোগিতামূলক প্রবেশ-স্তরের বেতন',
+    color: 'from-emerald-600 to-teal-600',
   },
 ]
 
 export default function Stats() {
+  const { language } = useLanguage()
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -52,7 +62,7 @@ export default function Stats() {
     <section className="relative py-20 md:py-32 bg-white overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950/5 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedSection className="text-center mb-16">
@@ -62,15 +72,15 @@ export default function Stats() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">
-              Proven Excellence
+            <span className={`px-4 py-2 rounded-full bg-emerald-100 text-emerald-600 text-sm font-semibold ${language === 'bn' ? 'font-bengali' : ''}`}>
+              {language === 'bn' ? 'প্রমাণিত উৎকর্ষ' : 'Proven Excellence'}
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 mb-6">
-            Results That Speak <span className="gradient-text">Volumes</span>
+          <h2 className={`heading-large text-dark-900 mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {language === 'bn' ? 'ফলাফল যা বলে' : 'Results That Speak'} <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">{language === 'bn' ? 'সবকিছু' : 'Volumes'}</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-            Our commitment to excellence is reflected in the success of our graduates
+          <p className={`text-lg md:text-xl text-dark-600 max-w-3xl mx-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {language === 'bn' ? 'উৎকর্ষের প্রতি আমাদের প্রতিশ্রুতি আমাদের স্নাতকদের সাফল্যে প্রতিফলিত' : 'Our commitment to excellence is reflected in the success of our graduates'}
           </p>
         </AnimatedSection>
 
@@ -123,14 +133,14 @@ export default function Stats() {
                       </>
                     )}
                   </div>
-                  <h3 className="text-xl font-semibold text-dark-800">
-                    {stat.label}
+                  <h3 className={`text-xl font-semibold text-dark-800 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? stat.labelBn : stat.label}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-dark-600">
-                  {stat.description}
+                <p className={`text-sm text-dark-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                  {language === 'bn' ? stat.descriptionBn : stat.description}
                 </p>
 
                 {/* Bottom Accent */}

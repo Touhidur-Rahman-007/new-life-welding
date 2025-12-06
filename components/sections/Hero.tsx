@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const heroImages = [
   {
@@ -49,6 +50,7 @@ const heroImages = [
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -90,13 +92,13 @@ export default function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 group shadow-lg"
       >
         <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 group shadow-lg"
       >
         <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
@@ -109,10 +111,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base md:text-lg text-orange-400 font-medium mb-2"
-            style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
+            className={`text-base md:text-lg text-emerald-400 font-medium mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}
           >
-            আপনার ওয়েল্ডিং ক্যারিয়ার শুরু করুন
+            {t('hero.banglaTtitle')}
           </motion.p>
 
           {/* English Title - Smaller */}
@@ -120,11 +121,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4"
+            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4 ${language === 'bn' ? 'font-bengali' : ''}`}
           >
-            Master the Art of
-            <span className="block mt-1 bg-gradient-to-r from-orange-400 via-orange-500 to-red-400 bg-clip-text text-transparent">
-              Professional Welding
+            {t('hero.title1')}
+            <span className="block mt-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              {t('hero.title2')}
             </span>
           </motion.h1>
 
@@ -133,10 +134,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm md:text-base text-gray-200 mb-6 max-w-lg leading-relaxed"
+            className={`text-sm md:text-base text-gray-200 mb-6 max-w-lg leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}
           >
-            Join Bangladesh's premier welding training institute. Get internationally recognized 
-            certifications and secure high-paying jobs in Europe, Japan, and the Middle East.
+            {t('hero.description')}
           </motion.p>
 
           {/* Single CTA Button Only */}
@@ -148,9 +148,9 @@ export default function Hero() {
           >
             <Link
               href="#programs"
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105"
+              className={`group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 ${language === 'bn' ? 'font-bengali' : ''}`}
             >
-              Start Your Journey
+              {t('hero.startJourney')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
@@ -163,10 +163,9 @@ export default function Hero() {
             className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg"
           >
             <p 
-              className="text-base md:text-lg text-orange-400 font-medium italic text-center"
-              style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
+              className="text-base md:text-lg text-emerald-400 font-medium italic text-center font-bengali"
             >
-              "দক্ষ হয়ে বিদেশ গেলে অর্থ সম্মান দুই-ই মেলে"
+              {t('hero.quote')}
             </p>
           </motion.div>
         </div>
@@ -180,7 +179,7 @@ export default function Hero() {
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'bg-orange-500 w-8'
+                ? 'bg-emerald-500 w-8'
                 : 'bg-white/50 hover:bg-white/70'
             }`}
           />

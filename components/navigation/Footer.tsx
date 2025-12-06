@@ -3,24 +3,26 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-const footerLinks = {
-  programs: [
-    { name: 'Basic Welding', href: '#programs' },
-    { name: 'Advanced MIG/TIG', href: '#programs' },
-    { name: 'Pipe Welding', href: '#programs' },
-    { name: 'Underwater Welding', href: '#programs' },
-    { name: 'Robotic Welding', href: '#programs' },
-  ],
-  company: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Team', href: '#team' },
-    { name: 'Success Stories', href: '#testimonials' },
-    { name: 'Visa Processing', href: '#visa' },
-    { name: 'Contact', href: '#contact' },
-  ],
-}
 export default function Footer() {
+  const { language } = useLanguage()
+
+  const footerLinks = {
+    programs: [
+      { name: language === 'bn' ? 'বেসিক ওয়েল্ডিং' : 'Basic Welding', href: '#programs' },
+      { name: language === 'bn' ? 'অ্যাডভান্সড MIG/TIG' : 'Advanced MIG/TIG', href: '#programs' },
+      { name: language === 'bn' ? 'পাইপ ওয়েল্ডিং' : 'Pipe Welding', href: '#programs' },
+      { name: language === 'bn' ? 'আন্ডারওয়াটার ওয়েল্ডিং' : 'Underwater Welding', href: '#programs' },
+      { name: language === 'bn' ? 'রোবোটিক ওয়েল্ডিং' : 'Robotic Welding', href: '#programs' },
+    ],
+    company: [
+      { name: language === 'bn' ? 'আমাদের সম্পর্কে' : 'About Us', href: '#about' },
+      { name: language === 'bn' ? 'আমাদের টিম' : 'Our Team', href: '#team' },
+      { name: language === 'bn' ? 'সাফল্যের গল্প' : 'Success Stories', href: '#testimonials' },
+      { name: language === 'bn' ? 'যোগাযোগ' : 'Contact', href: '#contact' },
+    ],
+  }
   return (
     <footer className="relative overflow-hidden">
       {/* Premium Dark Gradient Background */}
@@ -29,7 +31,7 @@ export default function Footer() {
       {/* Decorative Gradient Orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500/15 to-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl" />
       
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
@@ -44,7 +46,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center gap-4 mb-8 cursor-pointer"
               >
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-violet-500/30 bg-white/10 backdrop-blur-sm p-1">
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-500/30 bg-white/10 backdrop-blur-sm p-1">
                   <Image
                     src="/images/team/Screenshot%202025-11-27%20102701.png"
                     alt="New Life Logo"
@@ -54,7 +56,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">New Life</div>
-                  <div className="text-sm text-violet-400 font-medium">Welding Training Center</div>
+                  <div className={`text-sm text-emerald-400 font-medium ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'ওয়েল্ডিং প্রশিক্ষণ কেন্দ্র' : 'Welding Training Center'}</div>
                 </div>
               </motion.div>
             </Link>
@@ -63,15 +65,15 @@ export default function Footer() {
             <div className="space-y-3">
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-violet-500/30 transition-all"
+                className="flex items-start gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-emerald-500/30 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-xs text-violet-400 font-semibold mb-1">ADDRESS</div>
-                  <div className="text-gray-300 text-sm">
-                    House # 5372, Dakshinkhan Bazar, Dhaka 1230, Bangladesh
+                  <div className={`text-xs text-emerald-400 font-semibold mb-1 ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'ঠিকানা' : 'ADDRESS'}</div>
+                  <div className={`text-gray-300 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? 'বাড়ি # ৫৩৭২, দক্ষিণখান বাজার, ঢাকা ১২৩০, বাংলাদেশ' : 'House # 5372, Dakshinkhan Bazar, Dhaka 1230, Bangladesh'}
                   </div>
                 </div>
               </motion.div>
@@ -79,13 +81,13 @@ export default function Footer() {
               <motion.a
                 href="tel:+8801712577508"
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-cyan-500/30 transition-all"
+                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-emerald-500/30 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-xs text-cyan-400 font-semibold mb-1">PHONE</div>
+                  <div className={`text-xs text-emerald-400 font-semibold mb-1 ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'ফোন' : 'PHONE'}</div>
                   <div className="text-gray-300 font-medium">01712-577508 , 01748-003338</div>
                 </div>
               </motion.a>
@@ -93,13 +95,13 @@ export default function Footer() {
               <motion.a
                 href="mailto:newlifeweldingtrainingcenter@gmail.com"
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-rose-500/30 transition-all"
+                className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-emerald-500/30 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-xs text-rose-400 font-semibold mb-1">EMAIL</div>
+                  <div className={`text-xs text-emerald-400 font-semibold mb-1 ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'ইমেইল' : 'EMAIL'}</div>
                   <div className="text-gray-300 text-sm">newlifeweldingtrainingcenter@gmail.com</div>
                 </div>
               </motion.a>
@@ -139,9 +141,9 @@ export default function Footer() {
 
           {/* Programs Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white flex items-center gap-3">
-              <span className="w-10 h-1 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full" />
-              Programs
+            <h3 className={`text-lg font-bold mb-6 text-white flex items-center gap-3 ${language === 'bn' ? 'font-bengali' : ''}`}>
+              <span className="w-10 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
+              {language === 'bn' ? 'প্রোগ্রাম' : 'Programs'}
             </h3>
             <ul className="space-y-4">
               {footerLinks.programs.map((link) => (
@@ -149,9 +151,9 @@ export default function Footer() {
                   <Link href={link.href}>
                     <motion.div
                       whileHover={{ x: 8 }}
-                      className="text-gray-400 hover:text-violet-400 transition-all flex items-center gap-2 group"
+                      className={`text-gray-400 hover:text-emerald-400 transition-all flex items-center gap-2 group ${language === 'bn' ? 'font-bengali' : ''}`}
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-violet-400" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-400" />
                       {link.name}
                     </motion.div>
                   </Link>
@@ -162,9 +164,9 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white flex items-center gap-3">
-              <span className="w-10 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
-              Company
+            <h3 className={`text-lg font-bold mb-6 text-white flex items-center gap-3 ${language === 'bn' ? 'font-bengali' : ''}`}>
+              <span className="w-10 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
+              {language === 'bn' ? 'কোম্পানি' : 'Company'}
             </h3>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
@@ -172,9 +174,9 @@ export default function Footer() {
                   <Link href={link.href}>
                     <motion.div
                       whileHover={{ x: 8 }}
-                      className="text-gray-400 hover:text-cyan-400 transition-all flex items-center gap-2 group"
+                      className={`text-gray-400 hover:text-emerald-400 transition-all flex items-center gap-2 group ${language === 'bn' ? 'font-bengali' : ''}`}
                     >
-                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400" />
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-400" />
                       {link.name}
                     </motion.div>
                   </Link>
@@ -185,10 +187,10 @@ export default function Footer() {
             {/* Stats Card */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="mt-8 p-4 bg-gradient-to-br from-violet-500/20 to-purple-500/10 backdrop-blur-sm rounded-xl border border-violet-500/20"
+              className="mt-8 p-4 bg-gradient-to-br from-emerald-500/20 to-teal-500/10 backdrop-blur-sm rounded-xl border border-emerald-500/20"
             >
               <div className="text-3xl font-bold text-white">500+</div>
-              <div className="text-sm text-violet-300">Graduates Worldwide</div>
+              <div className={`text-sm text-emerald-300 ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? 'বিশ্বব্যাপী স্নাতক' : 'Graduates Worldwide'}</div>
             </motion.div>
           </div>
         </div>
@@ -196,17 +198,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm flex items-center gap-2">
-              © {new Date().getFullYear()} New Life Welding Training Center. Made with 
-              <Heart className="w-4 h-4 text-rose-500 fill-rose-500" /> 
-              in Bangladesh
+            <p className={`text-gray-500 text-sm flex items-center gap-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
+              © {new Date().getFullYear()} New Life Welding Training Center. {language === 'bn' ? 'বাংলাদেশে তৈরি' : 'Made with'} 
+              <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" /> 
+              {language === 'bn' ? '' : 'in Bangladesh'}
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-gray-500 hover:text-violet-400 transition-colors">
-                Privacy Policy
+              <Link href="#" className={`text-gray-500 hover:text-emerald-400 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                {language === 'bn' ? 'গোপনীয়তা নীতি' : 'Privacy Policy'}
               </Link>
-              <Link href="#" className="text-gray-500 hover:text-violet-400 transition-colors">
-                Terms of Service
+              <Link href="#" className={`text-gray-500 hover:text-emerald-400 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
+                {language === 'bn' ? 'সেবার শর্তাবলী' : 'Terms of Service'}
               </Link>
             </div>
           </div>

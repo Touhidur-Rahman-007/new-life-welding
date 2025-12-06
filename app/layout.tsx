@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Hind_Siliguri } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/Providers'
 import Navbar from '@/components/navigation/Navbar'
@@ -8,10 +8,18 @@ import ScrollProgress from '@/components/ui/ScrollProgress'
 import CustomCursor from '@/components/ui/CustomCursor'
 import PageTransition from '@/components/ui/PageTransition'
 import SmoothScroll from '@/components/ui/SmoothScroll'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const hindSiliguri = Hind_Siliguri({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['bengali'],
+  variable: '--font-hind-siliguri',
   display: 'swap',
 })
 
@@ -34,18 +42,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
-        <Providers>
-          <SmoothScroll>
-            <CustomCursor />
-            <ScrollProgress />
-            <Navbar />
-            <PageTransition>
-              {children}
-            </PageTransition>
-            <Footer />
-          </SmoothScroll>
-        </Providers>
+      <body className={`${inter.variable} ${hindSiliguri.variable} antialiased`}>
+        <LanguageProvider>
+          <Providers>
+            <SmoothScroll>
+              <CustomCursor />
+              <ScrollProgress />
+              <Navbar />
+              <PageTransition>
+                {children}
+              </PageTransition>
+              <Footer />
+            </SmoothScroll>
+          </Providers>
+        </LanguageProvider>
       </body>
     </html>
   )

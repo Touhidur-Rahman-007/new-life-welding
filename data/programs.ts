@@ -28,7 +28,7 @@ export const programs: Program[] = [
     duration: '12 Weeks',
     price: '$4,999',
     level: 'Intermediate',
-    color: 'from-primary-500 to-primary-600',
+    color: 'from-emerald-500 to-emerald-600',
     image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80',
     description: 'Elevate your welding skills with advanced MIG and TIG techniques used in professional settings.',
     features: [

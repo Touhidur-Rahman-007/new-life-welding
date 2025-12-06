@@ -4,42 +4,55 @@ import { motion } from 'framer-motion'
 import { Play, Youtube, Award, Users, TrendingUp, Eye } from 'lucide-react'
 import { AnimatedSection, StaggeredContainer, fadeInUp } from '@/components/ui/AnimatedSection'
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const videos = [
   {
     id: 'bUaJz5cMzBE',
     title: 'Professional Welding Training',
+    titleBn: 'পেশাদার ওয়েল্ডিং প্রশিক্ষণ',
     description: 'Discover our state-of-the-art training programs and facilities',
+    descriptionBn: 'আমাদের অত্যাধুনিক প্রশিক্ষণ প্রোগ্রাম এবং সুবিধাগুলি আবিষ্কার করুন',
     thumbnail: 'https://i.ytimg.com/vi/bUaJz5cMzBE/hqdefault.jpg',
     duration: '5:23',
     category: 'Training',
+    categoryBn: 'প্রশিক্ষণ',
     icon: Award,
   },
   {
     id: 'WOetqX3Q5UU',
     title: 'Student Success Stories',
+    titleBn: 'শিক্ষার্থীদের সাফল্যের গল্প',
     description: 'Real stories from graduates achieving their welding career goals',
+    descriptionBn: 'স্নাতকদের প্রকৃত গল্প যারা তাদের ওয়েল্ডিং ক্যারিয়ার লক্ষ্য অর্জন করেছে',
     thumbnail: 'https://i.ytimg.com/vi/WOetqX3Q5UU/hqdefault.jpg',
     duration: '4:15',
     category: 'Success',
+    categoryBn: 'সাফল্য',
     icon: Users,
   },
   {
     id: 'pEEo7hg-McQ',
     title: 'Advanced Techniques Demo',
+    titleBn: 'উন্নত কৌশল প্রদর্শন',
     description: 'Watch our expert instructors demonstrate advanced welding methods',
+    descriptionBn: 'আমাদের বিশেষজ্ঞ প্রশিক্ষকদের উন্নত ওয়েল্ডিং পদ্ধতি প্রদর্শন দেখুন',
     thumbnail: 'https://i.ytimg.com/vi/pEEo7hg-McQ/hqdefault.jpg',
     duration: '6:42',
     category: 'Tutorial',
+    categoryBn: 'টিউটোরিয়াল',
     icon: TrendingUp,
   },
   {
     id: 'KYRJvsAOKyI',
     title: 'Campus Tour & Facilities',
+    titleBn: 'ক্যাম্পাস ট্যুর ও সুবিধাসমূহ',
     description: 'Take a virtual tour of our world-class training center',
+    descriptionBn: 'আমাদের বিশ্বমানের প্রশিক্ষণ কেন্দ্রের ভার্চুয়াল ট্যুর করুন',
     thumbnail: 'https://i.ytimg.com/vi/KYRJvsAOKyI/hqdefault.jpg',
     duration: '3:58',
     category: 'Campus',
+    categoryBn: 'ক্যাম্পাস',
     icon: Eye,
   },
 ]
@@ -47,14 +60,15 @@ const videos = [
 export default function Videos() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const { language, t } = useLanguage()
 
   return (
-    <section id="videos" className="relative py-20 md:py-32 bg-gradient-to-b from-rose-50 via-pink-50 to-fuchsia-50 overflow-hidden">
+    <section id="videos" className="relative py-20 md:py-32 bg-gradient-to-b from-emerald-50 via-teal-50 to-green-50 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(5,150,105,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -66,16 +80,16 @@ export default function Videos() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-6 py-3 rounded-full bg-gradient-to-r from-red-600/20 via-primary-600/20 to-red-600/20 border border-red-500/30 text-red-400 text-sm font-bold flex items-center gap-2 backdrop-blur-sm">
+            <span className={`px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600/20 via-teal-600/20 to-emerald-600/20 border border-emerald-500/30 text-emerald-600 text-sm font-bold flex items-center gap-2 backdrop-blur-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
               <Youtube className="w-5 h-5 animate-pulse" />
-              Video Gallery
+              {t('videos.badge')}
             </span>
           </motion.div>
-          <h2 className="heading-large text-dark-900 mb-6">
-            Watch Our <span className="gradient-text">Training in Action</span>
+          <h2 className={`heading-large text-dark-900 mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {t('videos.title')} <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">{t('videos.titleHighlight')}</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-            Get an inside look at New Life Welding Training Center through our video showcases
+          <p className={`text-lg md:text-xl text-dark-600 max-w-3xl mx-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
+            {t('videos.subtitle')}
           </p>
         </AnimatedSection>
 
@@ -90,7 +104,7 @@ export default function Videos() {
               onHoverEnd={() => setHoveredIndex(null)}
               className="group relative"
             >
-              <div className="relative bg-white/80 backdrop-blur-xl shadow-lg rounded-3xl overflow-hidden border border-rose-200 hover:border-rose-500/50 transition-all duration-500 shadow-2xl">
+              <div className="relative bg-white/80 backdrop-blur-xl shadow-lg rounded-3xl overflow-hidden border border-emerald-200 hover:border-emerald-500/50 transition-all duration-500 shadow-2xl">
                 {/* Video Container */}
                 {activeVideo === video.id ? (
                   <motion.div
@@ -100,7 +114,7 @@ export default function Videos() {
                   >
                     <iframe
                       src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`}
-                      title={video.title}
+                      title={language === 'bn' ? video.titleBn : video.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="absolute inset-0 w-full h-full border-0"
@@ -115,7 +129,7 @@ export default function Videos() {
                     {/* Thumbnail */}
                     <img
                       src={video.thumbnail}
-                      alt={video.title}
+                      alt={language === 'bn' ? video.titleBn : video.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/thumb:scale-110"
                       loading="lazy"
                       onError={(e) => {
@@ -133,9 +147,9 @@ export default function Videos() {
                       animate={{ opacity: 1, y: 0 }}
                       className="absolute top-4 left-4 z-10"
                     >
-                      <div className="flex items-center gap-2 px-4 py-2 bg-dark-900/80 backdrop-blur-lg rounded-full border border-primary-500/30">
-                        <video.icon className="w-4 h-4 text-primary-400" />
-                        <span className="text-sm font-semibold text-primary-400">{video.category}</span>
+                      <div className={`flex items-center gap-2 px-4 py-2 bg-dark-900/80 backdrop-blur-lg rounded-full border border-emerald-500/30 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                        <video.icon className="w-4 h-4 text-emerald-400" />
+                        <span className="text-sm font-semibold text-emerald-400">{language === 'bn' ? video.categoryBn : video.category}</span>
                       </div>
                     </motion.div>
 
@@ -159,31 +173,31 @@ export default function Videos() {
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                          className="absolute inset-0 w-24 h-24 rounded-full border-4 border-primary-500/30 border-t-primary-500"
+                          className="absolute inset-0 w-24 h-24 rounded-full border-4 border-emerald-500/30 border-t-emerald-500"
                         />
                         
                         {/* Play Button */}
-                        <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-red-600 flex items-center justify-center shadow-2xl group-hover/thumb:shadow-primary-500/50 transition-all duration-500">
-                          <div className="absolute inset-0 rounded-full bg-primary-400/20 animate-ping" />
+                        <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-2xl group-hover/thumb:shadow-emerald-500/50 transition-all duration-500">
+                          <div className="absolute inset-0 rounded-full bg-emerald-400/20 animate-ping" />
                           <Play className="w-10 h-10 text-white ml-1 relative z-10" fill="white" />
                         </div>
                       </motion.div>
                     </motion.div>
 
                     {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-500/0 via-primary-500/0 to-primary-500/10 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/0 via-emerald-500/0 to-emerald-500/10 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-500" />
                   </div>
                 )}
 
                 {/* Content */}
                 <div className="p-6">
                   <motion.h3
-                    className="text-2xl font-bold text-dark-900 mb-3 group-hover:text-rose-500 transition-colors"
+                    className={`text-2xl font-bold text-dark-900 mb-3 group-hover:text-emerald-500 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}
                   >
-                    {video.title}
+                    {language === 'bn' ? video.titleBn : video.title}
                   </motion.h3>
-                  <p className="text-dark-600 leading-relaxed">
-                    {video.description}
+                  <p className={`text-dark-600 leading-relaxed ${language === 'bn' ? 'font-bengali' : ''}`}>
+                    {language === 'bn' ? video.descriptionBn : video.description}
                   </p>
 
                   {/* Watch Button */}
@@ -192,10 +206,10 @@ export default function Videos() {
                       onClick={() => setActiveVideo(video.id)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="mt-4 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all group/btn"
+                      className={`mt-4 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all group/btn ${language === 'bn' ? 'font-bengali' : ''}`}
                     >
                       <Play className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-                      Watch Now
+                      {language === 'bn' ? 'এখনই দেখুন' : 'Watch Now'}
                     </motion.button>
                   )}
                 </div>
