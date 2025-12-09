@@ -190,10 +190,10 @@ const translations: Record<Language, Record<string, string>> = {
     'facilities.items.studentLounge.specs.3': 'WiFi Access',
     'facilities.items.testingCenter.title': 'Testing Center',
     'facilities.items.testingCenter.description': 'Certified examination center for all major welding certifications.',
-    'facilities.items.testingCenter.specs.0': 'AWS Certified',
-    'facilities.items.testingCenter.specs.1': 'Practical Labs',
-    'facilities.items.testingCenter.specs.2': 'Written Exams',
-    'facilities.items.testingCenter.specs.3': 'Result Processing',
+    'facilities.items.testingCenter.specs.0': 'Practical Labs',
+    'facilities.items.testingCenter.specs.1': 'Written Exams',
+    'facilities.items.testingCenter.specs.2': 'Result Processing',
+    'facilities.items.testingCenter.specs.3': 'Professional Testing',
 
     // FAQ
     'faq.badge': 'FAQ',
@@ -413,10 +413,10 @@ const translations: Record<Language, Record<string, string>> = {
     'facilities.items.studentLounge.specs.3': 'ওয়াইফাই অ্যাক্সেস',
     'facilities.items.testingCenter.title': 'টেস্টিং সেন্টার',
     'facilities.items.testingCenter.description': 'সমস্ত প্রধান ওয়েল্ডিং সার্টিফিকেশনের জন্য সার্টিফাইড পরীক্ষা কেন্দ্র।',
-    'facilities.items.testingCenter.specs.0': 'AWS সার্টিফাইড',
-    'facilities.items.testingCenter.specs.1': 'ব্যবহারিক ল্যাব',
-    'facilities.items.testingCenter.specs.2': 'লিখিত পরীক্ষা',
-    'facilities.items.testingCenter.specs.3': 'ফলাফল প্রসেসিং',
+    'facilities.items.testingCenter.specs.0': 'ব্যবহারিক ল্যাব',
+    'facilities.items.testingCenter.specs.1': 'লিখিত পরীক্ষা',
+    'facilities.items.testingCenter.specs.2': 'ফলাফল প্রসেসিং',
+    'facilities.items.testingCenter.specs.3': 'পেশাদার টেস্টিং',
 
     // FAQ
     'faq.badge': 'প্রশ্নোত্তর',

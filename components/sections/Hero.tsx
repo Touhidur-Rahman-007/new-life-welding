@@ -7,44 +7,44 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const heroImages = [
   {
-    url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1920&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=1080&fit=crop',
     alt: 'Professional Welder at Work'
   },
   {
-    url: 'https://images.unsplash.com/photo-1565034946487-077786996e27?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Welding Sparks'
+    url: 'https://images.unsplash.com/photo-1565034946487-077786996e27?w=1920&h=1080&fit=crop',
+    alt: 'Welding Sparks Flying'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Industrial Welding'
+    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&h=1080&fit=crop',
+    alt: 'Industrial Welding Work'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Modern Welding Facility'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=1920&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop',
     alt: 'MIG Welding Process'
   },
   {
-    url: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1920&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=1920&h=1080&fit=crop',
     alt: 'TIG Welding Expert'
   },
   {
-    url: 'https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=1920&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=1080&fit=crop',
     alt: 'Steel Fabrication Welding'
   },
   {
-    url: 'https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Professional Welding Sparks'
+    url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=1920&h=1080&fit=crop',
+    alt: 'Professional Arc Welding'
   },
   {
-    url: 'https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Metal Fabrication Work'
+    url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&h=1080&fit=crop',
+    alt: 'Welding Training Facility'
   },
   {
-    url: 'https://images.unsplash.com/photo-1560461396-ec0ef7bb29dd?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Industrial Metal Cutting'
+    url: 'https://images.unsplash.com/photo-1581092160582-6443e4af41a4?w=1920&h=1080&fit=crop',
+    alt: 'Metal Fabrication Workshop'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=1920&h=1080&fit=crop',
+    alt: 'Industrial Welding Training'
   }
 ];
 

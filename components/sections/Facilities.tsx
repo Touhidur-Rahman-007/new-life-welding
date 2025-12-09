@@ -117,7 +117,7 @@ export default function Facilities() {
               key={index}
               variants={fadeInUp}
               whileHover={{ y: -10 }}
-              className="group"
+              className="group h-full"
             >
               <Tilt
                 tiltMaxAngleX={5}
@@ -125,10 +125,11 @@ export default function Facilities() {
                 glareEnable={true}
                 glareMaxOpacity={0.1}
                 scale={1.02}
+                className="h-full"
               >
-                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden flex-shrink-0">
                     <Image
                       src={facility.image}
                       alt={facility.title}
@@ -149,7 +150,7 @@ export default function Facilities() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     <h3 className={`text-2xl font-bold text-dark-900 mb-3 ${language === 'bn' ? 'font-bengali' : ''}`}>
                       {facility.title}
                     </h3>
@@ -158,7 +159,7 @@ export default function Facilities() {
                     </p>
 
                     {/* Specs */}
-                    <div className="space-y-2">
+                    <div className="space-y-2 mt-auto">
                       {facility.specs.map((spec, i) => (
                         <div
                           key={i}

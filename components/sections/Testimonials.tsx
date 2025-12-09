@@ -132,7 +132,7 @@ export default function Testimonials() {
             }}
             transition={{
               x: {
-                duration: 180,
+                duration: 120,
                 repeat: Infinity,
                 ease: 'linear',
               },
@@ -144,7 +144,7 @@ export default function Testimonials() {
                 key={`${testimonial.name}-${index}`}
                 className="flex-shrink-0 w-[400px]"
               >
-                <div className="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 border border-emerald-200 h-full flex flex-col">
+                <div className="relative bg-white backdrop-blur-lg shadow-2xl rounded-3xl p-8 border-2 border-emerald-300 h-full flex flex-col">
                   {/* Quote Icon */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl">
                     <Quote className="w-6 h-6 text-white" />
