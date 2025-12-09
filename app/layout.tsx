@@ -9,7 +9,7 @@ import CustomCursor from '@/components/ui/CustomCursor'
 import PageTransition from '@/components/ui/PageTransition'
 import SmoothScroll from '@/components/ui/SmoothScroll'
 import { LanguageProvider } from '@/contexts/LanguageContext'
-import { MessageCircle } from 'lucide-react'
+import WhatsAppButton from '@/components/ui/WhatsAppButton'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -50,16 +50,7 @@ export default function RootLayout({
               <CustomCursor />
               <ScrollProgress />
               <Navbar />
-              <a
-                href="https://wa.me/8801712577508"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fixed bottom-6 right-4 z-50 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all"
-                aria-label="Chat on WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span className="text-sm font-semibold">WhatsApp</span>
-              </a>
+              <WhatsAppButton />
               <PageTransition>
                 {children}
               </PageTransition>
