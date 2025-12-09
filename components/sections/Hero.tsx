@@ -11,32 +11,32 @@ const heroImages = [
     alt: 'Professional Welder at Work'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Arc Welding Sparks'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c74?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Industrial Welding Crew'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1581093457984-3b8b37556c6e?auto=format&fit=crop&w=1920&q=80',
-    alt: 'MIG Welding Closeup'
+    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Steel Fabrication Welding'
   },
   {
     url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80',
     alt: 'Pipe Welding Training'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Welding Training Facility'
+    url: 'https://images.unsplash.com/photo-1581093458791-9d42e1e09796?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Metal Fabrication Workshop'
   },
   {
-    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Steel Fabrication Weld'
+    url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Arc Welding Sparks'
   },
   {
-    url: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80',
-    alt: 'TIG Welding Sparks'
+    url: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Welder with Protective Gear'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Welding Torch in Action'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1541538601-82c8c52f3102?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Closeup Welding Sparks'
   }
 ];
 
