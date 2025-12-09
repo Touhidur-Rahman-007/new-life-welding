@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false)
   const phoneNumber = '8801712577508'
-  const message = 'Hello! I am interested in your welding training programs.'
+  const message = 'আসসালামু আলাইকুম। আমি আপনাদের ওয়েল্ডিং ট্রেনিং কোর্স সম্পর্কে বিস্তারিত জানতে চাই।'
 
   return (
     <motion.a

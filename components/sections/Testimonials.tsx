@@ -1,88 +1,80 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
-import Image from 'next/image'
+import { Star, Quote, User } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const testimonials = [
   {
-    name: 'Michael Rodriguez',
-    nameBn: 'মাইকেল রদ্রিগেজ',
-    role: 'Pipeline Welder',
-    roleBn: 'পাইপলাইন ওয়েল্ডার',
-    company: 'Energy Transfer',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    name: 'Md. Rahim Uddin',
+    nameBn: 'মো: রহিম উদ্দিন',
+    role: 'Welder',
+    roleBn: 'ওয়েল্ডার',
+    company: 'সৌদি আরব',
     rating: 5,
-    text: 'The training I received here completely transformed my career. Within 3 months of graduation, I was earning $85k annually working on major pipeline projects. The instructors are incredibly knowledgeable and patient.',
-    textBn: 'এখানে যে প্রশিক্ষণ পেয়েছি তা আমার ক্যারিয়ারকে সম্পূর্ণ বদলে দিয়েছে। স্নাতকের ৩ মাসের মধ্যে আমি বড় পাইপলাইন প্রকল্পে কাজ করে বার্ষিক $৮৫k উপার্জন করছিলাম। প্রশিক্ষকরা অবিশ্বাস্যভাবে জ্ঞানী এবং ধৈর্যশীল।',
+    text: 'New Life থেকে ট্রেনিং নিয়ে এখন সৌদিতে ভালো কাজ করছি। মাসে ৭০-৮০ হাজার টাকা পাঠাতে পারছি পরিবারকে। জনি স্যার আর সাজ্জাদ ভাইয়ের কাছে চিরকৃতজ্ঞ।',
+    textBn: 'New Life থেকে ট্রেনিং নিয়ে এখন সৌদিতে ভালো কাজ করছি। মাসে ৭০-৮০ হাজার টাকা পাঠাতে পারছি পরিবারকে। জনি স্যার আর সাজ্জাদ ভাইয়ের কাছে চিরকৃতজ্ঞ।',
   },
   {
-    name: 'Sarah Chen',
-    nameBn: 'সারা চেন',
-    role: 'Aerospace Welder',
-    roleBn: 'এয়ারোস্পেস ওয়েল্ডার',
-    company: 'Boeing',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+    name: 'Kamal Hossain',
+    nameBn: 'কামাল হোসেন',
+    role: 'Pipe Welder',
+    roleBn: 'পাইপ ওয়েল্ডার',
+    company: 'কুয়েত',
     rating: 5,
-    text: 'Coming from a non-traditional background, I was nervous about starting welding school. The supportive environment and hands-on approach made all the difference. Now I work on aircraft components and love what I do.',
-    textBn: 'অপ্রচলিত পটভূমি থেকে এসে ওয়েল্ডিং স্কুল শুরু করতে আমি নার্ভাস ছিলাম। সহায়ক পরিবেশ এবং হাতে-কলমে পদ্ধতি সব পার্থক্য তৈরি করেছে। এখন আমি বিমানের যন্ত্রাংশে কাজ করি এবং আমি যা করি তা ভালোবাসি।',
+    text: 'গ্রামের ছেলে ছিলাম, কিছুই জানতাম না। ৩ মাসের কোর্স করে এখন কুয়েতে আছি। স্বপ্নেও ভাবিনি এত তাড়াতাড়ি বিদেশে আসতে পারব।',
+    textBn: 'গ্রামের ছেলে ছিলাম, কিছুই জানতাম না। ৩ মাসের কোর্স করে এখন কুয়েতে আছি। স্বপ্নেও ভাবিনি এত তাড়াতাড়ি বিদেশে আসতে পারব।',
   },
   {
-    name: 'James Thompson',
-    nameBn: 'জেমস থম্পসন',
-    role: 'Welding Supervisor',
-    roleBn: 'ওয়েল্ডিং সুপারভাইজার',
-    company: 'Chevron',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+    name: 'Jahangir Alam',
+    nameBn: 'জাহাঙ্গীর আলম',
+    role: 'TIG Welder',
+    roleBn: 'টিআইজি ওয়েল্ডার',
+    company: 'সিঙ্গাপুর',
     rating: 5,
-    text: 'Best investment I ever made. The comprehensive curriculum and industry connections led me to my dream job in the oil and gas sector. The certifications I earned here opened doors nationwide.',
-    textBn: 'আমার জীবনের সেরা বিনিয়োগ। ব্যাপক পাঠ্যক্রম এবং শিল্প সংযোগ আমাকে তেল ও গ্যাস সেক্টরে আমার স্বপ্নের চাকরিতে নিয়ে গেছে। এখানে অর্জিত সার্টিফিকেট দেশব্যাপী দরজা খুলে দিয়েছে।',
+    text: 'এখানে হাতে-কলমে শিখেছি বলে কাজে কোনো সমস্যা হয় না। সিঙ্গাপুরে বস সবাইকে বলেন বাংলাদেশি ওয়েল্ডার সেরা। গর্ব লাগে শুনতে।',
+    textBn: 'এখানে হাতে-কলমে শিখেছি বলে কাজে কোনো সমস্যা হয় না। সিঙ্গাপুরে বস সবাইকে বলেন বাংলাদেশি ওয়েল্ডার সেরা। গর্ব লাগে শুনতে।',
   },
   {
-    name: 'David Kim',
-    nameBn: 'ডেভিড কিম',
+    name: 'Abdul Karim',
+    nameBn: 'আব্দুল করিম',
     role: 'Structural Welder',
     roleBn: 'স্ট্রাকচারাল ওয়েল্ডার',
-    company: 'Turner Construction',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    company: 'মালয়েশিয়া',
     rating: 5,
-    text: 'The hands-on training and safety protocols I learned here prepared me perfectly for the construction industry. I now work on high-rise buildings across the country.',
-    textBn: 'এখানে শেখা হাতে-কলমে প্রশিক্ষণ এবং নিরাপত্তা প্রটোকল আমাকে নির্মাণ শিল্পের জন্য পুরোপুরি প্রস্তুত করেছে। আমি এখন দেশের বিভিন্ন উঁচু ভবনে কাজ করি।',
+    text: 'New Life-এ ভর্তি হওয়ার আগে দিনমজুর ছিলাম। এখন মালয়েশিয়ায় বড় কোম্পানিতে চাকরি। জীবনটাই বদলে গেছে আলহামদুলিল্লাহ।',
+    textBn: 'New Life-এ ভর্তি হওয়ার আগে দিনমজুর ছিলাম। এখন মালয়েশিয়ায় বড় কোম্পানিতে চাকরি। জীবনটাই বদলে গেছে আলহামদুলিল্লাহ।',
   },
   {
-    name: 'Maria Garcia',
-    nameBn: 'মারিয়া গার্সিয়া',
-    role: 'TIG Specialist',
-    roleBn: 'টিআইজি বিশেষজ্ঞ',
-    company: 'SpaceX',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+    name: 'Mizanur Rahman',
+    nameBn: 'মিজানুর রহমান',
+    role: 'MIG Welder',
+    roleBn: 'মিগ ওয়েল্ডার',
+    company: 'দুবাই',
     rating: 5,
-    text: 'From zero experience to working at SpaceX in just 2 years. The TIG welding program here is world-class. My instructors never gave up on me.',
-    textBn: 'শূন্য অভিজ্ঞতা থেকে মাত্র ২ বছরে স্পেসএক্সে কাজ করছি। এখানকার টিআইজি ওয়েল্ডিং প্রোগ্রাম বিশ্বমানের। আমার প্রশিক্ষকরা কখনই আমাকে ছেড়ে দেননি।',
+    text: 'প্রথমে ভেবেছিলাম ওয়েল্ডিং কঠিন কাজ, পারব না। কিন্তু স্যারদের গাইডেন্সে সব সহজ হয়ে গেছে। এখন দুবাইতে মাশাল্লাহ ভালো আছি।',
+    textBn: 'প্রথমে ভেবেছিলাম ওয়েল্ডিং কঠিন কাজ, পারব না। কিন্তু স্যারদের গাইডেন্সে সব সহজ হয়ে গেছে। এখন দুবাইতে মাশাল্লাহ ভালো আছি।',
   },
   {
-    name: 'Robert Johnson',
-    nameBn: 'রবার্ট জনসন',
-    role: 'Offshore Welder',
-    roleBn: 'অফশোর ওয়েল্ডার',
-    company: 'Shell Oil',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    name: 'Shahinur Islam',
+    nameBn: 'শাহিনুর ইসলাম',
+    role: 'Welder',
+    roleBn: 'ওয়েল্ডার',
+    company: 'ওমান',
     rating: 5,
-    text: 'The offshore welding certification I got here landed me a job paying over $100k. The safety training was exceptional and gave me confidence for deep sea work.',
-    textBn: 'এখান থেকে পাওয়া অফশোর ওয়েল্ডিং সার্টিফিকেশন আমাকে $১০০k+ বেতনের চাকরি দিয়েছে। নিরাপত্তা প্রশিক্ষণ ছিল অসাধারণ।',
+    text: 'ভাই, সত্যি বলছি এখানে যা শিখেছি তা কোথাও পেতাম না। প্র্যাক্টিক্যাল ট্রেনিং একদম জব রেডি করে দেয়। এখন ওমানে সুন্দর করে আছি।',
+    textBn: 'ভাই, সত্যি বলছি এখানে যা শিখেছি তা কোথাও পেতাম না। প্র্যাক্টিক্যাল ট্রেনিং একদম জব রেডি করে দেয়। এখন ওমানে সুন্দর করে আছি।',
   },
   {
-    name: 'Lisa Wang',
-    nameBn: 'লিসা ওয়াং',
-    role: 'Quality Inspector',
-    roleBn: 'কোয়ালিটি ইন্সপেক্টর',
-    company: 'Tesla',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+    name: 'Faruk Ahmed',
+    nameBn: 'ফারুক আহমেদ',
+    role: 'Welder Supervisor',
+    roleBn: 'ওয়েল্ডার সুপারভাইজার',
+    company: 'কাতার',
     rating: 5,
-    text: 'Started as a welder, now I inspect welds at Tesla. The comprehensive knowledge I gained here about quality standards was invaluable.',
-    textBn: 'ওয়েল্ডার হিসেবে শুরু করেছিলাম, এখন টেসলায় ওয়েল্ড ইন্সপেক্টর। মান নিয়ন্ত্রণ সম্পর্কে যে জ্ঞান পেয়েছি তা অমূল্য।',
+    text: 'শুরুতে সাধারণ ওয়েল্ডার ছিলাম, এখন সুপারভাইজার। New Life-এর সার্টিফিকেট দেখে কোম্পানি প্রমোশন দিয়েছে। ধন্যবাদ নিউ লাইফ পরিবার।',
+    textBn: 'শুরুতে সাধারণ ওয়েল্ডার ছিলাম, এখন সুপারভাইজার। New Life-এর সার্টিফিকেট দেখে কোম্পানি প্রমোশন দিয়েছে। ধন্যবাদ নিউ লাইফ পরিবার।',
   },
 ]
 
@@ -111,10 +103,10 @@ export default function Testimonials() {
             </span>
           </motion.div>
           <h2 className={`heading-large text-dark-900 mb-6 ${language === 'bn' ? 'font-bengali' : ''}`}>
-            {language === 'bn' ? 'আমাদের' : 'Hear From Our'} <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">{language === 'bn' ? 'স্নাতকদের কথা শুনুন' : 'Graduates'}</span>
+            {language === 'bn' ? 'আমাদের প্রশিক্ষণার্থীদের' : 'What Our'} <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">{language === 'bn' ? 'মনের কথা' : 'Students Say'}</span>
           </h2>
           <p className={`text-lg md:text-xl text-dark-600 max-w-3xl mx-auto ${language === 'bn' ? 'font-bengali' : ''}`}>
-            {language === 'bn' ? 'প্রকৃত শিক্ষার্থীদের প্রকৃত গল্প যারা ওয়েল্ডিংয়ের মাধ্যমে তাদের জীবন পরিবর্তন করেছে' : 'Real stories from real students who transformed their lives through welding'}
+            {language === 'bn' ? 'যারা আমাদের কাছ থেকে প্রশিক্ষণ নিয়ে জীবন বদলে দিয়েছেন, তাদের অভিজ্ঞতা শুনুন' : 'Hear from those who transformed their lives through our training'}
           </p>
         </AnimatedSection>
 
@@ -132,7 +124,7 @@ export default function Testimonials() {
             }}
             transition={{
               x: {
-                duration: 120,
+                duration: 280,
                 repeat: Infinity,
                 ease: 'linear',
               },
@@ -158,24 +150,19 @@ export default function Testimonials() {
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className={`text-sm sm:text-base text-dark-600 leading-relaxed mb-4 sm:mb-6 flex-grow ${language === 'bn' ? 'font-bengali' : ''}`}>
-                    "{language === 'bn' ? testimonial.textBn : testimonial.text}"
+                  <p className={`text-sm sm:text-base text-dark-600 leading-relaxed mb-4 sm:mb-6 flex-grow font-bengali`}>
+                    "{testimonial.textBn}"
                   </p>
 
-                  {/* Author */}
+                  {/* Author - No Image */}
                   <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-emerald-200">
-                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/50">
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                      <User className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
                     <div>
                       <h4 className={`text-sm sm:text-base text-dark-900 font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.nameBn : testimonial.name}</h4>
                       <p className={`text-dark-400 text-xs sm:text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.roleBn : testimonial.role}</p>
-                      <p className="text-emerald-500 text-xs sm:text-sm font-medium">{testimonial.company}</p>
+                      <p className="text-emerald-500 text-xs sm:text-sm font-medium font-bengali">{testimonial.company}</p>
                     </div>
                   </div>
                 </div>

@@ -12,9 +12,9 @@ export default function About() {
 
   const milestones = [
     { year: '2012', title: t('about.milestones.founded.title'), description: t('about.milestones.founded.description') },
-    { year: '2017', title: t('about.milestones.expansion.title'), description: t('about.milestones.expansion.description') },
-    { year: '2022', title: t('about.milestones.recognition.title'), description: t('about.milestones.recognition.description') },
-    { year: '2025', title: t('about.milestones.innovation.title'), description: t('about.milestones.innovation.description') },
+    { year: '2015', title: t('about.milestones.expansion.title'), description: t('about.milestones.expansion.description') },
+    { year: '2019', title: t('about.milestones.recognition.title'), description: t('about.milestones.recognition.description') },
+    { year: '2022', title: t('about.milestones.innovation.title'), description: t('about.milestones.innovation.description') },
   ]
   return (
     <section id="about" className="relative py-20 md:py-32 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-hidden">
