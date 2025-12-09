@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Menu, X, Flame, Phone, ChevronDown, Globe } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { programs } from '@/data/programs'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,17 +17,18 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t } = useLanguage()
 
+  const programSubmenu = programs.map((program) => ({
+    name: program.title,
+    href: `/programs/${program.id}`
+  }))
+
   const navLinks = [
     { name: t('nav.home'), href: '/#home' },
     { name: t('nav.about'), href: '/#about' },
     {
       name: t('nav.programs'),
       href: '/#programs',
-      submenu: [
-        { name: t('nav.basicWelding'), href: '/#programs' },
-        { name: t('nav.advancedMigTig'), href: '/#programs' },
-        { name: t('nav.pipeWelding'), href: '/#programs' },
-      ]
+      submenu: programSubmenu
     },
     { name: t('nav.videos'), href: '/#videos' },
     { name: t('nav.team'), href: '/#team' },

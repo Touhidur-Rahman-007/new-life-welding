@@ -7,44 +7,36 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const heroImages = [
   {
-    url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=1080&fit=crop',
+    url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80',
     alt: 'Professional Welder at Work'
   },
   {
-    url: 'https://images.unsplash.com/photo-1565034946487-077786996e27?w=1920&h=1080&fit=crop',
-    alt: 'Welding Sparks Flying'
+    url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Arc Welding Sparks'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&h=1080&fit=crop',
-    alt: 'Industrial Welding Work'
+    url: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c74?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Industrial Welding Crew'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop',
-    alt: 'MIG Welding Process'
+    url: 'https://images.unsplash.com/photo-1581093457984-3b8b37556c6e?auto=format&fit=crop&w=1920&q=80',
+    alt: 'MIG Welding Closeup'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=1920&h=1080&fit=crop',
-    alt: 'TIG Welding Expert'
+    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Pipe Welding Training'
   },
   {
-    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=1080&fit=crop',
-    alt: 'Steel Fabrication Welding'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=1920&h=1080&fit=crop',
-    alt: 'Professional Arc Welding'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&h=1080&fit=crop',
+    url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80',
     alt: 'Welding Training Facility'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092160582-6443e4af41a4?w=1920&h=1080&fit=crop',
-    alt: 'Metal Fabrication Workshop'
+    url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Steel Fabrication Weld'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=1920&h=1080&fit=crop',
-    alt: 'Industrial Welding Training'
+    url: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80',
+    alt: 'TIG Welding Sparks'
   }
 ];
 
