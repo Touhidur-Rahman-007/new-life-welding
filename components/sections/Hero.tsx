@@ -37,6 +37,22 @@ const heroImages = [
   {
     url: 'https://images.unsplash.com/photo-1541538601-82c8c52f3102?auto=format&fit=crop&w=1920&q=80',
     alt: 'Closeup Welding Sparks'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Welding Helmet and Torch'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1516031190212-da133013de50?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Industrial Welder on Scaffold'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1520881363902-a0ff4e722963?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Sparks from Angle Grinder'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1581093588401-99b9a030d796?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Workshop Welding Scene'
   }
 ];
 

@@ -29,7 +29,7 @@ export const programs: Program[] = [
     price: '$4,999',
     level: 'Intermediate',
     color: 'from-emerald-500 to-emerald-600',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?auto=format&fit=crop&w=1200&q=80',
     description: 'Elevate your welding skills with advanced MIG and TIG techniques used in professional settings.',
     features: [
       'Advanced MIG welding techniques',
