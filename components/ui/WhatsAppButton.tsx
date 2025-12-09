@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 group"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 1 }}
@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
 
       {/* Main button */}
       <motion.div
-        className="relative flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl cursor-pointer overflow-hidden"
+        className="relative flex items-center gap-1 sm:gap-2 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl cursor-pointer overflow-hidden"
         animate={{
           y: [0, -6, 0],
         }}
@@ -50,7 +50,7 @@ export default function WhatsAppButton() {
         {/* WhatsApp Icon */}
         <div className="relative">
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -59,12 +59,12 @@ export default function WhatsAppButton() {
           </svg>
         </div>
 
-        {/* Text */}
-        <span className="relative text-sm font-bold tracking-wide">WhatsApp</span>
+        {/* Text - hidden on very small screens */}
+        <span className="relative text-xs sm:text-sm font-bold tracking-wide hidden xs:inline">WhatsApp</span>
 
-        {/* Arrow icon */}
+        {/* Arrow icon - hidden on mobile */}
         <motion.svg
-          className="w-4 h-4"
+          className="w-3 h-3 sm:w-4 sm:h-4 hidden sm:block"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

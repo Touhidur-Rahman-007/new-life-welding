@@ -142,24 +142,24 @@ export default function Team() {
 
       <div className="container-custom relative z-10">
         {/* Section Header with Flame Animation */}
-        <AnimatedSection className="text-center mb-24">
+        <AnimatedSection className="text-center mb-16 md:mb-24">
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', duration: 1 }}
-            className="inline-flex items-center gap-3 mb-6 px-8 py-3 bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100 border border-emerald-300 rounded-full"
+            className="inline-flex items-center gap-2 md:gap-3 mb-4 md:mb-6 px-4 md:px-8 py-2 md:py-3 bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100 border border-emerald-300 rounded-full"
           >
-            <Flame className="w-6 h-6 text-emerald-500 animate-pulse" />
-            <span className="text-emerald-600 font-bold text-lg">Our Expert Team</span>
-            <Flame className="w-6 h-6 text-emerald-500 animate-pulse" />
+            <Flame className="w-5 h-5 md:w-6 md:h-6 text-emerald-500 animate-pulse" />
+            <span className="text-emerald-600 font-bold text-sm md:text-lg">Our Expert Team</span>
+            <Flame className="w-5 h-5 md:w-6 md:h-6 text-emerald-500 animate-pulse" />
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 font-display leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-8 font-display leading-tight"
           >
             <span className="inline-block bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 bg-clip-text text-transparent">
               Meet The Masters
@@ -171,7 +171,7 @@ export default function Team() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-base md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4"
           >
             The passionate professionals behind Bangladesh's premier welding training institution
           </motion.p>
@@ -181,15 +181,15 @@ export default function Team() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, type: 'spring', stiffness: 120 }}
-            className="mt-12 flex justify-center"
+            className="mt-8 md:mt-12 flex justify-center"
           >
-            <div className="relative p-4 rounded-3xl bg-white border border-emerald-200 shadow-xl">
+            <div className="relative p-3 md:p-4 rounded-2xl md:rounded-3xl bg-white border border-emerald-200 shadow-xl">
               <Image
                 src={teamLogoSrc}
                 alt="New Life Welding logo"
                 width={280}
                 height={140}
-                className="object-contain"
+                className="object-contain w-[200px] md:w-[280px]"
                 priority
               />
             </div>
@@ -264,26 +264,26 @@ function SectionTitle({ icon: Icon, title, subtitle }: SectionTitleProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="text-center mb-16"
+      className="text-center mb-10 md:mb-16"
     >
-      <div className="inline-flex items-center gap-4 mb-4">
+      <div className="inline-flex items-center gap-2 md:gap-4 mb-4">
         <motion.div
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         >
-          <Icon className="w-8 h-8 text-emerald-500" />
+          <Icon className="w-6 h-6 md:w-8 md:h-8 text-emerald-500" />
         </motion.div>
-        <h3 className="text-4xl md:text-5xl font-bold font-display text-emerald-600">
+        <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold font-display text-emerald-600">
           {title}
         </h3>
         <motion.div
           animate={{ rotate: [360, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         >
-          <Icon className="w-8 h-8 text-emerald-500" />
+          <Icon className="w-6 h-6 md:w-8 md:h-8 text-emerald-500" />
         </motion.div>
       </div>
-      <p className="text-xl text-emerald-500 font-semibold">{subtitle}</p>
+      <p className="text-base md:text-xl text-emerald-500 font-semibold">{subtitle}</p>
     </motion.div>
   )
 }

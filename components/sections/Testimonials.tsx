@@ -126,7 +126,7 @@ export default function Testimonials() {
 
           {/* Sliding container */}
           <motion.div
-            className="flex gap-8"
+            className="flex gap-4 sm:gap-8"
             animate={{
               x: [0, -50 * testimonials.length + '%'],
             }}
@@ -142,29 +142,29 @@ export default function Testimonials() {
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="flex-shrink-0 w-[400px]"
+                className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px]"
               >
-                <div className="relative bg-white backdrop-blur-lg shadow-2xl rounded-3xl p-8 border-2 border-emerald-300 h-full flex flex-col">
+                <div className="relative bg-white backdrop-blur-lg shadow-2xl rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-emerald-300 h-full flex flex-col">
                   {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl">
-                    <Quote className="w-6 h-6 text-white" />
+                  <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl">
+                    <Quote className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                   </div>
 
                   {/* Rating */}
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-3 sm:mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-emerald-500 text-emerald-500" />
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-emerald-500 text-emerald-500" />
                     ))}
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className={`text-dark-600 leading-relaxed mb-6 flex-grow ${language === 'bn' ? 'font-bengali' : ''}`}>
+                  <p className={`text-sm sm:text-base text-dark-600 leading-relaxed mb-4 sm:mb-6 flex-grow ${language === 'bn' ? 'font-bengali' : ''}`}>
                     "{language === 'bn' ? testimonial.textBn : testimonial.text}"
                   </p>
 
                   {/* Author */}
-                  <div className="flex items-center gap-4 pt-6 border-t border-emerald-200">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/50">
+                  <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-emerald-200">
+                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/50">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -173,9 +173,9 @@ export default function Testimonials() {
                       />
                     </div>
                     <div>
-                      <h4 className={`text-dark-900 font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.nameBn : testimonial.name}</h4>
-                      <p className={`text-dark-400 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.roleBn : testimonial.role}</p>
-                      <p className="text-emerald-500 text-sm font-medium">{testimonial.company}</p>
+                      <h4 className={`text-sm sm:text-base text-dark-900 font-bold ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.nameBn : testimonial.name}</h4>
+                      <p className={`text-dark-400 text-xs sm:text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>{language === 'bn' ? testimonial.roleBn : testimonial.role}</p>
+                      <p className="text-emerald-500 text-xs sm:text-sm font-medium">{testimonial.company}</p>
                     </div>
                   </div>
                 </div>

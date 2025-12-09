@@ -215,15 +215,33 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <Link href="tel:+8801712577508">
+            
+            {/* Mobile Language Toggle & Call Button */}
+            <div className="px-4 pt-4 space-y-3">
+              {/* Language Toggle for Mobile */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
-                className={`w-full mt-4 flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold text-sm ${language === 'bn' ? 'font-bengali' : ''}`}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
+                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-all"
               >
-                <Phone className="w-4 h-4" />
-                {t('nav.callNow')}
+                <Globe className="w-4 h-4" />
+                <span className={language === 'bn' ? 'font-[var(--font-hind-siliguri)]' : ''}>
+                  {language === 'en' ? 'বাংলায় দেখুন' : 'Switch to English'}
+                </span>
               </motion.button>
-            </Link>
+
+              {/* Call Now Button */}
+              <Link href="tel:+8801712577508" className="block">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  className={`w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full font-semibold text-sm ${language === 'bn' ? 'font-bengali' : ''}`}
+                >
+                  <Phone className="w-4 h-4" />
+                  {t('nav.callNow')}
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
         )}
       </div>

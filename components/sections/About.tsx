@@ -127,11 +127,11 @@ export default function About() {
             {t('about.journey.heading')} <span className="text-emerald-500">{t('about.journey.headingHighlight')}</span>
           </h3>
           <div className="relative max-w-5xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-500 via-teal-500 to-green-600" />
+            {/* Timeline Line - Hidden on mobile */}
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-500 via-teal-500 to-green-600" />
 
             {/* Timeline Items */}
-            <div className="space-y-16">
+            <div className="space-y-8 md:space-y-16">
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={index}
@@ -139,34 +139,36 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                    }`}
+                  className={`flex items-center gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
-                  <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                  {/* Content - Always left on mobile */}
+                  <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="inline-block p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                      className="inline-block p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all"
                     >
-                      <div className="text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent mb-2">
+                      <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent mb-2">
                         {milestone.year}
                       </div>
-                      <h4 className={`text-xl font-bold text-dark-900 mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                      <h4 className={`text-lg md:text-xl font-bold text-dark-900 mb-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
                         {milestone.title}
                       </h4>
-                      <p className={`text-dark-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
+                      <p className={`text-sm md:text-base text-dark-600 ${language === 'bn' ? 'font-bengali' : ''}`}>
                         {milestone.description}
                       </p>
                     </motion.div>
                   </div>
 
+                  {/* Circle - positioned absolute on mobile */}
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg z-10 flex items-center justify-center"
+                    className="absolute left-2 md:relative md:left-auto w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg z-10 flex items-center justify-center"
                   >
-                    <div className="w-4 h-4 rounded-full bg-white" />
+                    <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white" />
                   </motion.div>
 
-                  <div className="flex-1" />
+                  {/* Empty space - hidden on mobile */}
+                  <div className="hidden md:block flex-1" />
                 </motion.div>
               ))}
             </div>
