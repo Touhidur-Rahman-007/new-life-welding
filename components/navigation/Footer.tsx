@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart } from 'lucide-react'
+import { Facebook, Youtube, Mail, Phone, MapPin, Globe, ArrowRight, Heart, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Footer() {
@@ -10,17 +10,14 @@ export default function Footer() {
 
   const footerLinks = {
     programs: [
-      { name: language === 'bn' ? 'বেসিক ওয়েল্ডিং' : 'Basic Welding', href: '#programs' },
-      { name: language === 'bn' ? 'অ্যাডভান্সড MIG/TIG' : 'Advanced MIG/TIG', href: '#programs' },
-      { name: language === 'bn' ? 'পাইপ ওয়েল্ডিং' : 'Pipe Welding', href: '#programs' },
-      { name: language === 'bn' ? 'আন্ডারওয়াটার ওয়েল্ডিং' : 'Underwater Welding', href: '#programs' },
-      { name: language === 'bn' ? 'রোবোটিক ওয়েল্ডিং' : 'Robotic Welding', href: '#programs' },
+      { name: language === 'bn' ? 'অ্যাডভান্সড MIG/TIG' : 'Advanced MIG/TIG', href: '/programs/advanced-mig-tig' },
+      { name: language === 'bn' ? 'পাইপ ওয়েল্ডিং' : 'Pipe Welding', href: '/programs/pipe-welding' },
+      { name: language === 'bn' ? 'স্ট্রাকচারাল ওয়েল্ডিং' : 'Structural Welding', href: '/programs/structural-welding' },
     ],
     company: [
-      { name: language === 'bn' ? 'আমাদের সম্পর্কে' : 'About Us', href: '#about' },
-      { name: language === 'bn' ? 'আমাদের টিম' : 'Our Team', href: '#team' },
-      { name: language === 'bn' ? 'সাফল্যের গল্প' : 'Success Stories', href: '#testimonials' },
-      { name: language === 'bn' ? 'যোগাযোগ' : 'Contact', href: '#contact' },
+      { name: language === 'bn' ? 'আমাদের সম্পর্কে' : 'About Us', href: '/#about' },
+      { name: language === 'bn' ? 'আমাদের টিম' : 'Our Team', href: '/#team' },
+      { name: language === 'bn' ? 'যোগাযোগ' : 'Contact', href: '/#contact' },
     ],
   }
   return (
@@ -184,24 +181,40 @@ export default function Footer() {
               ))}
             </ul>
 
+            {/* Quick Contact CTA */}
+            <div className="mt-8">
+              <Link href="/#contact">
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 ${language === 'bn' ? 'font-bengali' : ''}`}
+                >
+                  {language === 'bn' ? 'যোগাযোগ করুন' : 'Get In Touch'}
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className={`text-gray-500 text-sm flex items-center gap-2 ${language === 'bn' ? 'font-bengali' : ''}`}>
-              © {new Date().getFullYear()} New Life Welding Training Center. {language === 'bn' ? 'বাংলাদেশে তৈরি' : 'Made with'}
-              <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" />
-              {language === 'bn' ? '' : 'in Bangladesh'}
+            <p className={`text-gray-500 text-sm ${language === 'bn' ? 'font-bengali' : ''}`}>
+              © {new Date().getFullYear()} New Life Welding Training Center. {language === 'bn' ? 'সর্বস্বত্ব সংরক্ষিত।' : 'All rights reserved.'}
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="#" className={`text-gray-500 hover:text-emerald-400 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {language === 'bn' ? 'গোপনীয়তা নীতি' : 'Privacy Policy'}
-              </Link>
-              <Link href="#" className={`text-gray-500 hover:text-emerald-400 transition-colors ${language === 'bn' ? 'font-bengali' : ''}`}>
-                {language === 'bn' ? 'সেবার শর্তাবলী' : 'Terms of Service'}
-              </Link>
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span>{language === 'bn' ? 'ডেভেলপ করেছে' : 'Powered by'}</span>
+              <motion.a
+                href="https://zyrotech.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+              >
+                Zyrotech Bangladesh
+                <ExternalLink className="w-3 h-3" />
+              </motion.a>
             </div>
           </div>
         </div>
